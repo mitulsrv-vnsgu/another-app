@@ -1,25 +1,32 @@
-/**
- * app.js
- * Use `app.js` to run your app.
- * To start the server, run: `node app.js`.
- */
-
 const express = require('express');
 const cors = require('cors');
 const path = require('path');
 const dotenv = require('dotenv');
-dotenv.config({ path:'.env' });
+const dotenv = require('dotenv');
+const dotenv = require('dotenv');
+const dotenv = require('dotenv');
+const dotenv = require('dotenv');
+const dotenv = require('dotenv');
+const dotenv = require('dotenv');
+const dotenv = require('dotenv');
+const dotenv = require('dotenv');
+const dotenv = require('dotenv');
+const dotenv = require('dotenv');
+const dotenv = require('dotenv');
+const dotenv = require('dotenv');
+
+dotenv.config();
 global.__basedir = __dirname;
 const postmanToOpenApi = require('postman-to-openapi');
 const YAML = require('yamljs');
 const swaggerUi = require('swagger-ui-express');
-require('./config/db');
 const listEndpoints = require('express-list-endpoints');
+let logger = require('morgan');
 const passport = require('passport');
 
-let logger = require('morgan');
-const { devicePassportStrategy } = require('./config/devicePassportStrategy');
-const { adminPassportStrategy } = require('./config/adminPassportStrategy');
+const { devicePassportStrategy } = require('./middleware');
+const { adminPassportStrategy } = require('./middleware');
+
 const app = express();
 const corsOptions = { origin: process.env.ALLOW_ORIGIN, };
 app.use(cors(corsOptions));
@@ -27,7 +34,6 @@ app.use(cors(corsOptions));
 //template engine
 app.set('view engine', 'ejs'); 
 app.set('views', path.join(__dirname, 'views'));
-app.use(require('./utils/response/responseHandler'));
 
 //all routes 
 const routes =  require('./routes');

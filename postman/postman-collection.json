@@ -1,7 +1,7 @@
 {
   "info": {
-    "name": "nodejsapplication",
-    "_postman_id": "a6723f2a-0f31-44fa-8892-f99560bb37b4",
+    "name": "mitul_s_application6",
+    "_postman_id": "b015361a-7129-474b-b11d-bc4cf4b39c28",
     "schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
   },
   "item": [
@@ -10,13 +10,13 @@
       "description": "admin APIs",
       "item": [
         {
-          "name": "patient",
-          "description": "patient Model APIs",
+          "name": "enterprise",
+          "description": "enterprise Model APIs",
           "item": [
             {
-              "name": "getpatient",
+              "name": "getenterprise",
               "request": {
-                "url": "{{url}}/admin/patient/:id",
+                "url": "{{url}}/admin/enterprise/:id",
                 "method": "GET",
                 "header": [
                   {
@@ -39,18 +39,18 @@
               },
               "response": [
                 {
-                  "name": "getpatient_response",
+                  "name": "getenterprise_response",
                   "originalRequest": {
                     "method": "GET",
                     "header": [],
                     "url": {
-                      "raw": "{{url}}/admin/patient/:id"
+                      "raw": "{{url}}/admin/enterprise/:id"
                     }
                   },
                   "status": "OK",
                   "code": 200,
                   "_postman_previewlanguage": "json",
-                  "body": "{\n  \"status\": \"SUCCESS\",\n  \"message\": \"Your request is successfully executed\",\n  \"data\": {\n    \"name\": \"Allison Bergstrom\",\n    \"code\": \"calculating\",\n    \"email\": \"Brenda.Jacobi@hotmail.com\",\n    \"isDelete\": true,\n    \"id\": \"63b7b3ae1885d01a22f88134\",\n    \"isDeleted\": false,\n    \"isActive\": true,\n    \"createdAt\": \"2023-08-13T15:32:48.129Z\",\n    \"updatedAt\": \"2024-01-05T12:52:55.020Z\"\n  }\n}",
+                  "body": "{\n  \"status\": \"SUCCESS\",\n  \"message\": \"Your request is successfully executed\",\n  \"data\": {\n    \"name\": \"Judith Welch\",\n    \"email\": \"Lauriane_Pagac@hotmail.com\",\n    \"phone\": \"(150) 538-0841\",\n    \"code\": \"Synergistic\",\n    \"address\": \"192 Lessie Street\",\n    \"website\": \"mobile\",\n    \"isDelete\": false,\n    \"id\": \"63b804777cd4cb13ed59c0dd\",\n    \"isDeleted\": false,\n    \"isActive\": true,\n    \"createdAt\": \"2023-01-10T20:12:16.924Z\",\n    \"updatedAt\": \"2024-01-02T22:46:49.837Z\"\n  }\n}",
                   "header": [
                     {
                       "key": "Content-Type",
@@ -63,9 +63,9 @@
               "_postman_isSubFolder": true
             },
             {
-              "name": "addpatient",
+              "name": "addenterprise",
               "request": {
-                "url": "{{url}}/admin/patient/create",
+                "url": "{{url}}/admin/enterprise/create",
                 "method": "POST",
                 "header": [
                   {
@@ -76,7 +76,7 @@
                 ],
                 "body": {
                   "mode": "raw",
-                  "raw": "{\n  \"name\": \"Allison Bergstrom\",\n  \"code\": \"calculating\",\n  \"email\": \"Brenda.Jacobi@hotmail.com\",\n  \"isDelete\": true\n}"
+                  "raw": "{\n  \"name\": \"Judith Welch\",\n  \"email\": \"Lauriane_Pagac@hotmail.com\",\n  \"phone\": \"(150) 538-0841\",\n  \"code\": \"Synergistic\",\n  \"address\": \"192 Lessie Street\",\n  \"website\": \"mobile\",\n  \"isDelete\": false\n}"
                 },
                 "description": "",
                 "auth": {
@@ -88,18 +88,18 @@
               },
               "response": [
                 {
-                  "name": "addpatient_response",
+                  "name": "addenterprise_response",
                   "originalRequest": {
                     "method": "POST",
                     "header": [],
                     "url": {
-                      "raw": "{{url}}/admin/patient/create"
+                      "raw": "{{url}}/admin/enterprise/create"
                     }
                   },
                   "status": "OK",
                   "code": 200,
                   "_postman_previewlanguage": "json",
-                  "body": "{\n  \"status\": \"SUCCESS\",\n  \"message\": \"Your request is successfully executed\",\n  \"data\": {\n    \"name\": \"Allison Bergstrom\",\n    \"code\": \"calculating\",\n    \"email\": \"Brenda.Jacobi@hotmail.com\",\n    \"isDelete\": true,\n    \"id\": \"63b7b3ae1885d01a22f88132\",\n    \"isDeleted\": false,\n    \"isActive\": true,\n    \"createdAt\": \"2023-08-13T15:32:48.129Z\",\n    \"updatedAt\": \"2024-01-05T12:52:55.020Z\"\n  }\n}",
+                  "body": "{\n  \"status\": \"SUCCESS\",\n  \"message\": \"Your request is successfully executed\",\n  \"data\": {\n    \"name\": \"Judith Welch\",\n    \"email\": \"Lauriane_Pagac@hotmail.com\",\n    \"phone\": \"(150) 538-0841\",\n    \"code\": \"Synergistic\",\n    \"address\": \"192 Lessie Street\",\n    \"website\": \"mobile\",\n    \"isDelete\": false,\n    \"id\": \"63b804777cd4cb13ed59c0db\",\n    \"isDeleted\": false,\n    \"isActive\": true,\n    \"createdAt\": \"2023-01-10T20:12:16.924Z\",\n    \"updatedAt\": \"2024-01-02T22:46:49.837Z\"\n  }\n}",
                   "header": [
                     {
                       "key": "Content-Type",
@@ -112,9 +112,9 @@
               "_postman_isSubFolder": true
             },
             {
-              "name": "findAllpatient",
+              "name": "findAllenterprise",
               "request": {
-                "url": "{{url}}/admin/patient/list",
+                "url": "{{url}}/admin/enterprise/list",
                 "method": "POST",
                 "header": [
                   {
@@ -137,18 +137,18 @@
               },
               "response": [
                 {
-                  "name": "findAllpatient_response",
+                  "name": "findAllenterprise_response",
                   "originalRequest": {
                     "method": "POST",
                     "header": [],
                     "url": {
-                      "raw": "{{url}}/admin/patient/list"
+                      "raw": "{{url}}/admin/enterprise/list"
                     }
                   },
                   "status": "OK",
                   "code": 200,
                   "_postman_previewlanguage": "json",
-                  "body": "{\n  \"status\": \"SUCCESS\",\n  \"message\": \"Your request is successfully executed\",\n  \"data\": {\n    \"data\": [\n      {\n        \"name\": \"Allison Bergstrom\",\n        \"code\": \"calculating\",\n        \"email\": \"Brenda.Jacobi@hotmail.com\",\n        \"isDelete\": true,\n        \"id\": \"63b7b3ae1885d01a22f88133\",\n        \"isDeleted\": false,\n        \"isActive\": true,\n        \"createdAt\": \"2023-08-13T15:32:48.129Z\",\n        \"updatedAt\": \"2024-01-05T12:52:55.020Z\"\n      }\n    ],\n    \"paginator\": {\n      \"itemCount\": 1,\n      \"offset\": 0,\n      \"perPage\": 10,\n      \"pageCount\": 1,\n      \"currentPage\": 1,\n      \"slNo\": 1,\n      \"hasPrevPage\": false,\n      \"hasNextPage\": false,\n      \"prev\": null,\n      \"next\": null\n    }\n  }\n}",
+                  "body": "{\n  \"status\": \"SUCCESS\",\n  \"message\": \"Your request is successfully executed\",\n  \"data\": {\n    \"data\": [\n      {\n        \"name\": \"Judith Welch\",\n        \"email\": \"Lauriane_Pagac@hotmail.com\",\n        \"phone\": \"(150) 538-0841\",\n        \"code\": \"Synergistic\",\n        \"address\": \"192 Lessie Street\",\n        \"website\": \"mobile\",\n        \"isDelete\": false,\n        \"id\": \"63b804777cd4cb13ed59c0dc\",\n        \"isDeleted\": false,\n        \"isActive\": true,\n        \"createdAt\": \"2023-01-10T20:12:16.924Z\",\n        \"updatedAt\": \"2024-01-02T22:46:49.837Z\"\n      }\n    ],\n    \"paginator\": {\n      \"itemCount\": 1,\n      \"offset\": 0,\n      \"perPage\": 10,\n      \"pageCount\": 1,\n      \"currentPage\": 1,\n      \"slNo\": 1,\n      \"hasPrevPage\": false,\n      \"hasNextPage\": false,\n      \"prev\": null,\n      \"next\": null\n    }\n  }\n}",
                   "header": [
                     {
                       "key": "Content-Type",
@@ -161,9 +161,9 @@
               "_postman_isSubFolder": true
             },
             {
-              "name": "getpatientCount",
+              "name": "getenterpriseCount",
               "request": {
-                "url": "{{url}}/admin/patient/count",
+                "url": "{{url}}/admin/enterprise/count",
                 "method": "POST",
                 "header": [
                   {
@@ -186,12 +186,12 @@
               },
               "response": [
                 {
-                  "name": "getpatientCount_response",
+                  "name": "getenterpriseCount_response",
                   "originalRequest": {
                     "method": "POST",
                     "header": [],
                     "url": {
-                      "raw": "{{url}}/admin/patient/count"
+                      "raw": "{{url}}/admin/enterprise/count"
                     }
                   },
                   "status": "OK",
@@ -210,9 +210,9 @@
               "_postman_isSubFolder": true
             },
             {
-              "name": "insertBulkpatient",
+              "name": "insertBulkenterprise",
               "request": {
-                "url": "{{url}}/admin/patient/addBulk",
+                "url": "{{url}}/admin/enterprise/addBulk",
                 "method": "POST",
                 "header": [
                   {
@@ -223,7 +223,7 @@
                 ],
                 "body": {
                   "mode": "raw",
-                  "raw": "{\n  \"data\": [\n    {\n      \"name\": \"Allison Bergstrom\",\n      \"code\": \"calculating\",\n      \"email\": \"Brenda.Jacobi@hotmail.com\",\n      \"isDelete\": true\n    }\n  ]\n}"
+                  "raw": "{\n  \"data\": [\n    {\n      \"name\": \"Judith Welch\",\n      \"email\": \"Lauriane_Pagac@hotmail.com\",\n      \"phone\": \"(150) 538-0841\",\n      \"code\": \"Synergistic\",\n      \"address\": \"192 Lessie Street\",\n      \"website\": \"mobile\",\n      \"isDelete\": false\n    }\n  ]\n}"
                 },
                 "description": "",
                 "auth": {
@@ -235,12 +235,12 @@
               },
               "response": [
                 {
-                  "name": "insertBulkpatient_response",
+                  "name": "insertBulkenterprise_response",
                   "originalRequest": {
                     "method": "POST",
                     "header": [],
                     "url": {
-                      "raw": "{{url}}/admin/patient/addBulk"
+                      "raw": "{{url}}/admin/enterprise/addBulk"
                     }
                   },
                   "status": "OK",
@@ -259,9 +259,9 @@
               "_postman_isSubFolder": true
             },
             {
-              "name": "deleteManypatient",
+              "name": "deleteManyenterprise",
               "request": {
-                "url": "{{url}}/admin/patient/deleteMany",
+                "url": "{{url}}/admin/enterprise/deleteMany",
                 "method": "POST",
                 "header": [
                   {
@@ -284,12 +284,12 @@
               },
               "response": [
                 {
-                  "name": "deleteManypatient_response",
+                  "name": "deleteManyenterprise_response",
                   "originalRequest": {
                     "method": "POST",
                     "header": [],
                     "url": {
-                      "raw": "{{url}}/admin/patient/deleteMany"
+                      "raw": "{{url}}/admin/enterprise/deleteMany"
                     }
                   },
                   "status": "OK",
@@ -308,9 +308,9 @@
               "_postman_isSubFolder": true
             },
             {
-              "name": "updatepatient",
+              "name": "updateenterprise",
               "request": {
-                "url": "{{url}}/admin/patient/update/:id",
+                "url": "{{url}}/admin/enterprise/update/:id",
                 "method": "PUT",
                 "header": [
                   {
@@ -321,7 +321,7 @@
                 ],
                 "body": {
                   "mode": "raw",
-                  "raw": "{\n  \"name\": \"Allison Bergstrom\",\n  \"code\": \"calculating\",\n  \"email\": \"Brenda.Jacobi@hotmail.com\",\n  \"isDelete\": true\n}"
+                  "raw": "{\n  \"name\": \"Judith Welch\",\n  \"email\": \"Lauriane_Pagac@hotmail.com\",\n  \"phone\": \"(150) 538-0841\",\n  \"code\": \"Synergistic\",\n  \"address\": \"192 Lessie Street\",\n  \"website\": \"mobile\",\n  \"isDelete\": false\n}"
                 },
                 "description": "",
                 "auth": {
@@ -333,18 +333,18 @@
               },
               "response": [
                 {
-                  "name": "updatepatient_response",
+                  "name": "updateenterprise_response",
                   "originalRequest": {
                     "method": "PUT",
                     "header": [],
                     "url": {
-                      "raw": "{{url}}/admin/patient/update/:id"
+                      "raw": "{{url}}/admin/enterprise/update/:id"
                     }
                   },
                   "status": "OK",
                   "code": 200,
                   "_postman_previewlanguage": "json",
-                  "body": "{\n  \"status\": \"SUCCESS\",\n  \"message\": \"Your request is successfully executed\",\n  \"data\": {\n    \"name\": \"Allison Bergstrom\",\n    \"code\": \"calculating\",\n    \"email\": \"Brenda.Jacobi@hotmail.com\",\n    \"isDelete\": true,\n    \"id\": \"63b7b3ae1885d01a22f88135\",\n    \"isDeleted\": false,\n    \"isActive\": true,\n    \"createdAt\": \"2023-08-13T15:32:48.129Z\",\n    \"updatedAt\": \"2024-01-05T12:52:55.020Z\"\n  }\n}",
+                  "body": "{\n  \"status\": \"SUCCESS\",\n  \"message\": \"Your request is successfully executed\",\n  \"data\": {\n    \"name\": \"Judith Welch\",\n    \"email\": \"Lauriane_Pagac@hotmail.com\",\n    \"phone\": \"(150) 538-0841\",\n    \"code\": \"Synergistic\",\n    \"address\": \"192 Lessie Street\",\n    \"website\": \"mobile\",\n    \"isDelete\": false,\n    \"id\": \"63b804777cd4cb13ed59c0de\",\n    \"isDeleted\": false,\n    \"isActive\": true,\n    \"createdAt\": \"2023-01-10T20:12:16.924Z\",\n    \"updatedAt\": \"2024-01-02T22:46:49.837Z\"\n  }\n}",
                   "header": [
                     {
                       "key": "Content-Type",
@@ -357,9 +357,9 @@
               "_postman_isSubFolder": true
             },
             {
-              "name": "partialupdatepatient",
+              "name": "partialupdateenterprise",
               "request": {
-                "url": "{{url}}/admin/patient/partial-update/:id",
+                "url": "{{url}}/admin/enterprise/partial-update/:id",
                 "method": "PUT",
                 "header": [
                   {
@@ -382,18 +382,18 @@
               },
               "response": [
                 {
-                  "name": "partialupdatepatient_response",
+                  "name": "partialupdateenterprise_response",
                   "originalRequest": {
                     "method": "PUT",
                     "header": [],
                     "url": {
-                      "raw": "{{url}}/admin/patient/partial-update/:id"
+                      "raw": "{{url}}/admin/enterprise/partial-update/:id"
                     }
                   },
                   "status": "OK",
                   "code": 200,
                   "_postman_previewlanguage": "json",
-                  "body": "{\n  \"status\": \"SUCCESS\",\n  \"message\": \"Your request is successfully executed\",\n  \"data\": {\n    \"name\": \"Allison Bergstrom\",\n    \"code\": \"calculating\",\n    \"email\": \"Brenda.Jacobi@hotmail.com\",\n    \"isDelete\": true,\n    \"id\": \"63b7b3ae1885d01a22f88136\",\n    \"isDeleted\": false,\n    \"isActive\": true,\n    \"createdAt\": \"2023-08-13T15:32:48.129Z\",\n    \"updatedAt\": \"2024-01-05T12:52:55.020Z\"\n  }\n}",
+                  "body": "{\n  \"status\": \"SUCCESS\",\n  \"message\": \"Your request is successfully executed\",\n  \"data\": {\n    \"name\": \"Judith Welch\",\n    \"email\": \"Lauriane_Pagac@hotmail.com\",\n    \"phone\": \"(150) 538-0841\",\n    \"code\": \"Synergistic\",\n    \"address\": \"192 Lessie Street\",\n    \"website\": \"mobile\",\n    \"isDelete\": false,\n    \"id\": \"63b804777cd4cb13ed59c0df\",\n    \"isDeleted\": false,\n    \"isActive\": true,\n    \"createdAt\": \"2023-01-10T20:12:16.924Z\",\n    \"updatedAt\": \"2024-01-02T22:46:49.837Z\"\n  }\n}",
                   "header": [
                     {
                       "key": "Content-Type",
@@ -406,9 +406,9 @@
               "_postman_isSubFolder": true
             },
             {
-              "name": "softDeletepatient",
+              "name": "softDeleteenterprise",
               "request": {
-                "url": "{{url}}/admin/patient/softDelete/:id",
+                "url": "{{url}}/admin/enterprise/softDelete/:id",
                 "method": "PUT",
                 "header": [
                   {
@@ -431,12 +431,12 @@
               },
               "response": [
                 {
-                  "name": "softDeletepatient_response",
+                  "name": "softDeleteenterprise_response",
                   "originalRequest": {
                     "method": "PUT",
                     "header": [],
                     "url": {
-                      "raw": "{{url}}/admin/patient/softDelete/:id"
+                      "raw": "{{url}}/admin/enterprise/softDelete/:id"
                     }
                   },
                   "status": "OK",
@@ -455,9 +455,9 @@
               "_postman_isSubFolder": true
             },
             {
-              "name": "softDeleteManypatient",
+              "name": "softDeleteManyenterprise",
               "request": {
-                "url": "{{url}}/admin/patient/softDeleteMany",
+                "url": "{{url}}/admin/enterprise/softDeleteMany",
                 "method": "PUT",
                 "header": [
                   {
@@ -480,12 +480,12 @@
               },
               "response": [
                 {
-                  "name": "softDeleteManypatient_response",
+                  "name": "softDeleteManyenterprise_response",
                   "originalRequest": {
                     "method": "PUT",
                     "header": [],
                     "url": {
-                      "raw": "{{url}}/admin/patient/softDeleteMany"
+                      "raw": "{{url}}/admin/enterprise/softDeleteMany"
                     }
                   },
                   "status": "OK",
@@ -504,9 +504,9 @@
               "_postman_isSubFolder": true
             },
             {
-              "name": "updateBulkpatient",
+              "name": "updateBulkenterprise",
               "request": {
-                "url": "{{url}}/admin/patient/updateBulk",
+                "url": "{{url}}/admin/enterprise/updateBulk",
                 "method": "PUT",
                 "header": [
                   {
@@ -529,12 +529,12 @@
               },
               "response": [
                 {
-                  "name": "updateBulkpatient_response",
+                  "name": "updateBulkenterprise_response",
                   "originalRequest": {
                     "method": "PUT",
                     "header": [],
                     "url": {
-                      "raw": "{{url}}/admin/patient/updateBulk"
+                      "raw": "{{url}}/admin/enterprise/updateBulk"
                     }
                   },
                   "status": "OK",
@@ -553,9 +553,9 @@
               "_postman_isSubFolder": true
             },
             {
-              "name": "deletepatient",
+              "name": "deleteenterprise",
               "request": {
-                "url": "{{url}}/admin/patient/delete/:id",
+                "url": "{{url}}/admin/enterprise/delete/:id",
                 "method": "DELETE",
                 "header": [
                   {
@@ -578,12 +578,606 @@
               },
               "response": [
                 {
-                  "name": "deletepatient_response",
+                  "name": "deleteenterprise_response",
                   "originalRequest": {
                     "method": "DELETE",
                     "header": [],
                     "url": {
-                      "raw": "{{url}}/admin/patient/delete/:id"
+                      "raw": "{{url}}/admin/enterprise/delete/:id"
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "json",
+                  "body": "{\n  \"status\": \"SUCCESS\",\n  \"message\": \"Your request is successfully executed\",\n  \"data\": {\n    \"Count\": 1\n  }\n}",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": []
+                }
+              ],
+              "_postman_isSubFolder": true
+            }
+          ]
+        },
+        {
+          "name": "departments",
+          "description": "departments Model APIs",
+          "item": [
+            {
+              "name": "getdepartments",
+              "request": {
+                "url": "{{url}}/admin/departments/:id",
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json",
+                    "description": ""
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{}"
+                },
+                "description": "",
+                "auth": {
+                  "type": "bearer",
+                  "bearer": {
+                    "token": "{{token}}"
+                  }
+                }
+              },
+              "response": [
+                {
+                  "name": "getdepartments_response",
+                  "originalRequest": {
+                    "method": "GET",
+                    "header": [],
+                    "url": {
+                      "raw": "{{url}}/admin/departments/:id"
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "json",
+                  "body": "{\n  \"status\": \"SUCCESS\",\n  \"message\": \"Your request is successfully executed\",\n  \"data\": {\n    \"name\": \"Larry Gottlieb\",\n    \"code\": \"engineer\",\n    \"enterprises\": \"63b804777cd4cb13ed59c0e9\",\n    \"email\": \"Hubert_Rodriguez65@gmail.com\",\n    \"phone\": \"(004) 540-2260\",\n    \"website\": \"compressing\",\n    \"address\": \"92046 Boyer Crossing\",\n    \"isDelete\": false,\n    \"id\": \"63b804777cd4cb13ed59c0ed\",\n    \"isDeleted\": false,\n    \"isActive\": true,\n    \"createdAt\": \"2023-08-12T15:36:01.304Z\",\n    \"updatedAt\": \"2023-05-31T11:41:36.724Z\"\n  }\n}",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": []
+                }
+              ],
+              "_postman_isSubFolder": true
+            },
+            {
+              "name": "adddepartments",
+              "request": {
+                "url": "{{url}}/admin/departments/create",
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json",
+                    "description": ""
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"name\": \"Larry Gottlieb\",\n  \"code\": \"engineer\",\n  \"enterprises\": \"63b804777cd4cb13ed59c0e9\",\n  \"email\": \"Hubert_Rodriguez65@gmail.com\",\n  \"phone\": \"(004) 540-2260\",\n  \"website\": \"compressing\",\n  \"address\": \"92046 Boyer Crossing\",\n  \"isDelete\": false\n}"
+                },
+                "description": "",
+                "auth": {
+                  "type": "bearer",
+                  "bearer": {
+                    "token": "{{token}}"
+                  }
+                }
+              },
+              "response": [
+                {
+                  "name": "adddepartments_response",
+                  "originalRequest": {
+                    "method": "POST",
+                    "header": [],
+                    "url": {
+                      "raw": "{{url}}/admin/departments/create"
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "json",
+                  "body": "{\n  \"status\": \"SUCCESS\",\n  \"message\": \"Your request is successfully executed\",\n  \"data\": {\n    \"name\": \"Larry Gottlieb\",\n    \"code\": \"engineer\",\n    \"enterprises\": \"63b804777cd4cb13ed59c0e9\",\n    \"email\": \"Hubert_Rodriguez65@gmail.com\",\n    \"phone\": \"(004) 540-2260\",\n    \"website\": \"compressing\",\n    \"address\": \"92046 Boyer Crossing\",\n    \"isDelete\": false,\n    \"id\": \"63b804777cd4cb13ed59c0eb\",\n    \"isDeleted\": false,\n    \"isActive\": true,\n    \"createdAt\": \"2023-08-12T15:36:01.304Z\",\n    \"updatedAt\": \"2023-05-31T11:41:36.724Z\"\n  }\n}",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": []
+                }
+              ],
+              "_postman_isSubFolder": true
+            },
+            {
+              "name": "findAlldepartments",
+              "request": {
+                "url": "{{url}}/admin/departments/list",
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json",
+                    "description": ""
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"query\": {},\n  \"options\": {\n    \"select\": [\n      \"field 1\",\n      \"field 2\"\n    ],\n    \"collation\": \"\",\n    \"sort\": \"\",\n    \"populate\": \"\",\n    \"projection\": \"\",\n    \"lean\": false,\n    \"leanWithId\": true,\n    \"offset\": 0,\n    \"page\": 1,\n    \"limit\": 10,\n    \"pagination\": true,\n    \"useEstimatedCount\": false,\n    \"useCustomCountFn\": false,\n    \"forceCountFn\": false,\n    \"read\": {},\n    \"options\": {}\n  },\n  \"isCountOnly\": false\n}"
+                },
+                "description": "",
+                "auth": {
+                  "type": "bearer",
+                  "bearer": {
+                    "token": "{{token}}"
+                  }
+                }
+              },
+              "response": [
+                {
+                  "name": "findAlldepartments_response",
+                  "originalRequest": {
+                    "method": "POST",
+                    "header": [],
+                    "url": {
+                      "raw": "{{url}}/admin/departments/list"
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "json",
+                  "body": "{\n  \"status\": \"SUCCESS\",\n  \"message\": \"Your request is successfully executed\",\n  \"data\": {\n    \"data\": [\n      {\n        \"name\": \"Larry Gottlieb\",\n        \"code\": \"engineer\",\n        \"enterprises\": \"63b804777cd4cb13ed59c0e9\",\n        \"email\": \"Hubert_Rodriguez65@gmail.com\",\n        \"phone\": \"(004) 540-2260\",\n        \"website\": \"compressing\",\n        \"address\": \"92046 Boyer Crossing\",\n        \"isDelete\": false,\n        \"id\": \"63b804777cd4cb13ed59c0ec\",\n        \"isDeleted\": false,\n        \"isActive\": true,\n        \"createdAt\": \"2023-08-12T15:36:01.304Z\",\n        \"updatedAt\": \"2023-05-31T11:41:36.724Z\"\n      }\n    ],\n    \"paginator\": {\n      \"itemCount\": 1,\n      \"offset\": 0,\n      \"perPage\": 10,\n      \"pageCount\": 1,\n      \"currentPage\": 1,\n      \"slNo\": 1,\n      \"hasPrevPage\": false,\n      \"hasNextPage\": false,\n      \"prev\": null,\n      \"next\": null\n    }\n  }\n}",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": []
+                }
+              ],
+              "_postman_isSubFolder": true
+            },
+            {
+              "name": "getdepartmentsCount",
+              "request": {
+                "url": "{{url}}/admin/departments/count",
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json",
+                    "description": ""
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"where\": {\n    \"isActive\": true\n  }\n}"
+                },
+                "description": "",
+                "auth": {
+                  "type": "bearer",
+                  "bearer": {
+                    "token": "{{token}}"
+                  }
+                }
+              },
+              "response": [
+                {
+                  "name": "getdepartmentsCount_response",
+                  "originalRequest": {
+                    "method": "POST",
+                    "header": [],
+                    "url": {
+                      "raw": "{{url}}/admin/departments/count"
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "json",
+                  "body": "{\n  \"status\": \"SUCCESS\",\n  \"message\": \"Your request is successfully executed\",\n  \"data\": {\n    \"count\": 10\n  }\n}",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": []
+                }
+              ],
+              "_postman_isSubFolder": true
+            },
+            {
+              "name": "insertBulkdepartments",
+              "request": {
+                "url": "{{url}}/admin/departments/addBulk",
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json",
+                    "description": ""
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"data\": [\n    {\n      \"name\": \"Larry Gottlieb\",\n      \"code\": \"engineer\",\n      \"enterprises\": \"63b804777cd4cb13ed59c0e9\",\n      \"email\": \"Hubert_Rodriguez65@gmail.com\",\n      \"phone\": \"(004) 540-2260\",\n      \"website\": \"compressing\",\n      \"address\": \"92046 Boyer Crossing\",\n      \"isDelete\": false\n    }\n  ]\n}"
+                },
+                "description": "",
+                "auth": {
+                  "type": "bearer",
+                  "bearer": {
+                    "token": "{{token}}"
+                  }
+                }
+              },
+              "response": [
+                {
+                  "name": "insertBulkdepartments_response",
+                  "originalRequest": {
+                    "method": "POST",
+                    "header": [],
+                    "url": {
+                      "raw": "{{url}}/admin/departments/addBulk"
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "json",
+                  "body": "{\n  \"status\": \"SUCCESS\",\n  \"message\": \"Your request is successfully executed\",\n  \"data\": {\n    \"count\": 2\n  }\n}",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": []
+                }
+              ],
+              "_postman_isSubFolder": true
+            },
+            {
+              "name": "deleteManydepartments",
+              "request": {
+                "url": "{{url}}/admin/departments/deleteMany",
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json",
+                    "description": ""
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"isWarning\": true,\n  \"ids\": [\n    \":id\"\n  ]\n}"
+                },
+                "description": "",
+                "auth": {
+                  "type": "bearer",
+                  "bearer": {
+                    "token": "{{token}}"
+                  }
+                }
+              },
+              "response": [
+                {
+                  "name": "deleteManydepartments_response",
+                  "originalRequest": {
+                    "method": "POST",
+                    "header": [],
+                    "url": {
+                      "raw": "{{url}}/admin/departments/deleteMany"
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "json",
+                  "body": "{\n  \"status\": \"SUCCESS\",\n  \"message\": \"Your request is successfully executed\",\n  \"data\": {\n    \"count\": 2\n  }\n}",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": []
+                }
+              ],
+              "_postman_isSubFolder": true
+            },
+            {
+              "name": "updatedepartments",
+              "request": {
+                "url": "{{url}}/admin/departments/update/:id",
+                "method": "PUT",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json",
+                    "description": ""
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"name\": \"Larry Gottlieb\",\n  \"code\": \"engineer\",\n  \"enterprises\": \"63b804777cd4cb13ed59c0e9\",\n  \"email\": \"Hubert_Rodriguez65@gmail.com\",\n  \"phone\": \"(004) 540-2260\",\n  \"website\": \"compressing\",\n  \"address\": \"92046 Boyer Crossing\",\n  \"isDelete\": false\n}"
+                },
+                "description": "",
+                "auth": {
+                  "type": "bearer",
+                  "bearer": {
+                    "token": "{{token}}"
+                  }
+                }
+              },
+              "response": [
+                {
+                  "name": "updatedepartments_response",
+                  "originalRequest": {
+                    "method": "PUT",
+                    "header": [],
+                    "url": {
+                      "raw": "{{url}}/admin/departments/update/:id"
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "json",
+                  "body": "{\n  \"status\": \"SUCCESS\",\n  \"message\": \"Your request is successfully executed\",\n  \"data\": {\n    \"name\": \"Larry Gottlieb\",\n    \"code\": \"engineer\",\n    \"enterprises\": \"63b804777cd4cb13ed59c0e9\",\n    \"email\": \"Hubert_Rodriguez65@gmail.com\",\n    \"phone\": \"(004) 540-2260\",\n    \"website\": \"compressing\",\n    \"address\": \"92046 Boyer Crossing\",\n    \"isDelete\": false,\n    \"id\": \"63b804777cd4cb13ed59c0ee\",\n    \"isDeleted\": false,\n    \"isActive\": true,\n    \"createdAt\": \"2023-08-12T15:36:01.304Z\",\n    \"updatedAt\": \"2023-05-31T11:41:36.724Z\"\n  }\n}",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": []
+                }
+              ],
+              "_postman_isSubFolder": true
+            },
+            {
+              "name": "partialupdatedepartments",
+              "request": {
+                "url": "{{url}}/admin/departments/partial-update/:id",
+                "method": "PUT",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json",
+                    "description": ""
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"isActive\": true,\n  \"isDeleted\": false\n}"
+                },
+                "description": "",
+                "auth": {
+                  "type": "bearer",
+                  "bearer": {
+                    "token": "{{token}}"
+                  }
+                }
+              },
+              "response": [
+                {
+                  "name": "partialupdatedepartments_response",
+                  "originalRequest": {
+                    "method": "PUT",
+                    "header": [],
+                    "url": {
+                      "raw": "{{url}}/admin/departments/partial-update/:id"
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "json",
+                  "body": "{\n  \"status\": \"SUCCESS\",\n  \"message\": \"Your request is successfully executed\",\n  \"data\": {\n    \"name\": \"Larry Gottlieb\",\n    \"code\": \"engineer\",\n    \"enterprises\": \"63b804777cd4cb13ed59c0e9\",\n    \"email\": \"Hubert_Rodriguez65@gmail.com\",\n    \"phone\": \"(004) 540-2260\",\n    \"website\": \"compressing\",\n    \"address\": \"92046 Boyer Crossing\",\n    \"isDelete\": false,\n    \"id\": \"63b804777cd4cb13ed59c0ef\",\n    \"isDeleted\": false,\n    \"isActive\": true,\n    \"createdAt\": \"2023-08-12T15:36:01.304Z\",\n    \"updatedAt\": \"2023-05-31T11:41:36.724Z\"\n  }\n}",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": []
+                }
+              ],
+              "_postman_isSubFolder": true
+            },
+            {
+              "name": "softDeletedepartments",
+              "request": {
+                "url": "{{url}}/admin/departments/softDelete/:id",
+                "method": "PUT",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json",
+                    "description": ""
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{}"
+                },
+                "description": "",
+                "auth": {
+                  "type": "bearer",
+                  "bearer": {
+                    "token": "{{token}}"
+                  }
+                }
+              },
+              "response": [
+                {
+                  "name": "softDeletedepartments_response",
+                  "originalRequest": {
+                    "method": "PUT",
+                    "header": [],
+                    "url": {
+                      "raw": "{{url}}/admin/departments/softDelete/:id"
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "json",
+                  "body": "{\n  \"status\": \"SUCCESS\",\n  \"message\": \"Your request is successfully executed\",\n  \"data\": {\n    \"count\": 2\n  }\n}",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": []
+                }
+              ],
+              "_postman_isSubFolder": true
+            },
+            {
+              "name": "softDeleteManydepartments",
+              "request": {
+                "url": "{{url}}/admin/departments/softDeleteMany",
+                "method": "PUT",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json",
+                    "description": ""
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"ids\": [\n    \":id\"\n  ]\n}"
+                },
+                "description": "",
+                "auth": {
+                  "type": "bearer",
+                  "bearer": {
+                    "token": "{{token}}"
+                  }
+                }
+              },
+              "response": [
+                {
+                  "name": "softDeleteManydepartments_response",
+                  "originalRequest": {
+                    "method": "PUT",
+                    "header": [],
+                    "url": {
+                      "raw": "{{url}}/admin/departments/softDeleteMany"
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "json",
+                  "body": "{\n  \"status\": \"SUCCESS\",\n  \"message\": \"Your request is successfully executed\",\n  \"data\": {\n    \"count\": 2\n  }\n}",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": []
+                }
+              ],
+              "_postman_isSubFolder": true
+            },
+            {
+              "name": "updateBulkdepartments",
+              "request": {
+                "url": "{{url}}/admin/departments/updateBulk",
+                "method": "PUT",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json",
+                    "description": ""
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"filter\": {\n    \"isActive\": true\n  },\n  \"data\": {\n    \"isDeleted\": false\n  }\n}"
+                },
+                "description": "",
+                "auth": {
+                  "type": "bearer",
+                  "bearer": {
+                    "token": "{{token}}"
+                  }
+                }
+              },
+              "response": [
+                {
+                  "name": "updateBulkdepartments_response",
+                  "originalRequest": {
+                    "method": "PUT",
+                    "header": [],
+                    "url": {
+                      "raw": "{{url}}/admin/departments/updateBulk"
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "json",
+                  "body": "{\n  \"status\": \"SUCCESS\",\n  \"message\": \"Your request is successfully executed\",\n  \"data\": {\n    \"count\": 2\n  }\n}",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": []
+                }
+              ],
+              "_postman_isSubFolder": true
+            },
+            {
+              "name": "deletedepartments",
+              "request": {
+                "url": "{{url}}/admin/departments/delete/:id",
+                "method": "DELETE",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json",
+                    "description": ""
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"isWarning\": true\n}"
+                },
+                "description": "",
+                "auth": {
+                  "type": "bearer",
+                  "bearer": {
+                    "token": "{{token}}"
+                  }
+                }
+              },
+              "response": [
+                {
+                  "name": "deletedepartments_response",
+                  "originalRequest": {
+                    "method": "DELETE",
+                    "header": [],
+                    "url": {
+                      "raw": "{{url}}/admin/departments/delete/:id"
                     }
                   },
                   "status": "OK",
@@ -644,7 +1238,7 @@
                   "status": "OK",
                   "code": 200,
                   "_postman_previewlanguage": "json",
-                  "body": "{\n  \"status\": \"SUCCESS\",\n  \"message\": \"Your request is successfully executed\",\n  \"data\": {\n    \"username\": \"Michael.OKeefe\",\n    \"email\": \"Hester.Bechtelar79@gmail.com\",\n    \"name\": \"Mario Gislason\",\n    \"mobileNo\": \"(213) 593-3485\",\n    \"userType\": 1,\n    \"id\": \"63b7b3ae1885d01a22f88143\",\n    \"isDeleted\": false,\n    \"isActive\": true,\n    \"createdAt\": \"2023-09-03T23:02:44.070Z\",\n    \"updatedAt\": \"2023-07-21T09:50:15.429Z\"\n  }\n}",
+                  "body": "{\n  \"status\": \"SUCCESS\",\n  \"message\": \"Your request is successfully executed\",\n  \"data\": {\n    \"username\": \"Frank_Breitenberg\",\n    \"email\": \"Paul.Reichel5@hotmail.com\",\n    \"name\": \"Ida Hilpert\",\n    \"mobileNo\": \"(526) 935-0793\",\n    \"userType\": 1,\n    \"id\": \"63b804777cd4cb13ed59c0fc\",\n    \"isDeleted\": false,\n    \"isActive\": true,\n    \"createdAt\": \"2024-01-05T01:07:06.382Z\",\n    \"updatedAt\": \"2023-08-26T05:40:49.001Z\"\n  }\n}",
                   "header": [
                     {
                       "key": "Content-Type",
@@ -693,7 +1287,7 @@
                   "status": "OK",
                   "code": 200,
                   "_postman_previewlanguage": "json",
-                  "body": "{\n  \"status\": \"SUCCESS\",\n  \"message\": \"Your request is successfully executed\",\n  \"data\": {\n    \"username\": \"Michael.OKeefe\",\n    \"email\": \"Hester.Bechtelar79@gmail.com\",\n    \"name\": \"Mario Gislason\",\n    \"mobileNo\": \"(213) 593-3485\",\n    \"userType\": 1,\n    \"id\": \"63b7b3ae1885d01a22f88149\",\n    \"isDeleted\": false,\n    \"isActive\": true,\n    \"createdAt\": \"2023-09-03T23:02:44.070Z\",\n    \"updatedAt\": \"2023-07-21T09:50:15.429Z\"\n  }\n}",
+                  "body": "{\n  \"status\": \"SUCCESS\",\n  \"message\": \"Your request is successfully executed\",\n  \"data\": {\n    \"username\": \"Frank_Breitenberg\",\n    \"email\": \"Paul.Reichel5@hotmail.com\",\n    \"name\": \"Ida Hilpert\",\n    \"mobileNo\": \"(526) 935-0793\",\n    \"userType\": 1,\n    \"id\": \"63b804777cd4cb13ed59c102\",\n    \"isDeleted\": false,\n    \"isActive\": true,\n    \"createdAt\": \"2024-01-05T01:07:06.382Z\",\n    \"updatedAt\": \"2023-08-26T05:40:49.001Z\"\n  }\n}",
                   "header": [
                     {
                       "key": "Content-Type",
@@ -719,7 +1313,7 @@
                 ],
                 "body": {
                   "mode": "raw",
-                  "raw": "{\n  \"username\": \"Michael.OKeefe\",\n  \"password\": \"hfuv5ztRidToDff\",\n  \"email\": \"Hester.Bechtelar79@gmail.com\",\n  \"name\": \"Mario Gislason\",\n  \"mobileNo\": \"(213) 593-3485\",\n  \"userType\": 1\n}"
+                  "raw": "{\n  \"username\": \"Frank_Breitenberg\",\n  \"password\": \"qw87QCo1qz_ZB9X\",\n  \"email\": \"Paul.Reichel5@hotmail.com\",\n  \"name\": \"Ida Hilpert\",\n  \"mobileNo\": \"(526) 935-0793\",\n  \"userType\": 1\n}"
                 },
                 "description": "",
                 "auth": {
@@ -742,7 +1336,7 @@
                   "status": "OK",
                   "code": 200,
                   "_postman_previewlanguage": "json",
-                  "body": "{\n  \"status\": \"SUCCESS\",\n  \"message\": \"Your request is successfully executed\",\n  \"data\": {\n    \"username\": \"Michael.OKeefe\",\n    \"email\": \"Hester.Bechtelar79@gmail.com\",\n    \"name\": \"Mario Gislason\",\n    \"mobileNo\": \"(213) 593-3485\",\n    \"userType\": 1,\n    \"id\": \"63b7b3ae1885d01a22f88141\",\n    \"isDeleted\": false,\n    \"isActive\": true,\n    \"createdAt\": \"2023-09-03T23:02:44.070Z\",\n    \"updatedAt\": \"2023-07-21T09:50:15.429Z\"\n  }\n}",
+                  "body": "{\n  \"status\": \"SUCCESS\",\n  \"message\": \"Your request is successfully executed\",\n  \"data\": {\n    \"username\": \"Frank_Breitenberg\",\n    \"email\": \"Paul.Reichel5@hotmail.com\",\n    \"name\": \"Ida Hilpert\",\n    \"mobileNo\": \"(526) 935-0793\",\n    \"userType\": 1,\n    \"id\": \"63b804777cd4cb13ed59c0fa\",\n    \"isDeleted\": false,\n    \"isActive\": true,\n    \"createdAt\": \"2024-01-05T01:07:06.382Z\",\n    \"updatedAt\": \"2023-08-26T05:40:49.001Z\"\n  }\n}",
                   "header": [
                     {
                       "key": "Content-Type",
@@ -791,7 +1385,7 @@
                   "status": "OK",
                   "code": 200,
                   "_postman_previewlanguage": "json",
-                  "body": "{\n  \"status\": \"SUCCESS\",\n  \"message\": \"Your request is successfully executed\",\n  \"data\": {\n    \"data\": [\n      {\n        \"username\": \"Michael.OKeefe\",\n        \"email\": \"Hester.Bechtelar79@gmail.com\",\n        \"name\": \"Mario Gislason\",\n        \"mobileNo\": \"(213) 593-3485\",\n        \"userType\": 1,\n        \"id\": \"63b7b3ae1885d01a22f88142\",\n        \"isDeleted\": false,\n        \"isActive\": true,\n        \"createdAt\": \"2023-09-03T23:02:44.070Z\",\n        \"updatedAt\": \"2023-07-21T09:50:15.429Z\"\n      }\n    ],\n    \"paginator\": {\n      \"itemCount\": 1,\n      \"offset\": 0,\n      \"perPage\": 10,\n      \"pageCount\": 1,\n      \"currentPage\": 1,\n      \"slNo\": 1,\n      \"hasPrevPage\": false,\n      \"hasNextPage\": false,\n      \"prev\": null,\n      \"next\": null\n    }\n  }\n}",
+                  "body": "{\n  \"status\": \"SUCCESS\",\n  \"message\": \"Your request is successfully executed\",\n  \"data\": {\n    \"data\": [\n      {\n        \"username\": \"Frank_Breitenberg\",\n        \"email\": \"Paul.Reichel5@hotmail.com\",\n        \"name\": \"Ida Hilpert\",\n        \"mobileNo\": \"(526) 935-0793\",\n        \"userType\": 1,\n        \"id\": \"63b804777cd4cb13ed59c0fb\",\n        \"isDeleted\": false,\n        \"isActive\": true,\n        \"createdAt\": \"2024-01-05T01:07:06.382Z\",\n        \"updatedAt\": \"2023-08-26T05:40:49.001Z\"\n      }\n    ],\n    \"paginator\": {\n      \"itemCount\": 1,\n      \"offset\": 0,\n      \"perPage\": 10,\n      \"pageCount\": 1,\n      \"currentPage\": 1,\n      \"slNo\": 1,\n      \"hasPrevPage\": false,\n      \"hasNextPage\": false,\n      \"prev\": null,\n      \"next\": null\n    }\n  }\n}",
                   "header": [
                     {
                       "key": "Content-Type",
@@ -866,7 +1460,7 @@
                 ],
                 "body": {
                   "mode": "raw",
-                  "raw": "{\n  \"data\": [\n    {\n      \"username\": \"Michael.OKeefe\",\n      \"password\": \"hfuv5ztRidToDff\",\n      \"email\": \"Hester.Bechtelar79@gmail.com\",\n      \"name\": \"Mario Gislason\",\n      \"mobileNo\": \"(213) 593-3485\",\n      \"userType\": 1\n    }\n  ]\n}"
+                  "raw": "{\n  \"data\": [\n    {\n      \"username\": \"Frank_Breitenberg\",\n      \"password\": \"qw87QCo1qz_ZB9X\",\n      \"email\": \"Paul.Reichel5@hotmail.com\",\n      \"name\": \"Ida Hilpert\",\n      \"mobileNo\": \"(526) 935-0793\",\n      \"userType\": 1\n    }\n  ]\n}"
                 },
                 "description": "",
                 "auth": {
@@ -964,7 +1558,7 @@
                 ],
                 "body": {
                   "mode": "raw",
-                  "raw": "{\n  \"username\": \"Michael.OKeefe\",\n  \"password\": \"hfuv5ztRidToDff\",\n  \"email\": \"Hester.Bechtelar79@gmail.com\",\n  \"name\": \"Mario Gislason\",\n  \"mobileNo\": \"(213) 593-3485\",\n  \"userType\": 1\n}"
+                  "raw": "{\n  \"username\": \"Frank_Breitenberg\",\n  \"password\": \"qw87QCo1qz_ZB9X\",\n  \"email\": \"Paul.Reichel5@hotmail.com\",\n  \"name\": \"Ida Hilpert\",\n  \"mobileNo\": \"(526) 935-0793\",\n  \"userType\": 1\n}"
                 },
                 "description": "",
                 "auth": {
@@ -987,7 +1581,7 @@
                   "status": "OK",
                   "code": 200,
                   "_postman_previewlanguage": "json",
-                  "body": "{\n  \"status\": \"SUCCESS\",\n  \"message\": \"Your request is successfully executed\",\n  \"data\": {\n    \"username\": \"Michael.OKeefe\",\n    \"email\": \"Hester.Bechtelar79@gmail.com\",\n    \"name\": \"Mario Gislason\",\n    \"mobileNo\": \"(213) 593-3485\",\n    \"userType\": 1,\n    \"id\": \"63b7b3ae1885d01a22f88144\",\n    \"isDeleted\": false,\n    \"isActive\": true,\n    \"createdAt\": \"2023-09-03T23:02:44.070Z\",\n    \"updatedAt\": \"2023-07-21T09:50:15.429Z\"\n  }\n}",
+                  "body": "{\n  \"status\": \"SUCCESS\",\n  \"message\": \"Your request is successfully executed\",\n  \"data\": {\n    \"username\": \"Frank_Breitenberg\",\n    \"email\": \"Paul.Reichel5@hotmail.com\",\n    \"name\": \"Ida Hilpert\",\n    \"mobileNo\": \"(526) 935-0793\",\n    \"userType\": 1,\n    \"id\": \"63b804777cd4cb13ed59c0fd\",\n    \"isDeleted\": false,\n    \"isActive\": true,\n    \"createdAt\": \"2024-01-05T01:07:06.382Z\",\n    \"updatedAt\": \"2023-08-26T05:40:49.001Z\"\n  }\n}",
                   "header": [
                     {
                       "key": "Content-Type",
@@ -1036,7 +1630,7 @@
                   "status": "OK",
                   "code": 200,
                   "_postman_previewlanguage": "json",
-                  "body": "{\n  \"status\": \"SUCCESS\",\n  \"message\": \"Your request is successfully executed\",\n  \"data\": {\n    \"username\": \"Michael.OKeefe\",\n    \"email\": \"Hester.Bechtelar79@gmail.com\",\n    \"name\": \"Mario Gislason\",\n    \"mobileNo\": \"(213) 593-3485\",\n    \"userType\": 1,\n    \"id\": \"63b7b3ae1885d01a22f88145\",\n    \"isDeleted\": false,\n    \"isActive\": true,\n    \"createdAt\": \"2023-09-03T23:02:44.070Z\",\n    \"updatedAt\": \"2023-07-21T09:50:15.429Z\"\n  }\n}",
+                  "body": "{\n  \"status\": \"SUCCESS\",\n  \"message\": \"Your request is successfully executed\",\n  \"data\": {\n    \"username\": \"Frank_Breitenberg\",\n    \"email\": \"Paul.Reichel5@hotmail.com\",\n    \"name\": \"Ida Hilpert\",\n    \"mobileNo\": \"(526) 935-0793\",\n    \"userType\": 1,\n    \"id\": \"63b804777cd4cb13ed59c0fe\",\n    \"isDeleted\": false,\n    \"isActive\": true,\n    \"createdAt\": \"2024-01-05T01:07:06.382Z\",\n    \"updatedAt\": \"2023-08-26T05:40:49.001Z\"\n  }\n}",
                   "header": [
                     {
                       "key": "Content-Type",
@@ -1209,7 +1803,7 @@
                 ],
                 "body": {
                   "mode": "raw",
-                  "raw": "{\n  \"username\": \"Michael.OKeefe\",\n  \"password\": \"hfuv5ztRidToDff\",\n  \"email\": \"Hester.Bechtelar79@gmail.com\",\n  \"name\": \"Mario Gislason\",\n  \"mobileNo\": \"(213) 593-3485\",\n  \"userType\": 1\n}"
+                  "raw": "{\n  \"username\": \"Frank_Breitenberg\",\n  \"password\": \"qw87QCo1qz_ZB9X\",\n  \"email\": \"Paul.Reichel5@hotmail.com\",\n  \"name\": \"Ida Hilpert\",\n  \"mobileNo\": \"(526) 935-0793\",\n  \"userType\": 1\n}"
                 },
                 "description": "",
                 "auth": {
@@ -1232,7 +1826,7 @@
                   "status": "OK",
                   "code": 200,
                   "_postman_previewlanguage": "json",
-                  "body": "{\n  \"status\": \"SUCCESS\",\n  \"message\": \"Your request is successfully executed\",\n  \"data\": {\n    \"username\": \"Michael.OKeefe\",\n    \"email\": \"Hester.Bechtelar79@gmail.com\",\n    \"name\": \"Mario Gislason\",\n    \"mobileNo\": \"(213) 593-3485\",\n    \"userType\": 1,\n    \"id\": \"63b7b3ae1885d01a22f88148\",\n    \"isDeleted\": false,\n    \"isActive\": true,\n    \"createdAt\": \"2023-09-03T23:02:44.070Z\",\n    \"updatedAt\": \"2023-07-21T09:50:15.429Z\"\n  }\n}",
+                  "body": "{\n  \"status\": \"SUCCESS\",\n  \"message\": \"Your request is successfully executed\",\n  \"data\": {\n    \"username\": \"Frank_Breitenberg\",\n    \"email\": \"Paul.Reichel5@hotmail.com\",\n    \"name\": \"Ida Hilpert\",\n    \"mobileNo\": \"(526) 935-0793\",\n    \"userType\": 1,\n    \"id\": \"63b804777cd4cb13ed59c101\",\n    \"isDeleted\": false,\n    \"isActive\": true,\n    \"createdAt\": \"2024-01-05T01:07:06.382Z\",\n    \"updatedAt\": \"2023-08-26T05:40:49.001Z\"\n  }\n}",
                   "header": [
                     {
                       "key": "Content-Type",
@@ -1331,7 +1925,7 @@
                   "status": "OK",
                   "code": 200,
                   "_postman_previewlanguage": "json",
-                  "body": "{\n  \"status\": \"SUCCESS\",\n  \"message\": \"Login Successful\",\n  \"data\": {\n    \"username\": \"Michael.OKeefe\",\n    \"email\": \"Hester.Bechtelar79@gmail.com\",\n    \"name\": \"Mario Gislason\",\n    \"mobileNo\": \"(213) 593-3485\",\n    \"id\": \"63b7b3ae1885d01a22f8814a\",\n    \"loginRetryLimit\": 0,\n    \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYxMWRlZDVjMGFjMjAxMmFjMDI4ODkxZiIsInVzZXJuYW1lIjoiYWRtaW4iLCJpYXQiOjE2MjkzNTEyNzAsImV4cCI6MTYyOTk1MTI3MH0.BJ-WKjNYeFDQ4pn8kfli5gwn6GLz_c3voFht20Agj9k\",\n    \"isDeleted\": false,\n    \"isActive\": true,\n    \"createdAt\": \"2023-02-09T12:55:21.350Z\",\n    \"updatedAt\": \"2023-01-12T04:06:25.780Z\"\n  }\n}",
+                  "body": "{\n  \"status\": \"SUCCESS\",\n  \"message\": \"Login Successful\",\n  \"data\": {\n    \"username\": \"Frank_Breitenberg\",\n    \"email\": \"Paul.Reichel5@hotmail.com\",\n    \"name\": \"Ida Hilpert\",\n    \"mobileNo\": \"(526) 935-0793\",\n    \"id\": \"63b804777cd4cb13ed59c103\",\n    \"loginRetryLimit\": 0,\n    \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYxMWRlZDVjMGFjMjAxMmFjMDI4ODkxZiIsInVzZXJuYW1lIjoiYWRtaW4iLCJpYXQiOjE2MjkzNTEyNzAsImV4cCI6MTYyOTk1MTI3MH0.BJ-WKjNYeFDQ4pn8kfli5gwn6GLz_c3voFht20Agj9k\",\n    \"isDeleted\": false,\n    \"isActive\": true,\n    \"createdAt\": \"2023-11-10T13:50:00.188Z\",\n    \"updatedAt\": \"2023-09-15T19:47:55.797Z\"\n  }\n}",
                   "header": [
                     {
                       "key": "Content-Type",
@@ -1357,7 +1951,7 @@
                 ],
                 "body": {
                   "mode": "raw",
-                  "raw": "{\n  \"username\": \"Michael.OKeefe\",\n  \"password\": \"hfuv5ztRidToDff\",\n  \"email\": \"Hester.Bechtelar79@gmail.com\",\n  \"name\": \"Mario Gislason\",\n  \"mobileNo\": \"(213) 593-3485\"\n}"
+                  "raw": "{\n  \"username\": \"Frank_Breitenberg\",\n  \"password\": \"qw87QCo1qz_ZB9X\",\n  \"email\": \"Paul.Reichel5@hotmail.com\",\n  \"name\": \"Ida Hilpert\",\n  \"mobileNo\": \"(526) 935-0793\"\n}"
                 },
                 "description": "",
                 "auth": {}
@@ -1375,7 +1969,7 @@
                   "status": "OK",
                   "code": 200,
                   "_postman_previewlanguage": "json",
-                  "body": "{\n  \"status\": \"SUCCESS\",\n  \"message\": \"Your request is successfully executed\",\n  \"data\": {\n    \"username\": \"Michael.OKeefe\",\n    \"email\": \"Hester.Bechtelar79@gmail.com\",\n    \"name\": \"Mario Gislason\",\n    \"mobileNo\": \"(213) 593-3485\",\n    \"id\": \"63b7b3ae1885d01a22f8814a\",\n    \"loginRetryLimit\": 0,\n    \"isDeleted\": false,\n    \"isActive\": true,\n    \"createdAt\": \"2023-02-09T12:55:21.350Z\",\n    \"updatedAt\": \"2023-01-12T04:06:25.780Z\"\n  }\n}",
+                  "body": "{\n  \"status\": \"SUCCESS\",\n  \"message\": \"Your request is successfully executed\",\n  \"data\": {\n    \"username\": \"Frank_Breitenberg\",\n    \"email\": \"Paul.Reichel5@hotmail.com\",\n    \"name\": \"Ida Hilpert\",\n    \"mobileNo\": \"(526) 935-0793\",\n    \"id\": \"63b804777cd4cb13ed59c103\",\n    \"loginRetryLimit\": 0,\n    \"isDeleted\": false,\n    \"isActive\": true,\n    \"createdAt\": \"2023-11-10T13:50:00.188Z\",\n    \"updatedAt\": \"2023-09-15T19:47:55.797Z\"\n  }\n}",
                   "header": [
                     {
                       "key": "Content-Type",
@@ -1617,7 +2211,7 @@
                   "status": "OK",
                   "code": 200,
                   "_postman_previewlanguage": "json",
-                  "body": "{\n  \"status\": \"SUCCESS\",\n  \"message\": \"Your request is successfully executed\",\n  \"data\": {\n    \"name\": \"Clifford Sipes\",\n    \"code\": \"Avon\",\n    \"weight\": 504,\n    \"id\": \"63b7b3ae1885d01a22f88157\",\n    \"isDeleted\": false,\n    \"isActive\": true,\n    \"createdAt\": \"2023-04-18T10:07:22.449Z\",\n    \"updatedAt\": \"2023-12-09T22:38:15.618Z\"\n  }\n}",
+                  "body": "{\n  \"status\": \"SUCCESS\",\n  \"message\": \"Your request is successfully executed\",\n  \"data\": {\n    \"name\": \"Mr. Carmen Powlowski\",\n    \"code\": \"methodologies\",\n    \"weight\": 86,\n    \"id\": \"63b804777cd4cb13ed59c110\",\n    \"isDeleted\": false,\n    \"isActive\": true,\n    \"createdAt\": \"2023-07-30T22:14:17.638Z\",\n    \"updatedAt\": \"2024-01-03T18:11:12.488Z\"\n  }\n}",
                   "header": [
                     {
                       "key": "Content-Type",
@@ -1643,7 +2237,7 @@
                 ],
                 "body": {
                   "mode": "raw",
-                  "raw": "{\n  \"name\": \"Clifford Sipes\",\n  \"code\": \"Avon\",\n  \"weight\": 504\n}"
+                  "raw": "{\n  \"name\": \"Mr. Carmen Powlowski\",\n  \"code\": \"methodologies\",\n  \"weight\": 86\n}"
                 },
                 "description": "",
                 "auth": {
@@ -1666,7 +2260,7 @@
                   "status": "OK",
                   "code": 200,
                   "_postman_previewlanguage": "json",
-                  "body": "{\n  \"status\": \"SUCCESS\",\n  \"message\": \"Your request is successfully executed\",\n  \"data\": {\n    \"name\": \"Clifford Sipes\",\n    \"code\": \"Avon\",\n    \"weight\": 504,\n    \"id\": \"63b7b3ae1885d01a22f88151\",\n    \"isDeleted\": false,\n    \"isActive\": true,\n    \"createdAt\": \"2023-04-18T10:07:22.449Z\",\n    \"updatedAt\": \"2023-12-09T22:38:15.618Z\"\n  }\n}",
+                  "body": "{\n  \"status\": \"SUCCESS\",\n  \"message\": \"Your request is successfully executed\",\n  \"data\": {\n    \"name\": \"Mr. Carmen Powlowski\",\n    \"code\": \"methodologies\",\n    \"weight\": 86,\n    \"id\": \"63b804777cd4cb13ed59c10a\",\n    \"isDeleted\": false,\n    \"isActive\": true,\n    \"createdAt\": \"2023-07-30T22:14:17.638Z\",\n    \"updatedAt\": \"2024-01-03T18:11:12.488Z\"\n  }\n}",
                   "header": [
                     {
                       "key": "Content-Type",
@@ -1692,7 +2286,7 @@
                 ],
                 "body": {
                   "mode": "raw",
-                  "raw": "{\n  \"data\": [\n    {\n      \"name\": \"Clifford Sipes\",\n      \"code\": \"Avon\",\n      \"weight\": 504\n    }\n  ]\n}"
+                  "raw": "{\n  \"data\": [\n    {\n      \"name\": \"Mr. Carmen Powlowski\",\n      \"code\": \"methodologies\",\n      \"weight\": 86\n    }\n  ]\n}"
                 },
                 "description": "",
                 "auth": {
@@ -1764,7 +2358,7 @@
                   "status": "OK",
                   "code": 200,
                   "_postman_previewlanguage": "json",
-                  "body": "{\n  \"status\": \"SUCCESS\",\n  \"message\": \"Your request is successfully executed\",\n  \"data\": {\n    \"data\": [\n      {\n        \"name\": \"Clifford Sipes\",\n        \"code\": \"Avon\",\n        \"weight\": 504,\n        \"id\": \"63b7b3ae1885d01a22f88153\",\n        \"isDeleted\": false,\n        \"isActive\": true,\n        \"createdAt\": \"2023-04-18T10:07:22.449Z\",\n        \"updatedAt\": \"2023-12-09T22:38:15.618Z\"\n      }\n    ],\n    \"paginator\": {\n      \"itemCount\": 1,\n      \"offset\": 0,\n      \"perPage\": 10,\n      \"pageCount\": 1,\n      \"currentPage\": 1,\n      \"slNo\": 1,\n      \"hasPrevPage\": false,\n      \"hasNextPage\": false,\n      \"prev\": null,\n      \"next\": null\n    }\n  }\n}",
+                  "body": "{\n  \"status\": \"SUCCESS\",\n  \"message\": \"Your request is successfully executed\",\n  \"data\": {\n    \"data\": [\n      {\n        \"name\": \"Mr. Carmen Powlowski\",\n        \"code\": \"methodologies\",\n        \"weight\": 86,\n        \"id\": \"63b804777cd4cb13ed59c10c\",\n        \"isDeleted\": false,\n        \"isActive\": true,\n        \"createdAt\": \"2023-07-30T22:14:17.638Z\",\n        \"updatedAt\": \"2024-01-03T18:11:12.488Z\"\n      }\n    ],\n    \"paginator\": {\n      \"itemCount\": 1,\n      \"offset\": 0,\n      \"perPage\": 10,\n      \"pageCount\": 1,\n      \"currentPage\": 1,\n      \"slNo\": 1,\n      \"hasPrevPage\": false,\n      \"hasNextPage\": false,\n      \"prev\": null,\n      \"next\": null\n    }\n  }\n}",
                   "header": [
                     {
                       "key": "Content-Type",
@@ -2058,7 +2652,7 @@
                   "status": "OK",
                   "code": 200,
                   "_postman_previewlanguage": "json",
-                  "body": "{\n  \"status\": \"SUCCESS\",\n  \"message\": \"Your request is successfully executed\",\n  \"data\": {\n    \"name\": \"Clifford Sipes\",\n    \"code\": \"Avon\",\n    \"weight\": 504,\n    \"id\": \"63b7b3ae1885d01a22f88155\",\n    \"isDeleted\": false,\n    \"isActive\": true,\n    \"createdAt\": \"2023-04-18T10:07:22.449Z\",\n    \"updatedAt\": \"2023-12-09T22:38:15.618Z\"\n  }\n}",
+                  "body": "{\n  \"status\": \"SUCCESS\",\n  \"message\": \"Your request is successfully executed\",\n  \"data\": {\n    \"name\": \"Mr. Carmen Powlowski\",\n    \"code\": \"methodologies\",\n    \"weight\": 86,\n    \"id\": \"63b804777cd4cb13ed59c10e\",\n    \"isDeleted\": false,\n    \"isActive\": true,\n    \"createdAt\": \"2023-07-30T22:14:17.638Z\",\n    \"updatedAt\": \"2024-01-03T18:11:12.488Z\"\n  }\n}",
                   "header": [
                     {
                       "key": "Content-Type",
@@ -2084,7 +2678,7 @@
                 ],
                 "body": {
                   "mode": "raw",
-                  "raw": "{\n  \"name\": \"Clifford Sipes\",\n  \"code\": \"Avon\",\n  \"weight\": 504\n}"
+                  "raw": "{\n  \"name\": \"Mr. Carmen Powlowski\",\n  \"code\": \"methodologies\",\n  \"weight\": 86\n}"
                 },
                 "description": "",
                 "auth": {
@@ -2107,7 +2701,7 @@
                   "status": "OK",
                   "code": 200,
                   "_postman_previewlanguage": "json",
-                  "body": "{\n  \"status\": \"SUCCESS\",\n  \"message\": \"Your request is successfully executed\",\n  \"data\": {\n    \"name\": \"Clifford Sipes\",\n    \"code\": \"Avon\",\n    \"weight\": 504,\n    \"id\": \"63b7b3ae1885d01a22f88156\",\n    \"isDeleted\": false,\n    \"isActive\": true,\n    \"createdAt\": \"2023-04-18T10:07:22.449Z\",\n    \"updatedAt\": \"2023-12-09T22:38:15.618Z\"\n  }\n}",
+                  "body": "{\n  \"status\": \"SUCCESS\",\n  \"message\": \"Your request is successfully executed\",\n  \"data\": {\n    \"name\": \"Mr. Carmen Powlowski\",\n    \"code\": \"methodologies\",\n    \"weight\": 86,\n    \"id\": \"63b804777cd4cb13ed59c10f\",\n    \"isDeleted\": false,\n    \"isActive\": true,\n    \"createdAt\": \"2023-07-30T22:14:17.638Z\",\n    \"updatedAt\": \"2024-01-03T18:11:12.488Z\"\n  }\n}",
                   "header": [
                     {
                       "key": "Content-Type",
@@ -2211,7 +2805,7 @@
                   "status": "OK",
                   "code": 200,
                   "_postman_previewlanguage": "json",
-                  "body": "{\n  \"status\": \"SUCCESS\",\n  \"message\": \"Your request is successfully executed\",\n  \"data\": {\n    \"route_name\": \"Architect\",\n    \"method\": \"metrics\",\n    \"uri\": \"Automotive\",\n    \"id\": \"63b7b3ae1885d01a22f8815f\",\n    \"isDeleted\": false,\n    \"isActive\": true,\n    \"createdAt\": \"2023-06-25T12:12:08.426Z\",\n    \"updatedAt\": \"2023-12-10T17:18:25.491Z\"\n  }\n}",
+                  "body": "{\n  \"status\": \"SUCCESS\",\n  \"message\": \"Your request is successfully executed\",\n  \"data\": {\n    \"route_name\": \"Sleek\",\n    \"method\": \"optimizing\",\n    \"uri\": \"transmitting\",\n    \"id\": \"63b804777cd4cb13ed59c118\",\n    \"isDeleted\": false,\n    \"isActive\": true,\n    \"createdAt\": \"2023-01-23T00:48:36.110Z\",\n    \"updatedAt\": \"2023-05-16T12:50:33.114Z\"\n  }\n}",
                   "header": [
                     {
                       "key": "Content-Type",
@@ -2237,7 +2831,7 @@
                 ],
                 "body": {
                   "mode": "raw",
-                  "raw": "{\n  \"route_name\": \"Architect\",\n  \"method\": \"metrics\",\n  \"uri\": \"Automotive\"\n}"
+                  "raw": "{\n  \"route_name\": \"Sleek\",\n  \"method\": \"optimizing\",\n  \"uri\": \"transmitting\"\n}"
                 },
                 "description": "",
                 "auth": {
@@ -2260,7 +2854,7 @@
                   "status": "OK",
                   "code": 200,
                   "_postman_previewlanguage": "json",
-                  "body": "{\n  \"status\": \"SUCCESS\",\n  \"message\": \"Your request is successfully executed\",\n  \"data\": {\n    \"route_name\": \"Architect\",\n    \"method\": \"metrics\",\n    \"uri\": \"Automotive\",\n    \"id\": \"63b7b3ae1885d01a22f88159\",\n    \"isDeleted\": false,\n    \"isActive\": true,\n    \"createdAt\": \"2023-06-25T12:12:08.426Z\",\n    \"updatedAt\": \"2023-12-10T17:18:25.491Z\"\n  }\n}",
+                  "body": "{\n  \"status\": \"SUCCESS\",\n  \"message\": \"Your request is successfully executed\",\n  \"data\": {\n    \"route_name\": \"Sleek\",\n    \"method\": \"optimizing\",\n    \"uri\": \"transmitting\",\n    \"id\": \"63b804777cd4cb13ed59c112\",\n    \"isDeleted\": false,\n    \"isActive\": true,\n    \"createdAt\": \"2023-01-23T00:48:36.110Z\",\n    \"updatedAt\": \"2023-05-16T12:50:33.114Z\"\n  }\n}",
                   "header": [
                     {
                       "key": "Content-Type",
@@ -2286,7 +2880,7 @@
                 ],
                 "body": {
                   "mode": "raw",
-                  "raw": "{\n  \"data\": [\n    {\n      \"route_name\": \"Architect\",\n      \"method\": \"metrics\",\n      \"uri\": \"Automotive\"\n    }\n  ]\n}"
+                  "raw": "{\n  \"data\": [\n    {\n      \"route_name\": \"Sleek\",\n      \"method\": \"optimizing\",\n      \"uri\": \"transmitting\"\n    }\n  ]\n}"
                 },
                 "description": "",
                 "auth": {
@@ -2358,7 +2952,7 @@
                   "status": "OK",
                   "code": 200,
                   "_postman_previewlanguage": "json",
-                  "body": "{\n  \"status\": \"SUCCESS\",\n  \"message\": \"Your request is successfully executed\",\n  \"data\": {\n    \"data\": [\n      {\n        \"route_name\": \"Architect\",\n        \"method\": \"metrics\",\n        \"uri\": \"Automotive\",\n        \"id\": \"63b7b3ae1885d01a22f8815b\",\n        \"isDeleted\": false,\n        \"isActive\": true,\n        \"createdAt\": \"2023-06-25T12:12:08.426Z\",\n        \"updatedAt\": \"2023-12-10T17:18:25.491Z\"\n      }\n    ],\n    \"paginator\": {\n      \"itemCount\": 1,\n      \"offset\": 0,\n      \"perPage\": 10,\n      \"pageCount\": 1,\n      \"currentPage\": 1,\n      \"slNo\": 1,\n      \"hasPrevPage\": false,\n      \"hasNextPage\": false,\n      \"prev\": null,\n      \"next\": null\n    }\n  }\n}",
+                  "body": "{\n  \"status\": \"SUCCESS\",\n  \"message\": \"Your request is successfully executed\",\n  \"data\": {\n    \"data\": [\n      {\n        \"route_name\": \"Sleek\",\n        \"method\": \"optimizing\",\n        \"uri\": \"transmitting\",\n        \"id\": \"63b804777cd4cb13ed59c114\",\n        \"isDeleted\": false,\n        \"isActive\": true,\n        \"createdAt\": \"2023-01-23T00:48:36.110Z\",\n        \"updatedAt\": \"2023-05-16T12:50:33.114Z\"\n      }\n    ],\n    \"paginator\": {\n      \"itemCount\": 1,\n      \"offset\": 0,\n      \"perPage\": 10,\n      \"pageCount\": 1,\n      \"currentPage\": 1,\n      \"slNo\": 1,\n      \"hasPrevPage\": false,\n      \"hasNextPage\": false,\n      \"prev\": null,\n      \"next\": null\n    }\n  }\n}",
                   "header": [
                     {
                       "key": "Content-Type",
@@ -2652,7 +3246,7 @@
                   "status": "OK",
                   "code": 200,
                   "_postman_previewlanguage": "json",
-                  "body": "{\n  \"status\": \"SUCCESS\",\n  \"message\": \"Your request is successfully executed\",\n  \"data\": {\n    \"route_name\": \"Architect\",\n    \"method\": \"metrics\",\n    \"uri\": \"Automotive\",\n    \"id\": \"63b7b3ae1885d01a22f8815d\",\n    \"isDeleted\": false,\n    \"isActive\": true,\n    \"createdAt\": \"2023-06-25T12:12:08.426Z\",\n    \"updatedAt\": \"2023-12-10T17:18:25.491Z\"\n  }\n}",
+                  "body": "{\n  \"status\": \"SUCCESS\",\n  \"message\": \"Your request is successfully executed\",\n  \"data\": {\n    \"route_name\": \"Sleek\",\n    \"method\": \"optimizing\",\n    \"uri\": \"transmitting\",\n    \"id\": \"63b804777cd4cb13ed59c116\",\n    \"isDeleted\": false,\n    \"isActive\": true,\n    \"createdAt\": \"2023-01-23T00:48:36.110Z\",\n    \"updatedAt\": \"2023-05-16T12:50:33.114Z\"\n  }\n}",
                   "header": [
                     {
                       "key": "Content-Type",
@@ -2678,7 +3272,7 @@
                 ],
                 "body": {
                   "mode": "raw",
-                  "raw": "{\n  \"route_name\": \"Architect\",\n  \"method\": \"metrics\",\n  \"uri\": \"Automotive\"\n}"
+                  "raw": "{\n  \"route_name\": \"Sleek\",\n  \"method\": \"optimizing\",\n  \"uri\": \"transmitting\"\n}"
                 },
                 "description": "",
                 "auth": {
@@ -2701,7 +3295,7 @@
                   "status": "OK",
                   "code": 200,
                   "_postman_previewlanguage": "json",
-                  "body": "{\n  \"status\": \"SUCCESS\",\n  \"message\": \"Your request is successfully executed\",\n  \"data\": {\n    \"route_name\": \"Architect\",\n    \"method\": \"metrics\",\n    \"uri\": \"Automotive\",\n    \"id\": \"63b7b3ae1885d01a22f8815e\",\n    \"isDeleted\": false,\n    \"isActive\": true,\n    \"createdAt\": \"2023-06-25T12:12:08.426Z\",\n    \"updatedAt\": \"2023-12-10T17:18:25.491Z\"\n  }\n}",
+                  "body": "{\n  \"status\": \"SUCCESS\",\n  \"message\": \"Your request is successfully executed\",\n  \"data\": {\n    \"route_name\": \"Sleek\",\n    \"method\": \"optimizing\",\n    \"uri\": \"transmitting\",\n    \"id\": \"63b804777cd4cb13ed59c117\",\n    \"isDeleted\": false,\n    \"isActive\": true,\n    \"createdAt\": \"2023-01-23T00:48:36.110Z\",\n    \"updatedAt\": \"2023-05-16T12:50:33.114Z\"\n  }\n}",
                   "header": [
                     {
                       "key": "Content-Type",
@@ -2805,7 +3399,7 @@
                   "status": "OK",
                   "code": 200,
                   "_postman_previewlanguage": "json",
-                  "body": "{\n  \"status\": \"SUCCESS\",\n  \"message\": \"Your request is successfully executed\",\n  \"data\": {\n    \"routeId\": \"63b7b3ae1885d01a22f88160\",\n    \"roleId\": \"63b7b3ae1885d01a22f88161\",\n    \"id\": \"63b7b3ae1885d01a22f88169\",\n    \"isDeleted\": false,\n    \"isActive\": true,\n    \"createdAt\": \"2023-05-07T03:37:07.674Z\",\n    \"updatedAt\": \"2023-05-21T12:41:41.289Z\"\n  }\n}",
+                  "body": "{\n  \"status\": \"SUCCESS\",\n  \"message\": \"Your request is successfully executed\",\n  \"data\": {\n    \"routeId\": \"63b804777cd4cb13ed59c119\",\n    \"roleId\": \"63b804777cd4cb13ed59c11a\",\n    \"id\": \"63b804777cd4cb13ed59c122\",\n    \"isDeleted\": false,\n    \"isActive\": true,\n    \"createdAt\": \"2023-04-27T15:23:04.117Z\",\n    \"updatedAt\": \"2023-07-19T03:36:33.544Z\"\n  }\n}",
                   "header": [
                     {
                       "key": "Content-Type",
@@ -2831,7 +3425,7 @@
                 ],
                 "body": {
                   "mode": "raw",
-                  "raw": "{\n  \"routeId\": \"63b7b3ae1885d01a22f88160\",\n  \"roleId\": \"63b7b3ae1885d01a22f88161\"\n}"
+                  "raw": "{\n  \"routeId\": \"63b804777cd4cb13ed59c119\",\n  \"roleId\": \"63b804777cd4cb13ed59c11a\"\n}"
                 },
                 "description": "",
                 "auth": {
@@ -2854,7 +3448,7 @@
                   "status": "OK",
                   "code": 200,
                   "_postman_previewlanguage": "json",
-                  "body": "{\n  \"status\": \"SUCCESS\",\n  \"message\": \"Your request is successfully executed\",\n  \"data\": {\n    \"routeId\": \"63b7b3ae1885d01a22f88160\",\n    \"roleId\": \"63b7b3ae1885d01a22f88161\",\n    \"id\": \"63b7b3ae1885d01a22f88163\",\n    \"isDeleted\": false,\n    \"isActive\": true,\n    \"createdAt\": \"2023-05-07T03:37:07.674Z\",\n    \"updatedAt\": \"2023-05-21T12:41:41.289Z\"\n  }\n}",
+                  "body": "{\n  \"status\": \"SUCCESS\",\n  \"message\": \"Your request is successfully executed\",\n  \"data\": {\n    \"routeId\": \"63b804777cd4cb13ed59c119\",\n    \"roleId\": \"63b804777cd4cb13ed59c11a\",\n    \"id\": \"63b804777cd4cb13ed59c11c\",\n    \"isDeleted\": false,\n    \"isActive\": true,\n    \"createdAt\": \"2023-04-27T15:23:04.117Z\",\n    \"updatedAt\": \"2023-07-19T03:36:33.544Z\"\n  }\n}",
                   "header": [
                     {
                       "key": "Content-Type",
@@ -2880,7 +3474,7 @@
                 ],
                 "body": {
                   "mode": "raw",
-                  "raw": "{\n  \"data\": [\n    {\n      \"routeId\": \"63b7b3ae1885d01a22f88160\",\n      \"roleId\": \"63b7b3ae1885d01a22f88161\"\n    }\n  ]\n}"
+                  "raw": "{\n  \"data\": [\n    {\n      \"routeId\": \"63b804777cd4cb13ed59c119\",\n      \"roleId\": \"63b804777cd4cb13ed59c11a\"\n    }\n  ]\n}"
                 },
                 "description": "",
                 "auth": {
@@ -2952,7 +3546,7 @@
                   "status": "OK",
                   "code": 200,
                   "_postman_previewlanguage": "json",
-                  "body": "{\n  \"status\": \"SUCCESS\",\n  \"message\": \"Your request is successfully executed\",\n  \"data\": {\n    \"data\": [\n      {\n        \"routeId\": \"63b7b3ae1885d01a22f88160\",\n        \"roleId\": \"63b7b3ae1885d01a22f88161\",\n        \"id\": \"63b7b3ae1885d01a22f88165\",\n        \"isDeleted\": false,\n        \"isActive\": true,\n        \"createdAt\": \"2023-05-07T03:37:07.674Z\",\n        \"updatedAt\": \"2023-05-21T12:41:41.289Z\"\n      }\n    ],\n    \"paginator\": {\n      \"itemCount\": 1,\n      \"offset\": 0,\n      \"perPage\": 10,\n      \"pageCount\": 1,\n      \"currentPage\": 1,\n      \"slNo\": 1,\n      \"hasPrevPage\": false,\n      \"hasNextPage\": false,\n      \"prev\": null,\n      \"next\": null\n    }\n  }\n}",
+                  "body": "{\n  \"status\": \"SUCCESS\",\n  \"message\": \"Your request is successfully executed\",\n  \"data\": {\n    \"data\": [\n      {\n        \"routeId\": \"63b804777cd4cb13ed59c119\",\n        \"roleId\": \"63b804777cd4cb13ed59c11a\",\n        \"id\": \"63b804777cd4cb13ed59c11e\",\n        \"isDeleted\": false,\n        \"isActive\": true,\n        \"createdAt\": \"2023-04-27T15:23:04.117Z\",\n        \"updatedAt\": \"2023-07-19T03:36:33.544Z\"\n      }\n    ],\n    \"paginator\": {\n      \"itemCount\": 1,\n      \"offset\": 0,\n      \"perPage\": 10,\n      \"pageCount\": 1,\n      \"currentPage\": 1,\n      \"slNo\": 1,\n      \"hasPrevPage\": false,\n      \"hasNextPage\": false,\n      \"prev\": null,\n      \"next\": null\n    }\n  }\n}",
                   "header": [
                     {
                       "key": "Content-Type",
@@ -3246,7 +3840,7 @@
                   "status": "OK",
                   "code": 200,
                   "_postman_previewlanguage": "json",
-                  "body": "{\n  \"status\": \"SUCCESS\",\n  \"message\": \"Your request is successfully executed\",\n  \"data\": {\n    \"routeId\": \"63b7b3ae1885d01a22f88160\",\n    \"roleId\": \"63b7b3ae1885d01a22f88161\",\n    \"id\": \"63b7b3ae1885d01a22f88167\",\n    \"isDeleted\": false,\n    \"isActive\": true,\n    \"createdAt\": \"2023-05-07T03:37:07.674Z\",\n    \"updatedAt\": \"2023-05-21T12:41:41.289Z\"\n  }\n}",
+                  "body": "{\n  \"status\": \"SUCCESS\",\n  \"message\": \"Your request is successfully executed\",\n  \"data\": {\n    \"routeId\": \"63b804777cd4cb13ed59c119\",\n    \"roleId\": \"63b804777cd4cb13ed59c11a\",\n    \"id\": \"63b804777cd4cb13ed59c120\",\n    \"isDeleted\": false,\n    \"isActive\": true,\n    \"createdAt\": \"2023-04-27T15:23:04.117Z\",\n    \"updatedAt\": \"2023-07-19T03:36:33.544Z\"\n  }\n}",
                   "header": [
                     {
                       "key": "Content-Type",
@@ -3272,7 +3866,7 @@
                 ],
                 "body": {
                   "mode": "raw",
-                  "raw": "{\n  \"routeId\": \"63b7b3ae1885d01a22f88160\",\n  \"roleId\": \"63b7b3ae1885d01a22f88161\"\n}"
+                  "raw": "{\n  \"routeId\": \"63b804777cd4cb13ed59c119\",\n  \"roleId\": \"63b804777cd4cb13ed59c11a\"\n}"
                 },
                 "description": "",
                 "auth": {
@@ -3295,7 +3889,7 @@
                   "status": "OK",
                   "code": 200,
                   "_postman_previewlanguage": "json",
-                  "body": "{\n  \"status\": \"SUCCESS\",\n  \"message\": \"Your request is successfully executed\",\n  \"data\": {\n    \"routeId\": \"63b7b3ae1885d01a22f88160\",\n    \"roleId\": \"63b7b3ae1885d01a22f88161\",\n    \"id\": \"63b7b3ae1885d01a22f88168\",\n    \"isDeleted\": false,\n    \"isActive\": true,\n    \"createdAt\": \"2023-05-07T03:37:07.674Z\",\n    \"updatedAt\": \"2023-05-21T12:41:41.289Z\"\n  }\n}",
+                  "body": "{\n  \"status\": \"SUCCESS\",\n  \"message\": \"Your request is successfully executed\",\n  \"data\": {\n    \"routeId\": \"63b804777cd4cb13ed59c119\",\n    \"roleId\": \"63b804777cd4cb13ed59c11a\",\n    \"id\": \"63b804777cd4cb13ed59c121\",\n    \"isDeleted\": false,\n    \"isActive\": true,\n    \"createdAt\": \"2023-04-27T15:23:04.117Z\",\n    \"updatedAt\": \"2023-07-19T03:36:33.544Z\"\n  }\n}",
                   "header": [
                     {
                       "key": "Content-Type",
@@ -3399,7 +3993,7 @@
                   "status": "OK",
                   "code": 200,
                   "_postman_previewlanguage": "json",
-                  "body": "{\n  \"status\": \"SUCCESS\",\n  \"message\": \"Your request is successfully executed\",\n  \"data\": {\n    \"userId\": \"63b7b3ae1885d01a22f8816a\",\n    \"roleId\": \"63b7b3ae1885d01a22f8816b\",\n    \"id\": \"63b7b3ae1885d01a22f88173\",\n    \"isDeleted\": false,\n    \"isActive\": true,\n    \"createdAt\": \"2023-08-16T20:30:18.162Z\",\n    \"updatedAt\": \"2023-08-14T04:58:09.866Z\"\n  }\n}",
+                  "body": "{\n  \"status\": \"SUCCESS\",\n  \"message\": \"Your request is successfully executed\",\n  \"data\": {\n    \"userId\": \"63b804777cd4cb13ed59c123\",\n    \"roleId\": \"63b804777cd4cb13ed59c124\",\n    \"id\": \"63b804777cd4cb13ed59c12c\",\n    \"isDeleted\": false,\n    \"isActive\": true,\n    \"createdAt\": \"2023-10-12T09:50:05.576Z\",\n    \"updatedAt\": \"2023-07-15T15:57:05.958Z\"\n  }\n}",
                   "header": [
                     {
                       "key": "Content-Type",
@@ -3425,7 +4019,7 @@
                 ],
                 "body": {
                   "mode": "raw",
-                  "raw": "{\n  \"userId\": \"63b7b3ae1885d01a22f8816a\",\n  \"roleId\": \"63b7b3ae1885d01a22f8816b\"\n}"
+                  "raw": "{\n  \"userId\": \"63b804777cd4cb13ed59c123\",\n  \"roleId\": \"63b804777cd4cb13ed59c124\"\n}"
                 },
                 "description": "",
                 "auth": {
@@ -3448,7 +4042,7 @@
                   "status": "OK",
                   "code": 200,
                   "_postman_previewlanguage": "json",
-                  "body": "{\n  \"status\": \"SUCCESS\",\n  \"message\": \"Your request is successfully executed\",\n  \"data\": {\n    \"userId\": \"63b7b3ae1885d01a22f8816a\",\n    \"roleId\": \"63b7b3ae1885d01a22f8816b\",\n    \"id\": \"63b7b3ae1885d01a22f8816d\",\n    \"isDeleted\": false,\n    \"isActive\": true,\n    \"createdAt\": \"2023-08-16T20:30:18.162Z\",\n    \"updatedAt\": \"2023-08-14T04:58:09.866Z\"\n  }\n}",
+                  "body": "{\n  \"status\": \"SUCCESS\",\n  \"message\": \"Your request is successfully executed\",\n  \"data\": {\n    \"userId\": \"63b804777cd4cb13ed59c123\",\n    \"roleId\": \"63b804777cd4cb13ed59c124\",\n    \"id\": \"63b804777cd4cb13ed59c126\",\n    \"isDeleted\": false,\n    \"isActive\": true,\n    \"createdAt\": \"2023-10-12T09:50:05.576Z\",\n    \"updatedAt\": \"2023-07-15T15:57:05.958Z\"\n  }\n}",
                   "header": [
                     {
                       "key": "Content-Type",
@@ -3474,7 +4068,7 @@
                 ],
                 "body": {
                   "mode": "raw",
-                  "raw": "{\n  \"data\": [\n    {\n      \"userId\": \"63b7b3ae1885d01a22f8816a\",\n      \"roleId\": \"63b7b3ae1885d01a22f8816b\"\n    }\n  ]\n}"
+                  "raw": "{\n  \"data\": [\n    {\n      \"userId\": \"63b804777cd4cb13ed59c123\",\n      \"roleId\": \"63b804777cd4cb13ed59c124\"\n    }\n  ]\n}"
                 },
                 "description": "",
                 "auth": {
@@ -3546,7 +4140,7 @@
                   "status": "OK",
                   "code": 200,
                   "_postman_previewlanguage": "json",
-                  "body": "{\n  \"status\": \"SUCCESS\",\n  \"message\": \"Your request is successfully executed\",\n  \"data\": {\n    \"data\": [\n      {\n        \"userId\": \"63b7b3ae1885d01a22f8816a\",\n        \"roleId\": \"63b7b3ae1885d01a22f8816b\",\n        \"id\": \"63b7b3ae1885d01a22f8816f\",\n        \"isDeleted\": false,\n        \"isActive\": true,\n        \"createdAt\": \"2023-08-16T20:30:18.162Z\",\n        \"updatedAt\": \"2023-08-14T04:58:09.866Z\"\n      }\n    ],\n    \"paginator\": {\n      \"itemCount\": 1,\n      \"offset\": 0,\n      \"perPage\": 10,\n      \"pageCount\": 1,\n      \"currentPage\": 1,\n      \"slNo\": 1,\n      \"hasPrevPage\": false,\n      \"hasNextPage\": false,\n      \"prev\": null,\n      \"next\": null\n    }\n  }\n}",
+                  "body": "{\n  \"status\": \"SUCCESS\",\n  \"message\": \"Your request is successfully executed\",\n  \"data\": {\n    \"data\": [\n      {\n        \"userId\": \"63b804777cd4cb13ed59c123\",\n        \"roleId\": \"63b804777cd4cb13ed59c124\",\n        \"id\": \"63b804777cd4cb13ed59c128\",\n        \"isDeleted\": false,\n        \"isActive\": true,\n        \"createdAt\": \"2023-10-12T09:50:05.576Z\",\n        \"updatedAt\": \"2023-07-15T15:57:05.958Z\"\n      }\n    ],\n    \"paginator\": {\n      \"itemCount\": 1,\n      \"offset\": 0,\n      \"perPage\": 10,\n      \"pageCount\": 1,\n      \"currentPage\": 1,\n      \"slNo\": 1,\n      \"hasPrevPage\": false,\n      \"hasNextPage\": false,\n      \"prev\": null,\n      \"next\": null\n    }\n  }\n}",
                   "header": [
                     {
                       "key": "Content-Type",
@@ -3840,7 +4434,7 @@
                   "status": "OK",
                   "code": 200,
                   "_postman_previewlanguage": "json",
-                  "body": "{\n  \"status\": \"SUCCESS\",\n  \"message\": \"Your request is successfully executed\",\n  \"data\": {\n    \"userId\": \"63b7b3ae1885d01a22f8816a\",\n    \"roleId\": \"63b7b3ae1885d01a22f8816b\",\n    \"id\": \"63b7b3ae1885d01a22f88171\",\n    \"isDeleted\": false,\n    \"isActive\": true,\n    \"createdAt\": \"2023-08-16T20:30:18.162Z\",\n    \"updatedAt\": \"2023-08-14T04:58:09.866Z\"\n  }\n}",
+                  "body": "{\n  \"status\": \"SUCCESS\",\n  \"message\": \"Your request is successfully executed\",\n  \"data\": {\n    \"userId\": \"63b804777cd4cb13ed59c123\",\n    \"roleId\": \"63b804777cd4cb13ed59c124\",\n    \"id\": \"63b804777cd4cb13ed59c12a\",\n    \"isDeleted\": false,\n    \"isActive\": true,\n    \"createdAt\": \"2023-10-12T09:50:05.576Z\",\n    \"updatedAt\": \"2023-07-15T15:57:05.958Z\"\n  }\n}",
                   "header": [
                     {
                       "key": "Content-Type",
@@ -3866,7 +4460,7 @@
                 ],
                 "body": {
                   "mode": "raw",
-                  "raw": "{\n  \"userId\": \"63b7b3ae1885d01a22f8816a\",\n  \"roleId\": \"63b7b3ae1885d01a22f8816b\"\n}"
+                  "raw": "{\n  \"userId\": \"63b804777cd4cb13ed59c123\",\n  \"roleId\": \"63b804777cd4cb13ed59c124\"\n}"
                 },
                 "description": "",
                 "auth": {
@@ -3889,7 +4483,7 @@
                   "status": "OK",
                   "code": 200,
                   "_postman_previewlanguage": "json",
-                  "body": "{\n  \"status\": \"SUCCESS\",\n  \"message\": \"Your request is successfully executed\",\n  \"data\": {\n    \"userId\": \"63b7b3ae1885d01a22f8816a\",\n    \"roleId\": \"63b7b3ae1885d01a22f8816b\",\n    \"id\": \"63b7b3ae1885d01a22f88172\",\n    \"isDeleted\": false,\n    \"isActive\": true,\n    \"createdAt\": \"2023-08-16T20:30:18.162Z\",\n    \"updatedAt\": \"2023-08-14T04:58:09.866Z\"\n  }\n}",
+                  "body": "{\n  \"status\": \"SUCCESS\",\n  \"message\": \"Your request is successfully executed\",\n  \"data\": {\n    \"userId\": \"63b804777cd4cb13ed59c123\",\n    \"roleId\": \"63b804777cd4cb13ed59c124\",\n    \"id\": \"63b804777cd4cb13ed59c12b\",\n    \"isDeleted\": false,\n    \"isActive\": true,\n    \"createdAt\": \"2023-10-12T09:50:05.576Z\",\n    \"updatedAt\": \"2023-07-15T15:57:05.958Z\"\n  }\n}",
                   "header": [
                     {
                       "key": "Content-Type",
@@ -3959,13 +4553,13 @@
       "description": "device APIs",
       "item": [
         {
-          "name": "patient",
-          "description": "patient Model APIs",
+          "name": "enterprise",
+          "description": "enterprise Model APIs",
           "item": [
             {
-              "name": "getpatient",
+              "name": "getenterprise",
               "request": {
-                "url": "{{url}}/device/api/v1/patient/:id",
+                "url": "{{url}}/device/api/v1/enterprise/:id",
                 "method": "GET",
                 "header": [
                   {
@@ -3988,18 +4582,18 @@
               },
               "response": [
                 {
-                  "name": "getpatient_response",
+                  "name": "getenterprise_response",
                   "originalRequest": {
                     "method": "GET",
                     "header": [],
                     "url": {
-                      "raw": "{{url}}/device/api/v1/patient/:id"
+                      "raw": "{{url}}/device/api/v1/enterprise/:id"
                     }
                   },
                   "status": "OK",
                   "code": 200,
                   "_postman_previewlanguage": "json",
-                  "body": "{\n  \"status\": \"SUCCESS\",\n  \"message\": \"Your request is successfully executed\",\n  \"data\": {\n    \"name\": \"Allison Bergstrom\",\n    \"code\": \"calculating\",\n    \"email\": \"Brenda.Jacobi@hotmail.com\",\n    \"isDelete\": true,\n    \"id\": \"63b7b3ae1885d01a22f8813b\",\n    \"isDeleted\": false,\n    \"isActive\": true,\n    \"createdAt\": \"2023-11-07T02:46:14.364Z\",\n    \"updatedAt\": \"2023-02-26T17:21:38.263Z\"\n  }\n}",
+                  "body": "{\n  \"status\": \"SUCCESS\",\n  \"message\": \"Your request is successfully executed\",\n  \"data\": {\n    \"name\": \"Judith Welch\",\n    \"email\": \"Lauriane_Pagac@hotmail.com\",\n    \"phone\": \"(150) 538-0841\",\n    \"code\": \"Synergistic\",\n    \"address\": \"192 Lessie Street\",\n    \"website\": \"mobile\",\n    \"isDelete\": false,\n    \"id\": \"63b804777cd4cb13ed59c0e4\",\n    \"isDeleted\": false,\n    \"isActive\": true,\n    \"createdAt\": \"2023-08-04T20:01:40.698Z\",\n    \"updatedAt\": \"2023-04-13T11:15:16.202Z\"\n  }\n}",
                   "header": [
                     {
                       "key": "Content-Type",
@@ -4012,9 +4606,9 @@
               "_postman_isSubFolder": true
             },
             {
-              "name": "addpatient",
+              "name": "addenterprise",
               "request": {
-                "url": "{{url}}/device/api/v1/patient/create",
+                "url": "{{url}}/device/api/v1/enterprise/create",
                 "method": "POST",
                 "header": [
                   {
@@ -4025,7 +4619,7 @@
                 ],
                 "body": {
                   "mode": "raw",
-                  "raw": "{\n  \"name\": \"Allison Bergstrom\",\n  \"code\": \"calculating\",\n  \"email\": \"Brenda.Jacobi@hotmail.com\",\n  \"isDelete\": true\n}"
+                  "raw": "{\n  \"name\": \"Judith Welch\",\n  \"email\": \"Lauriane_Pagac@hotmail.com\",\n  \"phone\": \"(150) 538-0841\",\n  \"code\": \"Synergistic\",\n  \"address\": \"192 Lessie Street\",\n  \"website\": \"mobile\",\n  \"isDelete\": false\n}"
                 },
                 "description": "",
                 "auth": {
@@ -4037,18 +4631,18 @@
               },
               "response": [
                 {
-                  "name": "addpatient_response",
+                  "name": "addenterprise_response",
                   "originalRequest": {
                     "method": "POST",
                     "header": [],
                     "url": {
-                      "raw": "{{url}}/device/api/v1/patient/create"
+                      "raw": "{{url}}/device/api/v1/enterprise/create"
                     }
                   },
                   "status": "OK",
                   "code": 200,
                   "_postman_previewlanguage": "json",
-                  "body": "{\n  \"status\": \"SUCCESS\",\n  \"message\": \"Your request is successfully executed\",\n  \"data\": {\n    \"name\": \"Allison Bergstrom\",\n    \"code\": \"calculating\",\n    \"email\": \"Brenda.Jacobi@hotmail.com\",\n    \"isDelete\": true,\n    \"id\": \"63b7b3ae1885d01a22f88139\",\n    \"isDeleted\": false,\n    \"isActive\": true,\n    \"createdAt\": \"2023-11-07T02:46:14.364Z\",\n    \"updatedAt\": \"2023-02-26T17:21:38.263Z\"\n  }\n}",
+                  "body": "{\n  \"status\": \"SUCCESS\",\n  \"message\": \"Your request is successfully executed\",\n  \"data\": {\n    \"name\": \"Judith Welch\",\n    \"email\": \"Lauriane_Pagac@hotmail.com\",\n    \"phone\": \"(150) 538-0841\",\n    \"code\": \"Synergistic\",\n    \"address\": \"192 Lessie Street\",\n    \"website\": \"mobile\",\n    \"isDelete\": false,\n    \"id\": \"63b804777cd4cb13ed59c0e2\",\n    \"isDeleted\": false,\n    \"isActive\": true,\n    \"createdAt\": \"2023-08-04T20:01:40.698Z\",\n    \"updatedAt\": \"2023-04-13T11:15:16.202Z\"\n  }\n}",
                   "header": [
                     {
                       "key": "Content-Type",
@@ -4061,9 +4655,9 @@
               "_postman_isSubFolder": true
             },
             {
-              "name": "findAllpatient",
+              "name": "findAllenterprise",
               "request": {
-                "url": "{{url}}/device/api/v1/patient/list",
+                "url": "{{url}}/device/api/v1/enterprise/list",
                 "method": "POST",
                 "header": [
                   {
@@ -4086,18 +4680,18 @@
               },
               "response": [
                 {
-                  "name": "findAllpatient_response",
+                  "name": "findAllenterprise_response",
                   "originalRequest": {
                     "method": "POST",
                     "header": [],
                     "url": {
-                      "raw": "{{url}}/device/api/v1/patient/list"
+                      "raw": "{{url}}/device/api/v1/enterprise/list"
                     }
                   },
                   "status": "OK",
                   "code": 200,
                   "_postman_previewlanguage": "json",
-                  "body": "{\n  \"status\": \"SUCCESS\",\n  \"message\": \"Your request is successfully executed\",\n  \"data\": {\n    \"data\": [\n      {\n        \"name\": \"Allison Bergstrom\",\n        \"code\": \"calculating\",\n        \"email\": \"Brenda.Jacobi@hotmail.com\",\n        \"isDelete\": true,\n        \"id\": \"63b7b3ae1885d01a22f8813a\",\n        \"isDeleted\": false,\n        \"isActive\": true,\n        \"createdAt\": \"2023-11-07T02:46:14.364Z\",\n        \"updatedAt\": \"2023-02-26T17:21:38.263Z\"\n      }\n    ],\n    \"paginator\": {\n      \"itemCount\": 1,\n      \"offset\": 0,\n      \"perPage\": 10,\n      \"pageCount\": 1,\n      \"currentPage\": 1,\n      \"slNo\": 1,\n      \"hasPrevPage\": false,\n      \"hasNextPage\": false,\n      \"prev\": null,\n      \"next\": null\n    }\n  }\n}",
+                  "body": "{\n  \"status\": \"SUCCESS\",\n  \"message\": \"Your request is successfully executed\",\n  \"data\": {\n    \"data\": [\n      {\n        \"name\": \"Judith Welch\",\n        \"email\": \"Lauriane_Pagac@hotmail.com\",\n        \"phone\": \"(150) 538-0841\",\n        \"code\": \"Synergistic\",\n        \"address\": \"192 Lessie Street\",\n        \"website\": \"mobile\",\n        \"isDelete\": false,\n        \"id\": \"63b804777cd4cb13ed59c0e3\",\n        \"isDeleted\": false,\n        \"isActive\": true,\n        \"createdAt\": \"2023-08-04T20:01:40.698Z\",\n        \"updatedAt\": \"2023-04-13T11:15:16.202Z\"\n      }\n    ],\n    \"paginator\": {\n      \"itemCount\": 1,\n      \"offset\": 0,\n      \"perPage\": 10,\n      \"pageCount\": 1,\n      \"currentPage\": 1,\n      \"slNo\": 1,\n      \"hasPrevPage\": false,\n      \"hasNextPage\": false,\n      \"prev\": null,\n      \"next\": null\n    }\n  }\n}",
                   "header": [
                     {
                       "key": "Content-Type",
@@ -4110,9 +4704,9 @@
               "_postman_isSubFolder": true
             },
             {
-              "name": "getpatientCount",
+              "name": "getenterpriseCount",
               "request": {
-                "url": "{{url}}/device/api/v1/patient/count",
+                "url": "{{url}}/device/api/v1/enterprise/count",
                 "method": "POST",
                 "header": [
                   {
@@ -4135,12 +4729,12 @@
               },
               "response": [
                 {
-                  "name": "getpatientCount_response",
+                  "name": "getenterpriseCount_response",
                   "originalRequest": {
                     "method": "POST",
                     "header": [],
                     "url": {
-                      "raw": "{{url}}/device/api/v1/patient/count"
+                      "raw": "{{url}}/device/api/v1/enterprise/count"
                     }
                   },
                   "status": "OK",
@@ -4159,9 +4753,9 @@
               "_postman_isSubFolder": true
             },
             {
-              "name": "insertBulkpatient",
+              "name": "insertBulkenterprise",
               "request": {
-                "url": "{{url}}/device/api/v1/patient/addBulk",
+                "url": "{{url}}/device/api/v1/enterprise/addBulk",
                 "method": "POST",
                 "header": [
                   {
@@ -4172,7 +4766,7 @@
                 ],
                 "body": {
                   "mode": "raw",
-                  "raw": "{\n  \"data\": [\n    {\n      \"name\": \"Allison Bergstrom\",\n      \"code\": \"calculating\",\n      \"email\": \"Brenda.Jacobi@hotmail.com\",\n      \"isDelete\": true\n    }\n  ]\n}"
+                  "raw": "{\n  \"data\": [\n    {\n      \"name\": \"Judith Welch\",\n      \"email\": \"Lauriane_Pagac@hotmail.com\",\n      \"phone\": \"(150) 538-0841\",\n      \"code\": \"Synergistic\",\n      \"address\": \"192 Lessie Street\",\n      \"website\": \"mobile\",\n      \"isDelete\": false\n    }\n  ]\n}"
                 },
                 "description": "",
                 "auth": {
@@ -4184,12 +4778,12 @@
               },
               "response": [
                 {
-                  "name": "insertBulkpatient_response",
+                  "name": "insertBulkenterprise_response",
                   "originalRequest": {
                     "method": "POST",
                     "header": [],
                     "url": {
-                      "raw": "{{url}}/device/api/v1/patient/addBulk"
+                      "raw": "{{url}}/device/api/v1/enterprise/addBulk"
                     }
                   },
                   "status": "OK",
@@ -4208,9 +4802,9 @@
               "_postman_isSubFolder": true
             },
             {
-              "name": "deleteManypatient",
+              "name": "deleteManyenterprise",
               "request": {
-                "url": "{{url}}/device/api/v1/patient/deleteMany",
+                "url": "{{url}}/device/api/v1/enterprise/deleteMany",
                 "method": "POST",
                 "header": [
                   {
@@ -4233,12 +4827,12 @@
               },
               "response": [
                 {
-                  "name": "deleteManypatient_response",
+                  "name": "deleteManyenterprise_response",
                   "originalRequest": {
                     "method": "POST",
                     "header": [],
                     "url": {
-                      "raw": "{{url}}/device/api/v1/patient/deleteMany"
+                      "raw": "{{url}}/device/api/v1/enterprise/deleteMany"
                     }
                   },
                   "status": "OK",
@@ -4257,9 +4851,9 @@
               "_postman_isSubFolder": true
             },
             {
-              "name": "updatepatient",
+              "name": "updateenterprise",
               "request": {
-                "url": "{{url}}/device/api/v1/patient/update/:id",
+                "url": "{{url}}/device/api/v1/enterprise/update/:id",
                 "method": "PUT",
                 "header": [
                   {
@@ -4270,7 +4864,7 @@
                 ],
                 "body": {
                   "mode": "raw",
-                  "raw": "{\n  \"name\": \"Allison Bergstrom\",\n  \"code\": \"calculating\",\n  \"email\": \"Brenda.Jacobi@hotmail.com\",\n  \"isDelete\": true\n}"
+                  "raw": "{\n  \"name\": \"Judith Welch\",\n  \"email\": \"Lauriane_Pagac@hotmail.com\",\n  \"phone\": \"(150) 538-0841\",\n  \"code\": \"Synergistic\",\n  \"address\": \"192 Lessie Street\",\n  \"website\": \"mobile\",\n  \"isDelete\": false\n}"
                 },
                 "description": "",
                 "auth": {
@@ -4282,18 +4876,18 @@
               },
               "response": [
                 {
-                  "name": "updatepatient_response",
+                  "name": "updateenterprise_response",
                   "originalRequest": {
                     "method": "PUT",
                     "header": [],
                     "url": {
-                      "raw": "{{url}}/device/api/v1/patient/update/:id"
+                      "raw": "{{url}}/device/api/v1/enterprise/update/:id"
                     }
                   },
                   "status": "OK",
                   "code": 200,
                   "_postman_previewlanguage": "json",
-                  "body": "{\n  \"status\": \"SUCCESS\",\n  \"message\": \"Your request is successfully executed\",\n  \"data\": {\n    \"name\": \"Allison Bergstrom\",\n    \"code\": \"calculating\",\n    \"email\": \"Brenda.Jacobi@hotmail.com\",\n    \"isDelete\": true,\n    \"id\": \"63b7b3ae1885d01a22f8813c\",\n    \"isDeleted\": false,\n    \"isActive\": true,\n    \"createdAt\": \"2023-11-07T02:46:14.364Z\",\n    \"updatedAt\": \"2023-02-26T17:21:38.263Z\"\n  }\n}",
+                  "body": "{\n  \"status\": \"SUCCESS\",\n  \"message\": \"Your request is successfully executed\",\n  \"data\": {\n    \"name\": \"Judith Welch\",\n    \"email\": \"Lauriane_Pagac@hotmail.com\",\n    \"phone\": \"(150) 538-0841\",\n    \"code\": \"Synergistic\",\n    \"address\": \"192 Lessie Street\",\n    \"website\": \"mobile\",\n    \"isDelete\": false,\n    \"id\": \"63b804777cd4cb13ed59c0e5\",\n    \"isDeleted\": false,\n    \"isActive\": true,\n    \"createdAt\": \"2023-08-04T20:01:40.698Z\",\n    \"updatedAt\": \"2023-04-13T11:15:16.202Z\"\n  }\n}",
                   "header": [
                     {
                       "key": "Content-Type",
@@ -4306,9 +4900,9 @@
               "_postman_isSubFolder": true
             },
             {
-              "name": "partialupdatepatient",
+              "name": "partialupdateenterprise",
               "request": {
-                "url": "{{url}}/device/api/v1/patient/partial-update/:id",
+                "url": "{{url}}/device/api/v1/enterprise/partial-update/:id",
                 "method": "PUT",
                 "header": [
                   {
@@ -4331,18 +4925,18 @@
               },
               "response": [
                 {
-                  "name": "partialupdatepatient_response",
+                  "name": "partialupdateenterprise_response",
                   "originalRequest": {
                     "method": "PUT",
                     "header": [],
                     "url": {
-                      "raw": "{{url}}/device/api/v1/patient/partial-update/:id"
+                      "raw": "{{url}}/device/api/v1/enterprise/partial-update/:id"
                     }
                   },
                   "status": "OK",
                   "code": 200,
                   "_postman_previewlanguage": "json",
-                  "body": "{\n  \"status\": \"SUCCESS\",\n  \"message\": \"Your request is successfully executed\",\n  \"data\": {\n    \"name\": \"Allison Bergstrom\",\n    \"code\": \"calculating\",\n    \"email\": \"Brenda.Jacobi@hotmail.com\",\n    \"isDelete\": true,\n    \"id\": \"63b7b3ae1885d01a22f8813d\",\n    \"isDeleted\": false,\n    \"isActive\": true,\n    \"createdAt\": \"2023-11-07T02:46:14.364Z\",\n    \"updatedAt\": \"2023-02-26T17:21:38.263Z\"\n  }\n}",
+                  "body": "{\n  \"status\": \"SUCCESS\",\n  \"message\": \"Your request is successfully executed\",\n  \"data\": {\n    \"name\": \"Judith Welch\",\n    \"email\": \"Lauriane_Pagac@hotmail.com\",\n    \"phone\": \"(150) 538-0841\",\n    \"code\": \"Synergistic\",\n    \"address\": \"192 Lessie Street\",\n    \"website\": \"mobile\",\n    \"isDelete\": false,\n    \"id\": \"63b804777cd4cb13ed59c0e6\",\n    \"isDeleted\": false,\n    \"isActive\": true,\n    \"createdAt\": \"2023-08-04T20:01:40.698Z\",\n    \"updatedAt\": \"2023-04-13T11:15:16.202Z\"\n  }\n}",
                   "header": [
                     {
                       "key": "Content-Type",
@@ -4355,9 +4949,9 @@
               "_postman_isSubFolder": true
             },
             {
-              "name": "softDeletepatient",
+              "name": "softDeleteenterprise",
               "request": {
-                "url": "{{url}}/device/api/v1/patient/softDelete/:id",
+                "url": "{{url}}/device/api/v1/enterprise/softDelete/:id",
                 "method": "PUT",
                 "header": [
                   {
@@ -4380,12 +4974,12 @@
               },
               "response": [
                 {
-                  "name": "softDeletepatient_response",
+                  "name": "softDeleteenterprise_response",
                   "originalRequest": {
                     "method": "PUT",
                     "header": [],
                     "url": {
-                      "raw": "{{url}}/device/api/v1/patient/softDelete/:id"
+                      "raw": "{{url}}/device/api/v1/enterprise/softDelete/:id"
                     }
                   },
                   "status": "OK",
@@ -4404,9 +4998,9 @@
               "_postman_isSubFolder": true
             },
             {
-              "name": "softDeleteManypatient",
+              "name": "softDeleteManyenterprise",
               "request": {
-                "url": "{{url}}/device/api/v1/patient/softDeleteMany",
+                "url": "{{url}}/device/api/v1/enterprise/softDeleteMany",
                 "method": "PUT",
                 "header": [
                   {
@@ -4429,12 +5023,12 @@
               },
               "response": [
                 {
-                  "name": "softDeleteManypatient_response",
+                  "name": "softDeleteManyenterprise_response",
                   "originalRequest": {
                     "method": "PUT",
                     "header": [],
                     "url": {
-                      "raw": "{{url}}/device/api/v1/patient/softDeleteMany"
+                      "raw": "{{url}}/device/api/v1/enterprise/softDeleteMany"
                     }
                   },
                   "status": "OK",
@@ -4453,9 +5047,9 @@
               "_postman_isSubFolder": true
             },
             {
-              "name": "updateBulkpatient",
+              "name": "updateBulkenterprise",
               "request": {
-                "url": "{{url}}/device/api/v1/patient/updateBulk",
+                "url": "{{url}}/device/api/v1/enterprise/updateBulk",
                 "method": "PUT",
                 "header": [
                   {
@@ -4478,12 +5072,12 @@
               },
               "response": [
                 {
-                  "name": "updateBulkpatient_response",
+                  "name": "updateBulkenterprise_response",
                   "originalRequest": {
                     "method": "PUT",
                     "header": [],
                     "url": {
-                      "raw": "{{url}}/device/api/v1/patient/updateBulk"
+                      "raw": "{{url}}/device/api/v1/enterprise/updateBulk"
                     }
                   },
                   "status": "OK",
@@ -4502,9 +5096,9 @@
               "_postman_isSubFolder": true
             },
             {
-              "name": "deletepatient",
+              "name": "deleteenterprise",
               "request": {
-                "url": "{{url}}/device/api/v1/patient/delete/:id",
+                "url": "{{url}}/device/api/v1/enterprise/delete/:id",
                 "method": "DELETE",
                 "header": [
                   {
@@ -4527,12 +5121,606 @@
               },
               "response": [
                 {
-                  "name": "deletepatient_response",
+                  "name": "deleteenterprise_response",
                   "originalRequest": {
                     "method": "DELETE",
                     "header": [],
                     "url": {
-                      "raw": "{{url}}/device/api/v1/patient/delete/:id"
+                      "raw": "{{url}}/device/api/v1/enterprise/delete/:id"
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "json",
+                  "body": "{\n  \"status\": \"SUCCESS\",\n  \"message\": \"Your request is successfully executed\",\n  \"data\": {\n    \"Count\": 1\n  }\n}",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": []
+                }
+              ],
+              "_postman_isSubFolder": true
+            }
+          ]
+        },
+        {
+          "name": "departments",
+          "description": "departments Model APIs",
+          "item": [
+            {
+              "name": "getdepartments",
+              "request": {
+                "url": "{{url}}/device/api/v1/departments/:id",
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json",
+                    "description": ""
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{}"
+                },
+                "description": "",
+                "auth": {
+                  "type": "bearer",
+                  "bearer": {
+                    "token": "{{token}}"
+                  }
+                }
+              },
+              "response": [
+                {
+                  "name": "getdepartments_response",
+                  "originalRequest": {
+                    "method": "GET",
+                    "header": [],
+                    "url": {
+                      "raw": "{{url}}/device/api/v1/departments/:id"
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "json",
+                  "body": "{\n  \"status\": \"SUCCESS\",\n  \"message\": \"Your request is successfully executed\",\n  \"data\": {\n    \"name\": \"Larry Gottlieb\",\n    \"code\": \"engineer\",\n    \"enterprises\": \"63b804777cd4cb13ed59c0e9\",\n    \"email\": \"Hubert_Rodriguez65@gmail.com\",\n    \"phone\": \"(004) 540-2260\",\n    \"website\": \"compressing\",\n    \"address\": \"92046 Boyer Crossing\",\n    \"isDelete\": false,\n    \"id\": \"63b804777cd4cb13ed59c0f4\",\n    \"isDeleted\": false,\n    \"isActive\": true,\n    \"createdAt\": \"2023-03-06T19:46:18.066Z\",\n    \"updatedAt\": \"2023-05-16T14:15:49.912Z\"\n  }\n}",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": []
+                }
+              ],
+              "_postman_isSubFolder": true
+            },
+            {
+              "name": "adddepartments",
+              "request": {
+                "url": "{{url}}/device/api/v1/departments/create",
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json",
+                    "description": ""
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"name\": \"Larry Gottlieb\",\n  \"code\": \"engineer\",\n  \"enterprises\": \"63b804777cd4cb13ed59c0e9\",\n  \"email\": \"Hubert_Rodriguez65@gmail.com\",\n  \"phone\": \"(004) 540-2260\",\n  \"website\": \"compressing\",\n  \"address\": \"92046 Boyer Crossing\",\n  \"isDelete\": false\n}"
+                },
+                "description": "",
+                "auth": {
+                  "type": "bearer",
+                  "bearer": {
+                    "token": "{{token}}"
+                  }
+                }
+              },
+              "response": [
+                {
+                  "name": "adddepartments_response",
+                  "originalRequest": {
+                    "method": "POST",
+                    "header": [],
+                    "url": {
+                      "raw": "{{url}}/device/api/v1/departments/create"
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "json",
+                  "body": "{\n  \"status\": \"SUCCESS\",\n  \"message\": \"Your request is successfully executed\",\n  \"data\": {\n    \"name\": \"Larry Gottlieb\",\n    \"code\": \"engineer\",\n    \"enterprises\": \"63b804777cd4cb13ed59c0e9\",\n    \"email\": \"Hubert_Rodriguez65@gmail.com\",\n    \"phone\": \"(004) 540-2260\",\n    \"website\": \"compressing\",\n    \"address\": \"92046 Boyer Crossing\",\n    \"isDelete\": false,\n    \"id\": \"63b804777cd4cb13ed59c0f2\",\n    \"isDeleted\": false,\n    \"isActive\": true,\n    \"createdAt\": \"2023-03-06T19:46:18.066Z\",\n    \"updatedAt\": \"2023-05-16T14:15:49.912Z\"\n  }\n}",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": []
+                }
+              ],
+              "_postman_isSubFolder": true
+            },
+            {
+              "name": "findAlldepartments",
+              "request": {
+                "url": "{{url}}/device/api/v1/departments/list",
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json",
+                    "description": ""
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"query\": {},\n  \"options\": {\n    \"select\": [\n      \"field 1\",\n      \"field 2\"\n    ],\n    \"collation\": \"\",\n    \"sort\": \"\",\n    \"populate\": \"\",\n    \"projection\": \"\",\n    \"lean\": false,\n    \"leanWithId\": true,\n    \"offset\": 0,\n    \"page\": 1,\n    \"limit\": 10,\n    \"pagination\": true,\n    \"useEstimatedCount\": false,\n    \"useCustomCountFn\": false,\n    \"forceCountFn\": false,\n    \"read\": {},\n    \"options\": {}\n  },\n  \"isCountOnly\": false\n}"
+                },
+                "description": "",
+                "auth": {
+                  "type": "bearer",
+                  "bearer": {
+                    "token": "{{token}}"
+                  }
+                }
+              },
+              "response": [
+                {
+                  "name": "findAlldepartments_response",
+                  "originalRequest": {
+                    "method": "POST",
+                    "header": [],
+                    "url": {
+                      "raw": "{{url}}/device/api/v1/departments/list"
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "json",
+                  "body": "{\n  \"status\": \"SUCCESS\",\n  \"message\": \"Your request is successfully executed\",\n  \"data\": {\n    \"data\": [\n      {\n        \"name\": \"Larry Gottlieb\",\n        \"code\": \"engineer\",\n        \"enterprises\": \"63b804777cd4cb13ed59c0e9\",\n        \"email\": \"Hubert_Rodriguez65@gmail.com\",\n        \"phone\": \"(004) 540-2260\",\n        \"website\": \"compressing\",\n        \"address\": \"92046 Boyer Crossing\",\n        \"isDelete\": false,\n        \"id\": \"63b804777cd4cb13ed59c0f3\",\n        \"isDeleted\": false,\n        \"isActive\": true,\n        \"createdAt\": \"2023-03-06T19:46:18.066Z\",\n        \"updatedAt\": \"2023-05-16T14:15:49.912Z\"\n      }\n    ],\n    \"paginator\": {\n      \"itemCount\": 1,\n      \"offset\": 0,\n      \"perPage\": 10,\n      \"pageCount\": 1,\n      \"currentPage\": 1,\n      \"slNo\": 1,\n      \"hasPrevPage\": false,\n      \"hasNextPage\": false,\n      \"prev\": null,\n      \"next\": null\n    }\n  }\n}",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": []
+                }
+              ],
+              "_postman_isSubFolder": true
+            },
+            {
+              "name": "getdepartmentsCount",
+              "request": {
+                "url": "{{url}}/device/api/v1/departments/count",
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json",
+                    "description": ""
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"where\": {\n    \"isActive\": true\n  }\n}"
+                },
+                "description": "",
+                "auth": {
+                  "type": "bearer",
+                  "bearer": {
+                    "token": "{{token}}"
+                  }
+                }
+              },
+              "response": [
+                {
+                  "name": "getdepartmentsCount_response",
+                  "originalRequest": {
+                    "method": "POST",
+                    "header": [],
+                    "url": {
+                      "raw": "{{url}}/device/api/v1/departments/count"
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "json",
+                  "body": "{\n  \"status\": \"SUCCESS\",\n  \"message\": \"Your request is successfully executed\",\n  \"data\": {\n    \"count\": 10\n  }\n}",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": []
+                }
+              ],
+              "_postman_isSubFolder": true
+            },
+            {
+              "name": "insertBulkdepartments",
+              "request": {
+                "url": "{{url}}/device/api/v1/departments/addBulk",
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json",
+                    "description": ""
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"data\": [\n    {\n      \"name\": \"Larry Gottlieb\",\n      \"code\": \"engineer\",\n      \"enterprises\": \"63b804777cd4cb13ed59c0e9\",\n      \"email\": \"Hubert_Rodriguez65@gmail.com\",\n      \"phone\": \"(004) 540-2260\",\n      \"website\": \"compressing\",\n      \"address\": \"92046 Boyer Crossing\",\n      \"isDelete\": false\n    }\n  ]\n}"
+                },
+                "description": "",
+                "auth": {
+                  "type": "bearer",
+                  "bearer": {
+                    "token": "{{token}}"
+                  }
+                }
+              },
+              "response": [
+                {
+                  "name": "insertBulkdepartments_response",
+                  "originalRequest": {
+                    "method": "POST",
+                    "header": [],
+                    "url": {
+                      "raw": "{{url}}/device/api/v1/departments/addBulk"
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "json",
+                  "body": "{\n  \"status\": \"SUCCESS\",\n  \"message\": \"Your request is successfully executed\",\n  \"data\": {\n    \"count\": 2\n  }\n}",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": []
+                }
+              ],
+              "_postman_isSubFolder": true
+            },
+            {
+              "name": "deleteManydepartments",
+              "request": {
+                "url": "{{url}}/device/api/v1/departments/deleteMany",
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json",
+                    "description": ""
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"isWarning\": true,\n  \"ids\": [\n    \":id\"\n  ]\n}"
+                },
+                "description": "",
+                "auth": {
+                  "type": "bearer",
+                  "bearer": {
+                    "token": "{{token}}"
+                  }
+                }
+              },
+              "response": [
+                {
+                  "name": "deleteManydepartments_response",
+                  "originalRequest": {
+                    "method": "POST",
+                    "header": [],
+                    "url": {
+                      "raw": "{{url}}/device/api/v1/departments/deleteMany"
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "json",
+                  "body": "{\n  \"status\": \"SUCCESS\",\n  \"message\": \"Your request is successfully executed\",\n  \"data\": {\n    \"count\": 2\n  }\n}",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": []
+                }
+              ],
+              "_postman_isSubFolder": true
+            },
+            {
+              "name": "updatedepartments",
+              "request": {
+                "url": "{{url}}/device/api/v1/departments/update/:id",
+                "method": "PUT",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json",
+                    "description": ""
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"name\": \"Larry Gottlieb\",\n  \"code\": \"engineer\",\n  \"enterprises\": \"63b804777cd4cb13ed59c0e9\",\n  \"email\": \"Hubert_Rodriguez65@gmail.com\",\n  \"phone\": \"(004) 540-2260\",\n  \"website\": \"compressing\",\n  \"address\": \"92046 Boyer Crossing\",\n  \"isDelete\": false\n}"
+                },
+                "description": "",
+                "auth": {
+                  "type": "bearer",
+                  "bearer": {
+                    "token": "{{token}}"
+                  }
+                }
+              },
+              "response": [
+                {
+                  "name": "updatedepartments_response",
+                  "originalRequest": {
+                    "method": "PUT",
+                    "header": [],
+                    "url": {
+                      "raw": "{{url}}/device/api/v1/departments/update/:id"
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "json",
+                  "body": "{\n  \"status\": \"SUCCESS\",\n  \"message\": \"Your request is successfully executed\",\n  \"data\": {\n    \"name\": \"Larry Gottlieb\",\n    \"code\": \"engineer\",\n    \"enterprises\": \"63b804777cd4cb13ed59c0e9\",\n    \"email\": \"Hubert_Rodriguez65@gmail.com\",\n    \"phone\": \"(004) 540-2260\",\n    \"website\": \"compressing\",\n    \"address\": \"92046 Boyer Crossing\",\n    \"isDelete\": false,\n    \"id\": \"63b804777cd4cb13ed59c0f5\",\n    \"isDeleted\": false,\n    \"isActive\": true,\n    \"createdAt\": \"2023-03-06T19:46:18.066Z\",\n    \"updatedAt\": \"2023-05-16T14:15:49.912Z\"\n  }\n}",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": []
+                }
+              ],
+              "_postman_isSubFolder": true
+            },
+            {
+              "name": "partialupdatedepartments",
+              "request": {
+                "url": "{{url}}/device/api/v1/departments/partial-update/:id",
+                "method": "PUT",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json",
+                    "description": ""
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"isActive\": true,\n  \"isDeleted\": false\n}"
+                },
+                "description": "",
+                "auth": {
+                  "type": "bearer",
+                  "bearer": {
+                    "token": "{{token}}"
+                  }
+                }
+              },
+              "response": [
+                {
+                  "name": "partialupdatedepartments_response",
+                  "originalRequest": {
+                    "method": "PUT",
+                    "header": [],
+                    "url": {
+                      "raw": "{{url}}/device/api/v1/departments/partial-update/:id"
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "json",
+                  "body": "{\n  \"status\": \"SUCCESS\",\n  \"message\": \"Your request is successfully executed\",\n  \"data\": {\n    \"name\": \"Larry Gottlieb\",\n    \"code\": \"engineer\",\n    \"enterprises\": \"63b804777cd4cb13ed59c0e9\",\n    \"email\": \"Hubert_Rodriguez65@gmail.com\",\n    \"phone\": \"(004) 540-2260\",\n    \"website\": \"compressing\",\n    \"address\": \"92046 Boyer Crossing\",\n    \"isDelete\": false,\n    \"id\": \"63b804777cd4cb13ed59c0f6\",\n    \"isDeleted\": false,\n    \"isActive\": true,\n    \"createdAt\": \"2023-03-06T19:46:18.066Z\",\n    \"updatedAt\": \"2023-05-16T14:15:49.912Z\"\n  }\n}",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": []
+                }
+              ],
+              "_postman_isSubFolder": true
+            },
+            {
+              "name": "softDeletedepartments",
+              "request": {
+                "url": "{{url}}/device/api/v1/departments/softDelete/:id",
+                "method": "PUT",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json",
+                    "description": ""
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{}"
+                },
+                "description": "",
+                "auth": {
+                  "type": "bearer",
+                  "bearer": {
+                    "token": "{{token}}"
+                  }
+                }
+              },
+              "response": [
+                {
+                  "name": "softDeletedepartments_response",
+                  "originalRequest": {
+                    "method": "PUT",
+                    "header": [],
+                    "url": {
+                      "raw": "{{url}}/device/api/v1/departments/softDelete/:id"
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "json",
+                  "body": "{\n  \"status\": \"SUCCESS\",\n  \"message\": \"Your request is successfully executed\",\n  \"data\": {\n    \"count\": 2\n  }\n}",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": []
+                }
+              ],
+              "_postman_isSubFolder": true
+            },
+            {
+              "name": "softDeleteManydepartments",
+              "request": {
+                "url": "{{url}}/device/api/v1/departments/softDeleteMany",
+                "method": "PUT",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json",
+                    "description": ""
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"ids\": [\n    \":id\"\n  ]\n}"
+                },
+                "description": "",
+                "auth": {
+                  "type": "bearer",
+                  "bearer": {
+                    "token": "{{token}}"
+                  }
+                }
+              },
+              "response": [
+                {
+                  "name": "softDeleteManydepartments_response",
+                  "originalRequest": {
+                    "method": "PUT",
+                    "header": [],
+                    "url": {
+                      "raw": "{{url}}/device/api/v1/departments/softDeleteMany"
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "json",
+                  "body": "{\n  \"status\": \"SUCCESS\",\n  \"message\": \"Your request is successfully executed\",\n  \"data\": {\n    \"count\": 2\n  }\n}",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": []
+                }
+              ],
+              "_postman_isSubFolder": true
+            },
+            {
+              "name": "updateBulkdepartments",
+              "request": {
+                "url": "{{url}}/device/api/v1/departments/updateBulk",
+                "method": "PUT",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json",
+                    "description": ""
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"filter\": {\n    \"isActive\": true\n  },\n  \"data\": {\n    \"isDeleted\": false\n  }\n}"
+                },
+                "description": "",
+                "auth": {
+                  "type": "bearer",
+                  "bearer": {
+                    "token": "{{token}}"
+                  }
+                }
+              },
+              "response": [
+                {
+                  "name": "updateBulkdepartments_response",
+                  "originalRequest": {
+                    "method": "PUT",
+                    "header": [],
+                    "url": {
+                      "raw": "{{url}}/device/api/v1/departments/updateBulk"
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "json",
+                  "body": "{\n  \"status\": \"SUCCESS\",\n  \"message\": \"Your request is successfully executed\",\n  \"data\": {\n    \"count\": 2\n  }\n}",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": []
+                }
+              ],
+              "_postman_isSubFolder": true
+            },
+            {
+              "name": "deletedepartments",
+              "request": {
+                "url": "{{url}}/device/api/v1/departments/delete/:id",
+                "method": "DELETE",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json",
+                    "description": ""
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"isWarning\": true\n}"
+                },
+                "description": "",
+                "auth": {
+                  "type": "bearer",
+                  "bearer": {
+                    "token": "{{token}}"
+                  }
+                }
+              },
+              "response": [
+                {
+                  "name": "deletedepartments_response",
+                  "originalRequest": {
+                    "method": "DELETE",
+                    "header": [],
+                    "url": {
+                      "raw": "{{url}}/device/api/v1/departments/delete/:id"
                     }
                   },
                   "status": "OK",
@@ -4593,7 +5781,7 @@
                   "status": "OK",
                   "code": 200,
                   "_postman_previewlanguage": "json",
-                  "body": "{\n  \"status\": \"SUCCESS\",\n  \"message\": \"Your request is successfully executed\",\n  \"data\": {\n    \"username\": \"Michael.OKeefe\",\n    \"email\": \"Hester.Bechtelar79@gmail.com\",\n    \"name\": \"Mario Gislason\",\n    \"mobileNo\": \"(213) 593-3485\",\n    \"userType\": 1,\n    \"id\": \"63b7b3ae1885d01a22f8814c\",\n    \"isDeleted\": false,\n    \"isActive\": true,\n    \"createdAt\": \"2023-10-18T21:55:50.897Z\",\n    \"updatedAt\": \"2023-07-05T07:36:24.794Z\"\n  }\n}",
+                  "body": "{\n  \"status\": \"SUCCESS\",\n  \"message\": \"Your request is successfully executed\",\n  \"data\": {\n    \"username\": \"Frank_Breitenberg\",\n    \"email\": \"Paul.Reichel5@hotmail.com\",\n    \"name\": \"Ida Hilpert\",\n    \"mobileNo\": \"(526) 935-0793\",\n    \"userType\": 1,\n    \"id\": \"63b804777cd4cb13ed59c105\",\n    \"isDeleted\": false,\n    \"isActive\": true,\n    \"createdAt\": \"2023-04-29T08:40:40.203Z\",\n    \"updatedAt\": \"2023-12-21T07:39:56.014Z\"\n  }\n}",
                   "header": [
                     {
                       "key": "Content-Type",
@@ -4619,7 +5807,7 @@
                 ],
                 "body": {
                   "mode": "raw",
-                  "raw": "{\n  \"username\": \"Michael.OKeefe\",\n  \"password\": \"hfuv5ztRidToDff\",\n  \"email\": \"Hester.Bechtelar79@gmail.com\",\n  \"name\": \"Mario Gislason\",\n  \"mobileNo\": \"(213) 593-3485\",\n  \"userType\": 1\n}"
+                  "raw": "{\n  \"username\": \"Frank_Breitenberg\",\n  \"password\": \"qw87QCo1qz_ZB9X\",\n  \"email\": \"Paul.Reichel5@hotmail.com\",\n  \"name\": \"Ida Hilpert\",\n  \"mobileNo\": \"(526) 935-0793\",\n  \"userType\": 1\n}"
                 },
                 "description": "",
                 "auth": {
@@ -4642,7 +5830,7 @@
                   "status": "OK",
                   "code": 200,
                   "_postman_previewlanguage": "json",
-                  "body": "{\n  \"status\": \"SUCCESS\",\n  \"message\": \"Your request is successfully executed\",\n  \"data\": {\n    \"username\": \"Michael.OKeefe\",\n    \"email\": \"Hester.Bechtelar79@gmail.com\",\n    \"name\": \"Mario Gislason\",\n    \"mobileNo\": \"(213) 593-3485\",\n    \"userType\": 1,\n    \"id\": \"63b7b3ae1885d01a22f8814b\",\n    \"isDeleted\": false,\n    \"isActive\": true,\n    \"createdAt\": \"2023-10-18T21:55:50.897Z\",\n    \"updatedAt\": \"2023-07-05T07:36:24.794Z\"\n  }\n}",
+                  "body": "{\n  \"status\": \"SUCCESS\",\n  \"message\": \"Your request is successfully executed\",\n  \"data\": {\n    \"username\": \"Frank_Breitenberg\",\n    \"email\": \"Paul.Reichel5@hotmail.com\",\n    \"name\": \"Ida Hilpert\",\n    \"mobileNo\": \"(526) 935-0793\",\n    \"userType\": 1,\n    \"id\": \"63b804777cd4cb13ed59c104\",\n    \"isDeleted\": false,\n    \"isActive\": true,\n    \"createdAt\": \"2023-04-29T08:40:40.203Z\",\n    \"updatedAt\": \"2023-12-21T07:39:56.014Z\"\n  }\n}",
                   "header": [
                     {
                       "key": "Content-Type",
@@ -4692,7 +5880,7 @@
                   "status": "OK",
                   "code": 200,
                   "_postman_previewlanguage": "json",
-                  "body": "{\n  \"status\": \"SUCCESS\",\n  \"message\": \"Login Successful\",\n  \"data\": {\n    \"username\": \"Michael.OKeefe\",\n    \"email\": \"Hester.Bechtelar79@gmail.com\",\n    \"name\": \"Mario Gislason\",\n    \"mobileNo\": \"(213) 593-3485\",\n    \"id\": \"63b7b3ae1885d01a22f8814d\",\n    \"loginRetryLimit\": 0,\n    \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYxMWRlZDVjMGFjMjAxMmFjMDI4ODkxZiIsInVzZXJuYW1lIjoiYWRtaW4iLCJpYXQiOjE2MjkzNTEyNzAsImV4cCI6MTYyOTk1MTI3MH0.BJ-WKjNYeFDQ4pn8kfli5gwn6GLz_c3voFht20Agj9k\",\n    \"isDeleted\": false,\n    \"isActive\": true,\n    \"createdAt\": \"2023-03-02T10:19:16.010Z\",\n    \"updatedAt\": \"2023-11-29T04:49:30.031Z\"\n  }\n}",
+                  "body": "{\n  \"status\": \"SUCCESS\",\n  \"message\": \"Login Successful\",\n  \"data\": {\n    \"username\": \"Frank_Breitenberg\",\n    \"email\": \"Paul.Reichel5@hotmail.com\",\n    \"name\": \"Ida Hilpert\",\n    \"mobileNo\": \"(526) 935-0793\",\n    \"id\": \"63b804777cd4cb13ed59c106\",\n    \"loginRetryLimit\": 0,\n    \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYxMWRlZDVjMGFjMjAxMmFjMDI4ODkxZiIsInVzZXJuYW1lIjoiYWRtaW4iLCJpYXQiOjE2MjkzNTEyNzAsImV4cCI6MTYyOTk1MTI3MH0.BJ-WKjNYeFDQ4pn8kfli5gwn6GLz_c3voFht20Agj9k\",\n    \"isDeleted\": false,\n    \"isActive\": true,\n    \"createdAt\": \"2023-11-28T21:55:08.857Z\",\n    \"updatedAt\": \"2023-08-12T18:01:28.936Z\"\n  }\n}",
                   "header": [
                     {
                       "key": "Content-Type",
@@ -4718,7 +5906,7 @@
                 ],
                 "body": {
                   "mode": "raw",
-                  "raw": "{\n  \"username\": \"Michael.OKeefe\",\n  \"password\": \"hfuv5ztRidToDff\",\n  \"email\": \"Hester.Bechtelar79@gmail.com\",\n  \"name\": \"Mario Gislason\",\n  \"mobileNo\": \"(213) 593-3485\"\n}"
+                  "raw": "{\n  \"username\": \"Frank_Breitenberg\",\n  \"password\": \"qw87QCo1qz_ZB9X\",\n  \"email\": \"Paul.Reichel5@hotmail.com\",\n  \"name\": \"Ida Hilpert\",\n  \"mobileNo\": \"(526) 935-0793\"\n}"
                 },
                 "description": "",
                 "auth": {}
@@ -4736,7 +5924,7 @@
                   "status": "OK",
                   "code": 200,
                   "_postman_previewlanguage": "json",
-                  "body": "{\n  \"status\": \"SUCCESS\",\n  \"message\": \"Your request is successfully executed\",\n  \"data\": {\n    \"username\": \"Michael.OKeefe\",\n    \"email\": \"Hester.Bechtelar79@gmail.com\",\n    \"name\": \"Mario Gislason\",\n    \"mobileNo\": \"(213) 593-3485\",\n    \"id\": \"63b7b3ae1885d01a22f8814d\",\n    \"loginRetryLimit\": 0,\n    \"isDeleted\": false,\n    \"isActive\": true,\n    \"createdAt\": \"2023-03-02T10:19:16.010Z\",\n    \"updatedAt\": \"2023-11-29T04:49:30.031Z\"\n  }\n}",
+                  "body": "{\n  \"status\": \"SUCCESS\",\n  \"message\": \"Your request is successfully executed\",\n  \"data\": {\n    \"username\": \"Frank_Breitenberg\",\n    \"email\": \"Paul.Reichel5@hotmail.com\",\n    \"name\": \"Ida Hilpert\",\n    \"mobileNo\": \"(526) 935-0793\",\n    \"id\": \"63b804777cd4cb13ed59c106\",\n    \"loginRetryLimit\": 0,\n    \"isDeleted\": false,\n    \"isActive\": true,\n    \"createdAt\": \"2023-11-28T21:55:08.857Z\",\n    \"updatedAt\": \"2023-08-12T18:01:28.936Z\"\n  }\n}",
                   "header": [
                     {
                       "key": "Content-Type",

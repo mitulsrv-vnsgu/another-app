@@ -20,13 +20,13 @@ const PLATFORM = {
 };
 
 let LOGIN_ACCESS = {
-  [USER_TYPES.User]:[PLATFORM.DEVICE],        
-  [USER_TYPES.Admin]:[PLATFORM.ADMIN],        
+  [USER_TYPES.User]:[PLATFORM.DEVICE],           
+  [USER_TYPES.Admin]:[PLATFORM.ADMIN],           
 };
 
 const MAX_LOGIN_RETRY_LIMIT = 3;
-const LOGIN_REACTIVE_TIME = 20;   
-
+const LOGIN_REACTIVE_TIME = 20;
+    
 const FORGOT_PASSWORD_WITH = {
   LINK: {
     email: true,

@@ -28,6 +28,15 @@ services:
 
 volumes:
   dbdata:
+  dbdata:
+  dbdata:
+  dbdata:
+  dbdata:
+  dbdata:
+  dbdata:
+  dbdata:
+  dbdata:
+  mbdata:
 
 networks:
   node-network:

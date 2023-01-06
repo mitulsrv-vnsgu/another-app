@@ -1,6 +1,7 @@
 .vscode
 .dhiwise
 .git
+.vscode
 *Dockerfile*
 *DockerFile*
 *docker-compose*
