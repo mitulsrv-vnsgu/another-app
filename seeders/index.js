@@ -288,6 +288,66 @@ async function seedRouteRole () {
         method: 'POST'
       },
       {
+        route: '/admin/patient/create',
+        role: 'System_User',
+        method: 'POST' 
+      },
+      {
+        route: '/admin/patient/addbulk',
+        role: 'System_User',
+        method: 'POST'
+      },
+      {
+        route: '/admin/patient/list',
+        role: 'System_User',
+        method: 'POST' 
+      },
+      {
+        route: '/admin/patient/:id',
+        role: 'System_User',
+        method: 'GET' 
+      },
+      {
+        route: '/admin/patient/count',
+        role: 'System_User',
+        method: 'POST' 
+      },
+      {
+        route: '/admin/patient/update/:id',
+        role: 'System_User',
+        method: 'PUT'
+      },
+      {
+        route: '/admin/patient/partial-update/:id',
+        role: 'System_User',
+        method: 'PUT'
+      },
+      {
+        route: '/admin/patient/updatebulk',
+        role: 'System_User',
+        method: 'PUT'
+      },
+      {
+        route: '/admin/patient/softdelete/:id',
+        role: 'System_User',
+        method: 'PUT'
+      },
+      {
+        route: '/admin/patient/softdeletemany',
+        role: 'System_User',
+        method: 'PUT'
+      },
+      {
+        route: '/admin/patient/delete/:id',
+        role: 'System_User',
+        method: 'DELETE'
+      },
+      {
+        route: '/admin/patient/deletemany',
+        role: 'System_User',
+        method: 'POST'
+      },
+      {
         route: '/admin/usertokens/create',
         role: 'System_User',
         method: 'POST'
@@ -764,6 +824,66 @@ async function seedRouteRole () {
       },
       {
         route: '/device/api/v1/user/deletemany',
+        role: 'System_User',
+        method: 'POST'
+      },
+      {
+        route: '/device/api/v1/patient/create',
+        role: 'System_User',
+        method: 'POST'
+      },
+      {
+        route: '/device/api/v1/patient/addbulk',
+        role: 'System_User',
+        method: 'POST'
+      },
+      {
+        route: '/device/api/v1/patient/list',
+        role: 'System_User',
+        method: 'POST'
+      },
+      {
+        route: '/device/api/v1/patient/:id',
+        role: 'System_User',
+        method: 'GET'
+      },
+      {
+        route: '/device/api/v1/patient/count',
+        role: 'System_User',
+        method: 'POST'
+      },
+      {
+        route: '/device/api/v1/patient/update/:id',
+        role: 'System_User',
+        method: 'PUT'
+      },
+      {
+        route: '/device/api/v1/patient/partial-update/:id',
+        role: 'System_User',
+        method: 'PUT'
+      },
+      {
+        route: '/device/api/v1/patient/updatebulk',
+        role: 'System_User',
+        method: 'PUT'
+      },
+      {
+        route: '/device/api/v1/patient/softdelete/:id',
+        role: 'System_User',
+        method: 'PUT'
+      },
+      {
+        route: '/device/api/v1/patient/softdeletemany',
+        role: 'System_User',
+        method: 'PUT'
+      },
+      {
+        route: '/device/api/v1/patient/delete/:id',
+        role: 'System_User',
+        method: 'DELETE'
+      },
+      {
+        route: '/device/api/v1/patient/deletemany',
         role: 'System_User',
         method: 'POST'
       },
