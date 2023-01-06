@@ -1,52 +1,50 @@
-/**
- * seeder.js
- * @description :: functions that seeds mock data to run the application
- */
-
 const bcrypt = require('bcrypt');
-const User = require('../model/user');
 const authConstant = require('../constants/authConstant');
-const Role = require('../model/role');
-const ProjectRoute = require('../model/projectRoute');
-const RouteRole = require('../model/routeRole');
-const UserRole = require('../model/userRole');
-const { replaceAll } = require('../utils/common');
-const dbService = require('../utils/dbService');
+const userDb = require('../data-access/userDb');
+const roleDb = require('../data-access/roleDb');
+const projectRouteDb = require('../data-access/projectRouteDb');
+const routeRoleDb = require('../data-access/routeRoleDb');
+const userRoleDb = require('../data-access/userRoleDb');
+const replaceAll = require('../utils/replaceAll');
 
-/* seeds default users */
 async function seedUser () {
   try {
     let userToBeInserted = {};
     userToBeInserted = {
-      'password':'RJ97ajkVGpeCK5y',
+      'password':'xGbqcHIU4zoT2Z1',
       'isDeleted':false,
-      'username':'Rosamond.Pouros',
-      'email':'Jamarcus85@yahoo.com',
+      'username':'Thaddeus_OKon53',
+      'email':'Tatyana.Wisozk@gmail.com',
       'isActive':true,
       'userType':authConstant.USER_TYPES.User
     };
-    userToBeInserted.password = await  bcrypt.hash(userToBeInserted.password, 8);
-    let user = await dbService.updateOne(User, { 'username':'Rosamond.Pouros' }, userToBeInserted,  { upsert: true });
+    userToBeInserted.password = await bcrypt.hash(userToBeInserted.password, 8);
+    let user = await userDb.updateOne( { 'username':'Thaddeus_OKon53' }, userToBeInserted,  {
+      upsert: true,
+      new: true
+    });
     userToBeInserted = {
-      'password':'jEeAhxyykYjDD6p',
+      'password':'vWVjAf3ai7T7WyK',
       'isDeleted':false,
-      'username':'Jena43',
-      'email':'Tressa68@gmail.com',
+      'username':'Shaina_Hane41',
+      'email':'Jaren_Bailey59@gmail.com',
       'isActive':true,
       'userType':authConstant.USER_TYPES.Admin
     };
-    userToBeInserted.password = await  bcrypt.hash(userToBeInserted.password, 8);
-    let admin = await dbService.updateOne(User, { 'username':'Jena43' }, userToBeInserted,  { upsert: true });
+    userToBeInserted.password = await bcrypt.hash(userToBeInserted.password, 8);
+    let admin = await userDb.updateOne( { 'username':'Shaina_Hane41' }, userToBeInserted,  {
+      upsert: true,
+      new: true
+    });
     console.info('Users seeded 🍺');
   } catch (error){
     console.log('User seeder failed due to ', error.message);
   }
 }
-/* seeds roles */
 async function seedRole () {
   try {
     const roles = [ 'User', 'Admin', 'System_User' ];
-    const insertedRoles = await dbService.findMany(Role, { code: { '$in': roles.map(role => role.toUpperCase()) } });
+    const insertedRoles = await roleDb.findMany({ code: { '$in': roles.map(role => role.toUpperCase()) } });
     const rolesToInsert = [];
     roles.forEach(role => {
       if (!insertedRoles.find(insertedRole => insertedRole.code === role.toUpperCase())) {
@@ -58,7 +56,7 @@ async function seedRole () {
       }
     });
     if (rolesToInsert.length) {
-      const result = await dbService.create(Role, rolesToInsert);
+      const result = await roleDb.create(rolesToInsert);
       if (result) console.log('Role seeded 🍺');
       else console.log('Role seeder failed!');
     } else {
@@ -69,12 +67,11 @@ async function seedRole () {
   }
 }
 
-/* seeds routes of project */
 async function seedProjectRoutes (routes) {
   try {
-    if (routes  && routes.length) {
+    if (routes && routes.length) {
       let routeName = '';
-      const dbRoutes = await dbService.findMany(ProjectRoute, {});
+      const dbRoutes = await projectRouteDb.findMany({});
       let routeArr = [];
       let routeObj = {};
       routes.forEach(route => {
@@ -91,7 +88,7 @@ async function seedProjectRoutes (routes) {
         });
       });
       if (routeArr.length) {
-        const result = await dbService.create(ProjectRoute, routeArr);
+        const result = await projectRouteDb.create(routeArr);
         if (result) console.info('ProjectRoute model seeded 🍺');
         else console.info('ProjectRoute seeder failed.');
       } else {
@@ -103,7 +100,6 @@ async function seedProjectRoutes (routes) {
   }
 }
 
-/* seeds role for routes */
 async function seedRouteRole () {
   try {
     const routeRoles = [ 
@@ -288,62 +284,122 @@ async function seedRouteRole () {
         method: 'POST'
       },
       {
-        route: '/admin/patient/create',
-        role: 'System_User',
-        method: 'POST' 
-      },
-      {
-        route: '/admin/patient/addbulk',
+        route: '/admin/enterprise/create',
         role: 'System_User',
         method: 'POST'
       },
       {
-        route: '/admin/patient/list',
+        route: '/admin/enterprise/addbulk',
         role: 'System_User',
-        method: 'POST' 
+        method: 'POST'
       },
       {
-        route: '/admin/patient/:id',
+        route: '/admin/enterprise/list',
+        role: 'System_User',
+        method: 'POST'
+      },
+      {
+        route: '/admin/enterprise/:id',
         role: 'System_User',
         method: 'GET' 
       },
       {
-        route: '/admin/patient/count',
+        route: '/admin/enterprise/count',
         role: 'System_User',
-        method: 'POST' 
+        method: 'POST'
       },
       {
-        route: '/admin/patient/update/:id',
-        role: 'System_User',
-        method: 'PUT'
-      },
-      {
-        route: '/admin/patient/partial-update/:id',
+        route: '/admin/enterprise/update/:id',
         role: 'System_User',
         method: 'PUT'
       },
       {
-        route: '/admin/patient/updatebulk',
+        route: '/admin/enterprise/partial-update/:id',
         role: 'System_User',
         method: 'PUT'
       },
       {
-        route: '/admin/patient/softdelete/:id',
+        route: '/admin/enterprise/updatebulk',
         role: 'System_User',
         method: 'PUT'
       },
       {
-        route: '/admin/patient/softdeletemany',
+        route: '/admin/enterprise/softdelete/:id',
         role: 'System_User',
         method: 'PUT'
       },
       {
-        route: '/admin/patient/delete/:id',
+        route: '/admin/enterprise/softdeletemany',
+        role: 'System_User',
+        method: 'PUT'
+      },
+      {
+        route: '/admin/enterprise/delete/:id',
         role: 'System_User',
         method: 'DELETE'
       },
       {
-        route: '/admin/patient/deletemany',
+        route: '/admin/enterprise/deletemany',
+        role: 'System_User',
+        method: 'POST'
+      },
+      {
+        route: '/admin/departments/create',
+        role: 'System_User',
+        method: 'POST'
+      },
+      {
+        route: '/admin/departments/addbulk',
+        role: 'System_User',
+        method: 'POST'
+      },
+      {
+        route: '/admin/departments/list',
+        role: 'System_User',
+        method: 'POST'
+      },
+      {
+        route: '/admin/departments/:id',
+        role: 'System_User',
+        method: 'GET' 
+      },
+      {
+        route: '/admin/departments/count',
+        role: 'System_User',
+        method: 'POST'
+      },
+      {
+        route: '/admin/departments/update/:id',
+        role: 'System_User',
+        method: 'PUT'
+      },
+      {
+        route: '/admin/departments/partial-update/:id',
+        role: 'System_User',
+        method: 'PUT'
+      },
+      {
+        route: '/admin/departments/updatebulk',
+        role: 'System_User',
+        method: 'PUT'
+      },
+      {
+        route: '/admin/departments/softdelete/:id',
+        role: 'System_User',
+        method: 'PUT'
+      },
+      {
+        route: '/admin/departments/softdeletemany',
+        role: 'System_User',
+        method: 'PUT'
+      },
+      {
+        route: '/admin/departments/delete/:id',
+        role: 'System_User',
+        method: 'DELETE'
+      },
+      {
+        route: '/admin/departments/deletemany',
         role: 'System_User',
         method: 'POST'
       },
@@ -828,62 +884,122 @@ async function seedRouteRole () {
         method: 'POST'
       },
       {
-        route: '/device/api/v1/patient/create',
+        route: '/device/api/v1/enterprise/create',
         role: 'System_User',
         method: 'POST'
       },
       {
-        route: '/device/api/v1/patient/addbulk',
+        route: '/device/api/v1/enterprise/addbulk',
         role: 'System_User',
         method: 'POST'
       },
       {
-        route: '/device/api/v1/patient/list',
+        route: '/device/api/v1/enterprise/list',
         role: 'System_User',
         method: 'POST'
       },
       {
-        route: '/device/api/v1/patient/:id',
+        route: '/device/api/v1/enterprise/:id',
         role: 'System_User',
         method: 'GET'
       },
       {
-        route: '/device/api/v1/patient/count',
+        route: '/device/api/v1/enterprise/count',
         role: 'System_User',
         method: 'POST'
       },
       {
-        route: '/device/api/v1/patient/update/:id',
+        route: '/device/api/v1/enterprise/update/:id',
         role: 'System_User',
         method: 'PUT'
       },
       {
-        route: '/device/api/v1/patient/partial-update/:id',
+        route: '/device/api/v1/enterprise/partial-update/:id',
         role: 'System_User',
         method: 'PUT'
       },
       {
-        route: '/device/api/v1/patient/updatebulk',
+        route: '/device/api/v1/enterprise/updatebulk',
         role: 'System_User',
         method: 'PUT'
       },
       {
-        route: '/device/api/v1/patient/softdelete/:id',
+        route: '/device/api/v1/enterprise/softdelete/:id',
         role: 'System_User',
         method: 'PUT'
       },
       {
-        route: '/device/api/v1/patient/softdeletemany',
+        route: '/device/api/v1/enterprise/softdeletemany',
         role: 'System_User',
         method: 'PUT'
       },
       {
-        route: '/device/api/v1/patient/delete/:id',
+        route: '/device/api/v1/enterprise/delete/:id',
         role: 'System_User',
         method: 'DELETE'
       },
       {
-        route: '/device/api/v1/patient/deletemany',
+        route: '/device/api/v1/enterprise/deletemany',
+        role: 'System_User',
+        method: 'POST'
+      },
+      {
+        route: '/device/api/v1/departments/create',
+        role: 'System_User',
+        method: 'POST'
+      },
+      {
+        route: '/device/api/v1/departments/addbulk',
+        role: 'System_User',
+        method: 'POST'
+      },
+      {
+        route: '/device/api/v1/departments/list',
+        role: 'System_User',
+        method: 'POST'
+      },
+      {
+        route: '/device/api/v1/departments/:id',
+        role: 'System_User',
+        method: 'GET'
+      },
+      {
+        route: '/device/api/v1/departments/count',
+        role: 'System_User',
+        method: 'POST'
+      },
+      {
+        route: '/device/api/v1/departments/update/:id',
+        role: 'System_User',
+        method: 'PUT'
+      },
+      {
+        route: '/device/api/v1/departments/partial-update/:id',
+        role: 'System_User',
+        method: 'PUT'
+      },
+      {
+        route: '/device/api/v1/departments/updatebulk',
+        role: 'System_User',
+        method: 'PUT'
+      },
+      {
+        route: '/device/api/v1/departments/softdelete/:id',
+        role: 'System_User',
+        method: 'PUT'
+      },
+      {
+        route: '/device/api/v1/departments/softdeletemany',
+        role: 'System_User',
+        method: 'PUT'
+      },
+      {
+        route: '/device/api/v1/departments/delete/:id',
+        role: 'System_User',
+        method: 'DELETE'
+      },
+      {
+        route: '/device/api/v1/departments/deletemany',
         role: 'System_User',
         method: 'POST'
       },
@@ -1193,13 +1309,13 @@ async function seedRouteRole () {
       const routes = [...new Set(routeRoles.map(routeRole => routeRole.route.toLowerCase()))];
       const routeMethods = [...new Set(routeRoles.map(routeRole => routeRole.method))];
       const roles = [ 'User', 'Admin', 'System_User' ];
-      const insertedProjectRoute = await dbService.findMany(ProjectRoute, {
+      const insertedProjectRoute = await projectRouteDb.findMany({
         uri: { '$in': routes },
         method: { '$in': routeMethods },
         'isActive': true,
         'isDeleted': false
       });
-      const insertedRoles = await dbService.findMany(Role, {
+      const insertedRoles = await roleDb.findMany({
         code: { '$in': roles.map(role => role.toUpperCase()) },
         'isActive': true,
         'isDeleted': false
@@ -1222,7 +1338,7 @@ async function seedRouteRole () {
 
       await Promise.all(
         createRouteRoles.map(async routeRole => {
-          routeRoleObj = await dbService.findOne(RouteRole, {
+          routeRoleObj = await routeRoleDb.findOne({
             routeId: routeRole.routeId,
             roleId: routeRole.roleId,
           });
@@ -1235,7 +1351,7 @@ async function seedRouteRole () {
         })
       );
       if (routeRolesToBeInserted.length) {
-        const result = await dbService.create(RouteRole, routeRolesToBeInserted);
+        const result = await routeRoleDb.create(routeRolesToBeInserted);
         if (result) console.log('RouteRole seeded 🍺');
         else console.log('RouteRole seeder failed!');
       } else {
@@ -1247,18 +1363,17 @@ async function seedRouteRole () {
   }
 }
 
-/* seeds roles for users */
-async function seedUserRole (){
+async function seedUserRole () {
   try {
     const userRoles = [{
-      'username':'Rosamond.Pouros',
-      'password':'RJ97ajkVGpeCK5y'
+      'username':'Thaddeus_OKon53',
+      'password':'xGbqcHIU4zoT2Z1'
     },{
-      'username':'Jena43',
-      'password':'jEeAhxyykYjDD6p'
+      'username':'Shaina_Hane41',
+      'password':'vWVjAf3ai7T7WyK'
     }];
-    const defaultRoles = await dbService.findMany(Role);
-    const insertedUsers = await dbService.findMany(User, { username: { '$in': userRoles.map(userRole => userRole.username) } });
+    const defaultRoles = await roleDb.findMany();
+    const insertedUsers = await userDb.findMany( { username: { '$in': userRoles.map(userRole => userRole.username) } });
     let user = {};
     const userRolesArr = [];
     userRoles.map(userRole => {
@@ -1287,7 +1402,7 @@ async function seedUserRole (){
     if (userRolesArr.length) {
       await Promise.all(
         userRolesArr.map(async userRole => {
-          userRoleObj = await dbService.findOne(UserRole, {
+          userRoleObj = await userRoleDb.findOne({
             userId: userRole.userId,
             roleId: userRole.roleId
           });
@@ -1300,7 +1415,7 @@ async function seedUserRole (){
         })
       );
       if (userRolesToBeInserted.length) {
-        const result = await dbService.create(UserRole, userRolesToBeInserted);
+        const result = await userRoleDb.create(userRolesToBeInserted);
         if (result) console.log('UserRole seeded 🍺');
         else console.log('UserRole seeder failed');
       } else {
@@ -1312,12 +1427,11 @@ async function seedUserRole (){
   }
 }
 
-async function seedData (allRegisterRoutes){
+const seedData = async (allRegisterRoutes) => {
   await seedUser();
   await seedRole();
   await seedProjectRoutes(allRegisterRoutes);
   await seedRouteRole();
   await seedUserRole();
-
 };
 module.exports = seedData;

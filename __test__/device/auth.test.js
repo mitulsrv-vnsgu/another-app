@@ -20,26 +20,22 @@ const client = new MongoClient(uri, {
 
 let insertedUser = {};
 
-/**
- * @description : model dependencies resolver
- */
 beforeAll(async function (){
   try {
     await client.connect();
     const dbInstance = client.db('Dhiwise_test');
-
     const user = dbInstance.collection('users');
     insertedUser = await user.insertOne({
-      username: 'Eldon.Boyer10',
-      password: 'ie0E3Oi0j4CJIuD',
-      email: 'Easter_Mante53@hotmail.com',
-      name: 'Sergio Kohler',
-      userType: 209,
-      mobileNo: '(465) 009-9485',
+      username: 'Tyrell_Rodriguez',
+      password: '4iwtEJsXOzMns4e',
+      email: 'Bryon_Harvey88@gmail.com',
+      name: 'Shaun Schroeder',
+      userType: 623,
+      mobileNo: '(350) 935-7373',
       resetPasswordLink: {},
-      loginRetryLimit: 529,
-      loginReactiveTime: '2023-03-10T10:04:23.144Z',
-      id: '63b7b3ae1885d01a22f881b1'
+      loginRetryLimit: 334,
+      loginReactiveTime: '2023-11-04T17:23:15.519Z',
+      id: '63b804777cd4cb13ed59c176'
     });
   }
   catch (error) {
@@ -57,15 +53,16 @@ describe('POST /register -> if email and username is given', () => {
     let registeredUser = await request(app)
       .post('/device/auth/register')
       .send({
-        'username':'Jonathan.Weimann8',
-        'password':'mlx7v1E052xkWUm',
-        'email':'Johnnie_Cormier51@gmail.com',
-        'name':'Grace Murazik DVM',
+        'username':'Kennith_Torp6',
+        'password':'dIgUNPJZGxGINIa',
+        'email':'Gaylord18@gmail.com',
+        'name':'Tanya Gaylord',
         'userType':authConstant.USER_TYPES.User,
-        'mobileNo':'(999) 009-4325',
+        'mobileNo':'(581) 121-1349',
         'addedBy':insertedUser.insertedId,
         'updatedBy':insertedUser.insertedId
       });
+    
     expect(registeredUser.statusCode).toBe(200);
     expect(registeredUser.body.status).toBe('SUCCESS');
     expect(registeredUser.body.data).toMatchObject({ id: expect.any(String) });
@@ -78,10 +75,11 @@ describe('POST /login -> if username and password is correct', () => {
       .post('/device/auth/login')
       .send(
         {
-          username: 'Jonathan.Weimann8',
-          password: 'mlx7v1E052xkWUm'
+          username: 'Kennith_Torp6',
+          password: 'dIgUNPJZGxGINIa'
         }
       );
+      
     expect(user.statusCode).toBe(200);
     expect(user.body.status).toBe('SUCCESS');
     expect(user.body.data).toMatchObject({
@@ -98,7 +96,7 @@ describe('POST /login -> if username is incorrect', () => {
       .send(
         {
           username: 'wrong.username',
-          password: 'mlx7v1E052xkWUm'
+          password: 'dIgUNPJZGxGINIa'
         }
       );
 
@@ -113,7 +111,7 @@ describe('POST /login -> if password is incorrect', () => {
       .post('/device/auth/login')
       .send(
         {
-          username: 'Jonathan.Weimann8',
+          username: 'Kennith_Torp6',
           password: 'wrong@password'
         }
       );
@@ -140,8 +138,8 @@ describe('POST /forgot-password -> if email has not passed from request body', (
       .post('/device/auth/forgot-password')
       .send({ email: '' });
 
-    expect(user.statusCode).toBe(400);
-    expect(user.body.status).toBe('BAD_REQUEST');
+    expect(user.statusCode).toBe(422);
+    expect(user.body.status).toBe('VALIDATION_ERROR');
   });
 });
 
@@ -151,7 +149,7 @@ describe('POST /forgot-password -> if email passed from request body is not avai
       .post('/device/auth/forgot-password')
       .send({ 'email': 'unavailable.email@hotmail.com', });
 
-    expect(user.statusCode).toBe(404);
+    expect(user.statusCode).toBe(200);
     expect(user.body.status).toBe('RECORD_NOT_FOUND');
   });
 });
@@ -160,7 +158,7 @@ describe('POST /forgot-password -> if email passed from request body is valid an
   test('should return success message', async () => {
     let user = await request(app)
       .post('/device/auth/forgot-password')
-      .send({ 'email':'Johnnie_Cormier51@gmail.com', });
+      .send({ 'email':'Gaylord18@gmail.com', });
 
     expect(user.statusCode).toBe(200);
     expect(user.body.status).toBe('SUCCESS');
@@ -173,8 +171,8 @@ describe('POST /validate-otp -> OTP is sent in request body and OTP is correct',
       .post('/device/auth/login')
       .send(
         {
-          username: 'Jonathan.Weimann8',
-          password: 'mlx7v1E052xkWUm'
+          username: 'Kennith_Torp6',
+          password: 'dIgUNPJZGxGINIa'
         }).then(login => () => {
         return request(app)
           .get(`/device/api/v1/user/${login.body.data.id}`)
@@ -198,10 +196,9 @@ describe('POST /validate-otp -> if OTP is incorrect or OTP has expired', () => {
     let user = await request(app)
       .post('/device/auth/validate-otp')
       .send({ 'otp': '12334' });
-    
-    expect(user.statusCode).toBe(200);
-    expect(user.body.status).toBe('FAILURE');
-    
+    expect(user.headers['content-type']).toEqual('application/json; charset=utf-8');
+    expect(user.body.status).toBe('BAD_REQUEST');
+    expect(user.statusCode).toBe(400);
   });
 });
 
@@ -222,8 +219,8 @@ describe('PUT /reset-password -> code is sent in request body and code is correc
       .post('/device/auth/login')
       .send(
         {
-          username: 'Jonathan.Weimann8',
-          password: 'mlx7v1E052xkWUm'
+          username: 'Kennith_Torp6',
+          password: 'dIgUNPJZGxGINIa'
         }).then(login => () => {
         return request(app)
           .get(`/device/api/v1/user/${login.body.data.id}`)
@@ -237,6 +234,7 @@ describe('PUT /reset-password -> code is sent in request body and code is correc
                 'code': foundUser.body.data.resetPasswordLink.code,
                 'newPassword':'newPassword'
               }).then(user => {
+                  
                 expect(user.statusCode).toBe(200);
                 expect(user.body.status).toBe('SUCCESS');
               });
@@ -250,7 +248,7 @@ describe('PUT /reset-password -> if request body is empty or code/newPassword is
     let user = await request(app)
       .put('/device/auth/reset-password')
       .send({});
-    
+  
     expect(user.statusCode).toBe(400);
     expect(user.body.status).toBe('BAD_REQUEST');
   });
@@ -265,9 +263,8 @@ describe('PUT /reset-password -> if code is invalid', () => {
         'newPassword': 'testPassword'
       });
 
-    expect(user.statusCode).toBe(200);
-    expect(user.body.status).toBe('FAILURE');
-
+    expect(user.statusCode).toBe(400);
+    expect(user.body.status).toBe('BAD_REQUEST');
   });
 });
 

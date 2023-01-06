@@ -1,13 +1,8 @@
-/**
- * userRoutes.js
- * @description :: CRUD API routes for user
- */
-
 const express = require('express');
 const router = express.Router();
-const userController = require('../../../controller/device/v1/userController');
+const userController = require('../../../controller/device/v1/user');
+const { auth, } = require('../../../middleware');
 const { PLATFORM } =  require('../../../constants/authConstant'); 
-const auth = require('../../../middleware/auth');
 
 router.route('/device/api/v1/user/me').get(auth(PLATFORM.DEVICE),userController.getLoggedInUserInfo);
 router.route('/device/api/v1/user/change-password').put(auth(PLATFORM.DEVICE),userController.changePassword);

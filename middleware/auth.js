@@ -3,21 +3,13 @@
  * @description :: middleware that checks authentication and authorization of user
  */
 
-const passport = require('passport');
 const {
   LOGIN_ACCESS,PLATFORM 
 } = require('../constants/authConstant');
-const userTokens = require('../model/userTokens');
-const dbService = require('../utils/dbService');
+const responseHandler = require('../utils/response/responseHandler');
+const { unAuthorized } = require('../utils/response');
 
-/**
- * @description : returns callback that verifies required rights and access
- * @param {Object} req : request of route.
- * @param {callback} resolve : resolve callback for succeeding method.
- * @param {callback} reject : reject callback for error.
- * @param {int} platform : platform
- */
-const verifyCallback = (req, resolve, reject, platform) => async (error, user, info) => {
+const verifyCallback = (userTokensDb, req, resolve, reject, platform) => async (error, user, info) => {
   if (error || info || !user) {
     return reject('Unauthorized User');
   }
@@ -25,7 +17,7 @@ const verifyCallback = (req, resolve, reject, platform) => async (error, user, i
   if (!user.isActive) {
     return reject('User is deactivated');
   }
-  let userToken = await dbService.findOne(userTokens,{
+  let userToken = await userTokensDb.findOne({
     token:(req.headers.authorization).replace('Bearer ',''),
     userId:user.id
   });
@@ -44,18 +36,13 @@ const verifyCallback = (req, resolve, reject, platform) => async (error, user, i
   resolve();
 };
 
-/**
- * @description : authentication middleware for request.
- * @param {Object} req : request of route.
- * @param {Object} res : response of route.
- * @param {callback} next : executes the next middleware succeeding the current middleware.
- * @param {int} platform : platform
- */
-const auth = (platform) => async (req, res, next) => {
-
+const auth = ({
+  passport, userTokensDb
+}) => (platform) => async (req, res, next) => {
+    
   if (platform == PLATFORM.DEVICE){
     return new Promise((resolve, reject) => {
-      passport.authenticate('device-rule', { session: false }, verifyCallback(req, resolve, reject, platform))(
+      passport.authenticate('device-rule', { session: false }, verifyCallback(userTokensDb,req, resolve, reject, platform))(
         req,
         res,
         next
@@ -63,12 +50,13 @@ const auth = (platform) => async (req, res, next) => {
     })
       .then(() => next())
       .catch((error) => {
-        return res.unAuthorized({ message:error.message });
+        responseHandler(res,unAuthorized());
       });
   }
+    
   else if (platform == PLATFORM.ADMIN){
     return new Promise((resolve, reject) => {
-      passport.authenticate('admin-rule', { session: false }, verifyCallback(req, resolve, reject, platform))(
+      passport.authenticate('admin-rule', { session: false }, verifyCallback(userTokensDb,req, resolve, reject, platform))(
         req,
         res,
         next
@@ -76,9 +64,10 @@ const auth = (platform) => async (req, res, next) => {
     })
       .then(() => next())
       .catch((error) => {
-        return res.unAuthorized({ message:error.message });
+        responseHandler(res,unAuthorized());
       });
   }
+   
 };
 
 module.exports = auth;
