@@ -1,8 +1,3 @@
-/** 
- * smsService.js
- * @description :: exports function used in sending sms using gupshup provider
- */
-
 const axios = require('axios');
 const sendSMS = async (obj) => {
   console.log('SMS---', obj);
@@ -22,16 +17,16 @@ const sendSMS = async (obj) => {
     mobiles = tmpNo[1] ? tmpNo[1] : tmpNo[0];
   }
   const message = obj.message;
-  const userId = '';
-  const password = escape('You Password');
+  const userid = '';
+  const password = escape('yourPassword');
   const v = 1.1;
   const method = 'sendMessage';
-  const messageType = 'text';
+  const msg_type = 'text';
   const send_to = mobiles;
   return await new Promise((resolve, reject) => {
     axios(
       {
-        url: `http://enterprise.smsgupshup.com/GatewayAPI/rest?msg=${message}&v=${v}&userid=${userId}&password=${password}&method=${method}&send_to=${send_to}&msg_type=${messageType}`,
+        url: `http://enterprise.smsgupshup.com/GatewayAPI/rest?msg=${message}&v=${v}&userid=${userid}&password=${password}&method=${method}&send_to=${send_to}&msg_type=${msg_type}`,
         method: 'GET',
       })
       .then(function (response) {

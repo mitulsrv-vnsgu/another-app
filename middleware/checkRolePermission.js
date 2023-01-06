@@ -1,41 +1,36 @@
 /**
  * checkRolePermission.js
- * @description :: middleware that checks access of APIs for logged-in user
+ * @description :: middleware that checks access of APIs for logged-in users
  */
+const response = require('../utils/response');
+const responseHandler = require('../utils/response/responseHandler');
+const db = require('mongoose');
 
-const mongoose = require('mongoose');
-const UserRole = require('../model/userRole');
-const RouteRole = require('../model/routeRole');
-const ProjectRoute = require('../model/projectRoute');
-const { replaceAll } = require('../utils/common');
-
-/**
- * @description : middleware for authentication with role and permission.
- * @param {Object} req : request of route.
- * @param {Object} res : response of route.
- * @param {callback} next : executes the next middleware succeeding the current middleware.
- */
-const checkRolePermission = async (req, res, next) => {
-  if (!req.user || !req.user.id) {
-    return res.badRequest();
-  }
+const checkRolePermission = ({
+  userRoleDb, routeRoleDb,projectRouteDb
+}) =>async (req, res, next) => {
+  if (!req.user) {
+    return responseHandler(res, response.badRequest());
+  } 
   const loggedInUserId = req.user.id;
-  let rolesOfUser = await UserRole.find({
+  let rolesOfUser = await userRoleDb.findMany({
     userId: loggedInUserId,
     isActive: true,
-    isDeleted: false,
+    isDeleted: false 
   }, {
     roleId: 1,
     _id: 0,
   });
+
   if (rolesOfUser && rolesOfUser.length) {
-    rolesOfUser = rolesOfUser.map((role) => mongoose.Types.ObjectId(role.roleId));
-    const route = await ProjectRoute.findOne({
+    rolesOfUser = rolesOfUser.map((role) => db.Types.ObjectId(role.roleId));
+    const route = await projectRouteDb.findOne({
       route_name: replaceAll((req.route.path.toLowerCase()), '/', '_'),
       uri: req.route.path.toLowerCase(),
     });
-    if (route) {
-      const allowedRoute = await RouteRole.find({
+
+    if (route) { 
+      const allowedRoute = await routeRoleDb.findMany({
         routeId: route._id,
         roleId: { $in: rolesOfUser },
         isActive: true,
@@ -44,15 +39,19 @@ const checkRolePermission = async (req, res, next) => {
       if (allowedRoute && allowedRoute.length) {
         next();
       } else {
-        return res.unAuthorized();
+        return responseHandler(res, response.unAuthorized());
       }
+
     } else {
-      return res.unAuthorized();
+      return responseHandler(res, response.unAuthorized());
     }
   } else {
-    // return res.unAuthorized();
     next();
-  }
+  } 
+};
+
+function replaceAll (string, search, replace) {
+  return string.split(search).join(replace);
 };
 
 module.exports = checkRolePermission;

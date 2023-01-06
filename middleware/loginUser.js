@@ -5,16 +5,10 @@
 
 const jwt = require('jsonwebtoken');
 const { PLATFORM } = require('../constants/authConstant');
+const response = require('../utils/response');
 const deviceSecret = require('../constants/authConstant').JWT.DEVICE_SECRET;
 const adminSecret = require('../constants/authConstant').JWT.ADMIN_SECRET;
-
-/**
- * @description : middleware for authenticate user with JWT token
- * @param {Object} req : request of route.
- * @param {Object} res : response of route.
- * @param {callback} next : executes the next middleware succeeding the current middleware.
- */
-const authenticateJWT = (platform) => async (req, res, next) => {
+const authenticateJWT = (platform) =>  (req, res, next) => {
   const authHeader = req.headers.authorization;
   if (authHeader) {
     const token = authHeader.split(' ')[1];
@@ -27,13 +21,13 @@ const authenticateJWT = (platform) => async (req, res, next) => {
     }
     jwt.verify(token,secret, (error, user) => {
       if (error) {
-        return res.unAuthorized();
+        response.unAuthorized();
       }
       req.user = user;
       next();
     });
   } else {
-    return res.unAuthorized();
+    response.unAuthorized();
   }
 };
 module.exports = authenticateJWT;

@@ -21,7 +21,7 @@ module.exports = {
 
   badRequest: (data = {}) => ({
     status: responseStatus.badRequest,
-    message: data.message || 'Request parameters are invalid or missing.',
+    message: data.message || 'The request cannot be fulfilled due to bad syntax.',
     data: data.data && Object.keys(data.data).length ? data.data : null,
   }),
 
