@@ -1,7 +1,7 @@
 {
   "info": {
     "name": "nodejsapplication",
-    "_postman_id": "e8430612-a0a3-4b3f-b932-2c9d47574ce7",
+    "_postman_id": "a6723f2a-0f31-44fa-8892-f99560bb37b4",
     "schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
   },
   "item": [
@@ -9,6 +9,600 @@
       "name": "admin",
       "description": "admin APIs",
       "item": [
+        {
+          "name": "patient",
+          "description": "patient Model APIs",
+          "item": [
+            {
+              "name": "getpatient",
+              "request": {
+                "url": "{{url}}/admin/patient/:id",
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json",
+                    "description": ""
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{}"
+                },
+                "description": "",
+                "auth": {
+                  "type": "bearer",
+                  "bearer": {
+                    "token": "{{token}}"
+                  }
+                }
+              },
+              "response": [
+                {
+                  "name": "getpatient_response",
+                  "originalRequest": {
+                    "method": "GET",
+                    "header": [],
+                    "url": {
+                      "raw": "{{url}}/admin/patient/:id"
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "json",
+                  "body": "{\n  \"status\": \"SUCCESS\",\n  \"message\": \"Your request is successfully executed\",\n  \"data\": {\n    \"name\": \"Allison Bergstrom\",\n    \"code\": \"calculating\",\n    \"email\": \"Brenda.Jacobi@hotmail.com\",\n    \"isDelete\": true,\n    \"id\": \"63b7b3ae1885d01a22f88134\",\n    \"isDeleted\": false,\n    \"isActive\": true,\n    \"createdAt\": \"2023-08-13T15:32:48.129Z\",\n    \"updatedAt\": \"2024-01-05T12:52:55.020Z\"\n  }\n}",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": []
+                }
+              ],
+              "_postman_isSubFolder": true
+            },
+            {
+              "name": "addpatient",
+              "request": {
+                "url": "{{url}}/admin/patient/create",
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json",
+                    "description": ""
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"name\": \"Allison Bergstrom\",\n  \"code\": \"calculating\",\n  \"email\": \"Brenda.Jacobi@hotmail.com\",\n  \"isDelete\": true\n}"
+                },
+                "description": "",
+                "auth": {
+                  "type": "bearer",
+                  "bearer": {
+                    "token": "{{token}}"
+                  }
+                }
+              },
+              "response": [
+                {
+                  "name": "addpatient_response",
+                  "originalRequest": {
+                    "method": "POST",
+                    "header": [],
+                    "url": {
+                      "raw": "{{url}}/admin/patient/create"
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "json",
+                  "body": "{\n  \"status\": \"SUCCESS\",\n  \"message\": \"Your request is successfully executed\",\n  \"data\": {\n    \"name\": \"Allison Bergstrom\",\n    \"code\": \"calculating\",\n    \"email\": \"Brenda.Jacobi@hotmail.com\",\n    \"isDelete\": true,\n    \"id\": \"63b7b3ae1885d01a22f88132\",\n    \"isDeleted\": false,\n    \"isActive\": true,\n    \"createdAt\": \"2023-08-13T15:32:48.129Z\",\n    \"updatedAt\": \"2024-01-05T12:52:55.020Z\"\n  }\n}",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": []
+                }
+              ],
+              "_postman_isSubFolder": true
+            },
+            {
+              "name": "findAllpatient",
+              "request": {
+                "url": "{{url}}/admin/patient/list",
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json",
+                    "description": ""
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"query\": {},\n  \"options\": {\n    \"select\": [\n      \"field 1\",\n      \"field 2\"\n    ],\n    \"collation\": \"\",\n    \"sort\": \"\",\n    \"populate\": \"\",\n    \"projection\": \"\",\n    \"lean\": false,\n    \"leanWithId\": true,\n    \"offset\": 0,\n    \"page\": 1,\n    \"limit\": 10,\n    \"pagination\": true,\n    \"useEstimatedCount\": false,\n    \"useCustomCountFn\": false,\n    \"forceCountFn\": false,\n    \"read\": {},\n    \"options\": {}\n  },\n  \"isCountOnly\": false\n}"
+                },
+                "description": "",
+                "auth": {
+                  "type": "bearer",
+                  "bearer": {
+                    "token": "{{token}}"
+                  }
+                }
+              },
+              "response": [
+                {
+                  "name": "findAllpatient_response",
+                  "originalRequest": {
+                    "method": "POST",
+                    "header": [],
+                    "url": {
+                      "raw": "{{url}}/admin/patient/list"
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "json",
+                  "body": "{\n  \"status\": \"SUCCESS\",\n  \"message\": \"Your request is successfully executed\",\n  \"data\": {\n    \"data\": [\n      {\n        \"name\": \"Allison Bergstrom\",\n        \"code\": \"calculating\",\n        \"email\": \"Brenda.Jacobi@hotmail.com\",\n        \"isDelete\": true,\n        \"id\": \"63b7b3ae1885d01a22f88133\",\n        \"isDeleted\": false,\n        \"isActive\": true,\n        \"createdAt\": \"2023-08-13T15:32:48.129Z\",\n        \"updatedAt\": \"2024-01-05T12:52:55.020Z\"\n      }\n    ],\n    \"paginator\": {\n      \"itemCount\": 1,\n      \"offset\": 0,\n      \"perPage\": 10,\n      \"pageCount\": 1,\n      \"currentPage\": 1,\n      \"slNo\": 1,\n      \"hasPrevPage\": false,\n      \"hasNextPage\": false,\n      \"prev\": null,\n      \"next\": null\n    }\n  }\n}",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": []
+                }
+              ],
+              "_postman_isSubFolder": true
+            },
+            {
+              "name": "getpatientCount",
+              "request": {
+                "url": "{{url}}/admin/patient/count",
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json",
+                    "description": ""
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"where\": {\n    \"isActive\": true\n  }\n}"
+                },
+                "description": "",
+                "auth": {
+                  "type": "bearer",
+                  "bearer": {
+                    "token": "{{token}}"
+                  }
+                }
+              },
+              "response": [
+                {
+                  "name": "getpatientCount_response",
+                  "originalRequest": {
+                    "method": "POST",
+                    "header": [],
+                    "url": {
+                      "raw": "{{url}}/admin/patient/count"
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "json",
+                  "body": "{\n  \"status\": \"SUCCESS\",\n  \"message\": \"Your request is successfully executed\",\n  \"data\": {\n    \"count\": 10\n  }\n}",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": []
+                }
+              ],
+              "_postman_isSubFolder": true
+            },
+            {
+              "name": "insertBulkpatient",
+              "request": {
+                "url": "{{url}}/admin/patient/addBulk",
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json",
+                    "description": ""
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"data\": [\n    {\n      \"name\": \"Allison Bergstrom\",\n      \"code\": \"calculating\",\n      \"email\": \"Brenda.Jacobi@hotmail.com\",\n      \"isDelete\": true\n    }\n  ]\n}"
+                },
+                "description": "",
+                "auth": {
+                  "type": "bearer",
+                  "bearer": {
+                    "token": "{{token}}"
+                  }
+                }
+              },
+              "response": [
+                {
+                  "name": "insertBulkpatient_response",
+                  "originalRequest": {
+                    "method": "POST",
+                    "header": [],
+                    "url": {
+                      "raw": "{{url}}/admin/patient/addBulk"
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "json",
+                  "body": "{\n  \"status\": \"SUCCESS\",\n  \"message\": \"Your request is successfully executed\",\n  \"data\": {\n    \"count\": 2\n  }\n}",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": []
+                }
+              ],
+              "_postman_isSubFolder": true
+            },
+            {
+              "name": "deleteManypatient",
+              "request": {
+                "url": "{{url}}/admin/patient/deleteMany",
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json",
+                    "description": ""
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"isWarning\": true,\n  \"ids\": [\n    \":id\"\n  ]\n}"
+                },
+                "description": "",
+                "auth": {
+                  "type": "bearer",
+                  "bearer": {
+                    "token": "{{token}}"
+                  }
+                }
+              },
+              "response": [
+                {
+                  "name": "deleteManypatient_response",
+                  "originalRequest": {
+                    "method": "POST",
+                    "header": [],
+                    "url": {
+                      "raw": "{{url}}/admin/patient/deleteMany"
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "json",
+                  "body": "{\n  \"status\": \"SUCCESS\",\n  \"message\": \"Your request is successfully executed\",\n  \"data\": {\n    \"count\": 2\n  }\n}",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": []
+                }
+              ],
+              "_postman_isSubFolder": true
+            },
+            {
+              "name": "updatepatient",
+              "request": {
+                "url": "{{url}}/admin/patient/update/:id",
+                "method": "PUT",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json",
+                    "description": ""
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"name\": \"Allison Bergstrom\",\n  \"code\": \"calculating\",\n  \"email\": \"Brenda.Jacobi@hotmail.com\",\n  \"isDelete\": true\n}"
+                },
+                "description": "",
+                "auth": {
+                  "type": "bearer",
+                  "bearer": {
+                    "token": "{{token}}"
+                  }
+                }
+              },
+              "response": [
+                {
+                  "name": "updatepatient_response",
+                  "originalRequest": {
+                    "method": "PUT",
+                    "header": [],
+                    "url": {
+                      "raw": "{{url}}/admin/patient/update/:id"
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "json",
+                  "body": "{\n  \"status\": \"SUCCESS\",\n  \"message\": \"Your request is successfully executed\",\n  \"data\": {\n    \"name\": \"Allison Bergstrom\",\n    \"code\": \"calculating\",\n    \"email\": \"Brenda.Jacobi@hotmail.com\",\n    \"isDelete\": true,\n    \"id\": \"63b7b3ae1885d01a22f88135\",\n    \"isDeleted\": false,\n    \"isActive\": true,\n    \"createdAt\": \"2023-08-13T15:32:48.129Z\",\n    \"updatedAt\": \"2024-01-05T12:52:55.020Z\"\n  }\n}",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": []
+                }
+              ],
+              "_postman_isSubFolder": true
+            },
+            {
+              "name": "partialupdatepatient",
+              "request": {
+                "url": "{{url}}/admin/patient/partial-update/:id",
+                "method": "PUT",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json",
+                    "description": ""
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"isActive\": true,\n  \"isDeleted\": false\n}"
+                },
+                "description": "",
+                "auth": {
+                  "type": "bearer",
+                  "bearer": {
+                    "token": "{{token}}"
+                  }
+                }
+              },
+              "response": [
+                {
+                  "name": "partialupdatepatient_response",
+                  "originalRequest": {
+                    "method": "PUT",
+                    "header": [],
+                    "url": {
+                      "raw": "{{url}}/admin/patient/partial-update/:id"
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "json",
+                  "body": "{\n  \"status\": \"SUCCESS\",\n  \"message\": \"Your request is successfully executed\",\n  \"data\": {\n    \"name\": \"Allison Bergstrom\",\n    \"code\": \"calculating\",\n    \"email\": \"Brenda.Jacobi@hotmail.com\",\n    \"isDelete\": true,\n    \"id\": \"63b7b3ae1885d01a22f88136\",\n    \"isDeleted\": false,\n    \"isActive\": true,\n    \"createdAt\": \"2023-08-13T15:32:48.129Z\",\n    \"updatedAt\": \"2024-01-05T12:52:55.020Z\"\n  }\n}",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": []
+                }
+              ],
+              "_postman_isSubFolder": true
+            },
+            {
+              "name": "softDeletepatient",
+              "request": {
+                "url": "{{url}}/admin/patient/softDelete/:id",
+                "method": "PUT",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json",
+                    "description": ""
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{}"
+                },
+                "description": "",
+                "auth": {
+                  "type": "bearer",
+                  "bearer": {
+                    "token": "{{token}}"
+                  }
+                }
+              },
+              "response": [
+                {
+                  "name": "softDeletepatient_response",
+                  "originalRequest": {
+                    "method": "PUT",
+                    "header": [],
+                    "url": {
+                      "raw": "{{url}}/admin/patient/softDelete/:id"
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "json",
+                  "body": "{\n  \"status\": \"SUCCESS\",\n  \"message\": \"Your request is successfully executed\",\n  \"data\": {\n    \"count\": 2\n  }\n}",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": []
+                }
+              ],
+              "_postman_isSubFolder": true
+            },
+            {
+              "name": "softDeleteManypatient",
+              "request": {
+                "url": "{{url}}/admin/patient/softDeleteMany",
+                "method": "PUT",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json",
+                    "description": ""
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"ids\": [\n    \":id\"\n  ]\n}"
+                },
+                "description": "",
+                "auth": {
+                  "type": "bearer",
+                  "bearer": {
+                    "token": "{{token}}"
+                  }
+                }
+              },
+              "response": [
+                {
+                  "name": "softDeleteManypatient_response",
+                  "originalRequest": {
+                    "method": "PUT",
+                    "header": [],
+                    "url": {
+                      "raw": "{{url}}/admin/patient/softDeleteMany"
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "json",
+                  "body": "{\n  \"status\": \"SUCCESS\",\n  \"message\": \"Your request is successfully executed\",\n  \"data\": {\n    \"count\": 2\n  }\n}",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": []
+                }
+              ],
+              "_postman_isSubFolder": true
+            },
+            {
+              "name": "updateBulkpatient",
+              "request": {
+                "url": "{{url}}/admin/patient/updateBulk",
+                "method": "PUT",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json",
+                    "description": ""
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"filter\": {\n    \"isActive\": true\n  },\n  \"data\": {\n    \"isDeleted\": false\n  }\n}"
+                },
+                "description": "",
+                "auth": {
+                  "type": "bearer",
+                  "bearer": {
+                    "token": "{{token}}"
+                  }
+                }
+              },
+              "response": [
+                {
+                  "name": "updateBulkpatient_response",
+                  "originalRequest": {
+                    "method": "PUT",
+                    "header": [],
+                    "url": {
+                      "raw": "{{url}}/admin/patient/updateBulk"
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "json",
+                  "body": "{\n  \"status\": \"SUCCESS\",\n  \"message\": \"Your request is successfully executed\",\n  \"data\": {\n    \"count\": 2\n  }\n}",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": []
+                }
+              ],
+              "_postman_isSubFolder": true
+            },
+            {
+              "name": "deletepatient",
+              "request": {
+                "url": "{{url}}/admin/patient/delete/:id",
+                "method": "DELETE",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json",
+                    "description": ""
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"isWarning\": true\n}"
+                },
+                "description": "",
+                "auth": {
+                  "type": "bearer",
+                  "bearer": {
+                    "token": "{{token}}"
+                  }
+                }
+              },
+              "response": [
+                {
+                  "name": "deletepatient_response",
+                  "originalRequest": {
+                    "method": "DELETE",
+                    "header": [],
+                    "url": {
+                      "raw": "{{url}}/admin/patient/delete/:id"
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "json",
+                  "body": "{\n  \"status\": \"SUCCESS\",\n  \"message\": \"Your request is successfully executed\",\n  \"data\": {\n    \"Count\": 1\n  }\n}",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": []
+                }
+              ],
+              "_postman_isSubFolder": true
+            }
+          ]
+        },
         {
           "name": "user",
           "description": "user Model APIs",
@@ -50,7 +644,7 @@
                   "status": "OK",
                   "code": 200,
                   "_postman_previewlanguage": "json",
-                  "body": "{\n  \"status\": \"SUCCESS\",\n  \"message\": \"Your request is successfully executed\",\n  \"data\": {\n    \"username\": \"Esmeralda26\",\n    \"email\": \"Aleen_Fisher@gmail.com\",\n    \"name\": \"Roxanne Purdy\",\n    \"mobileNo\": \"(339) 083-0142\",\n    \"userType\": 1,\n    \"id\": \"63b7b1fd0cb41919d67b493e\",\n    \"isDeleted\": false,\n    \"isActive\": true,\n    \"createdAt\": \"2023-09-28T17:21:15.673Z\",\n    \"updatedAt\": \"2023-02-17T23:16:57.861Z\"\n  }\n}",
+                  "body": "{\n  \"status\": \"SUCCESS\",\n  \"message\": \"Your request is successfully executed\",\n  \"data\": {\n    \"username\": \"Michael.OKeefe\",\n    \"email\": \"Hester.Bechtelar79@gmail.com\",\n    \"name\": \"Mario Gislason\",\n    \"mobileNo\": \"(213) 593-3485\",\n    \"userType\": 1,\n    \"id\": \"63b7b3ae1885d01a22f88143\",\n    \"isDeleted\": false,\n    \"isActive\": true,\n    \"createdAt\": \"2023-09-03T23:02:44.070Z\",\n    \"updatedAt\": \"2023-07-21T09:50:15.429Z\"\n  }\n}",
                   "header": [
                     {
                       "key": "Content-Type",
@@ -99,7 +693,7 @@
                   "status": "OK",
                   "code": 200,
                   "_postman_previewlanguage": "json",
-                  "body": "{\n  \"status\": \"SUCCESS\",\n  \"message\": \"Your request is successfully executed\",\n  \"data\": {\n    \"username\": \"Esmeralda26\",\n    \"email\": \"Aleen_Fisher@gmail.com\",\n    \"name\": \"Roxanne Purdy\",\n    \"mobileNo\": \"(339) 083-0142\",\n    \"userType\": 1,\n    \"id\": \"63b7b1fd0cb41919d67b4944\",\n    \"isDeleted\": false,\n    \"isActive\": true,\n    \"createdAt\": \"2023-09-28T17:21:15.673Z\",\n    \"updatedAt\": \"2023-02-17T23:16:57.861Z\"\n  }\n}",
+                  "body": "{\n  \"status\": \"SUCCESS\",\n  \"message\": \"Your request is successfully executed\",\n  \"data\": {\n    \"username\": \"Michael.OKeefe\",\n    \"email\": \"Hester.Bechtelar79@gmail.com\",\n    \"name\": \"Mario Gislason\",\n    \"mobileNo\": \"(213) 593-3485\",\n    \"userType\": 1,\n    \"id\": \"63b7b3ae1885d01a22f88149\",\n    \"isDeleted\": false,\n    \"isActive\": true,\n    \"createdAt\": \"2023-09-03T23:02:44.070Z\",\n    \"updatedAt\": \"2023-07-21T09:50:15.429Z\"\n  }\n}",
                   "header": [
                     {
                       "key": "Content-Type",
@@ -125,7 +719,7 @@
                 ],
                 "body": {
                   "mode": "raw",
-                  "raw": "{\n  \"username\": \"Esmeralda26\",\n  \"password\": \"iygtwNDPBLRUlkA\",\n  \"email\": \"Aleen_Fisher@gmail.com\",\n  \"name\": \"Roxanne Purdy\",\n  \"mobileNo\": \"(339) 083-0142\",\n  \"userType\": 1\n}"
+                  "raw": "{\n  \"username\": \"Michael.OKeefe\",\n  \"password\": \"hfuv5ztRidToDff\",\n  \"email\": \"Hester.Bechtelar79@gmail.com\",\n  \"name\": \"Mario Gislason\",\n  \"mobileNo\": \"(213) 593-3485\",\n  \"userType\": 1\n}"
                 },
                 "description": "",
                 "auth": {
@@ -148,7 +742,7 @@
                   "status": "OK",
                   "code": 200,
                   "_postman_previewlanguage": "json",
-                  "body": "{\n  \"status\": \"SUCCESS\",\n  \"message\": \"Your request is successfully executed\",\n  \"data\": {\n    \"username\": \"Esmeralda26\",\n    \"email\": \"Aleen_Fisher@gmail.com\",\n    \"name\": \"Roxanne Purdy\",\n    \"mobileNo\": \"(339) 083-0142\",\n    \"userType\": 1,\n    \"id\": \"63b7b1fd0cb41919d67b493c\",\n    \"isDeleted\": false,\n    \"isActive\": true,\n    \"createdAt\": \"2023-09-28T17:21:15.673Z\",\n    \"updatedAt\": \"2023-02-17T23:16:57.861Z\"\n  }\n}",
+                  "body": "{\n  \"status\": \"SUCCESS\",\n  \"message\": \"Your request is successfully executed\",\n  \"data\": {\n    \"username\": \"Michael.OKeefe\",\n    \"email\": \"Hester.Bechtelar79@gmail.com\",\n    \"name\": \"Mario Gislason\",\n    \"mobileNo\": \"(213) 593-3485\",\n    \"userType\": 1,\n    \"id\": \"63b7b3ae1885d01a22f88141\",\n    \"isDeleted\": false,\n    \"isActive\": true,\n    \"createdAt\": \"2023-09-03T23:02:44.070Z\",\n    \"updatedAt\": \"2023-07-21T09:50:15.429Z\"\n  }\n}",
                   "header": [
                     {
                       "key": "Content-Type",
@@ -197,7 +791,7 @@
                   "status": "OK",
                   "code": 200,
                   "_postman_previewlanguage": "json",
-                  "body": "{\n  \"status\": \"SUCCESS\",\n  \"message\": \"Your request is successfully executed\",\n  \"data\": {\n    \"data\": [\n      {\n        \"username\": \"Esmeralda26\",\n        \"email\": \"Aleen_Fisher@gmail.com\",\n        \"name\": \"Roxanne Purdy\",\n        \"mobileNo\": \"(339) 083-0142\",\n        \"userType\": 1,\n        \"id\": \"63b7b1fd0cb41919d67b493d\",\n        \"isDeleted\": false,\n        \"isActive\": true,\n        \"createdAt\": \"2023-09-28T17:21:15.673Z\",\n        \"updatedAt\": \"2023-02-17T23:16:57.861Z\"\n      }\n    ],\n    \"paginator\": {\n      \"itemCount\": 1,\n      \"offset\": 0,\n      \"perPage\": 10,\n      \"pageCount\": 1,\n      \"currentPage\": 1,\n      \"slNo\": 1,\n      \"hasPrevPage\": false,\n      \"hasNextPage\": false,\n      \"prev\": null,\n      \"next\": null\n    }\n  }\n}",
+                  "body": "{\n  \"status\": \"SUCCESS\",\n  \"message\": \"Your request is successfully executed\",\n  \"data\": {\n    \"data\": [\n      {\n        \"username\": \"Michael.OKeefe\",\n        \"email\": \"Hester.Bechtelar79@gmail.com\",\n        \"name\": \"Mario Gislason\",\n        \"mobileNo\": \"(213) 593-3485\",\n        \"userType\": 1,\n        \"id\": \"63b7b3ae1885d01a22f88142\",\n        \"isDeleted\": false,\n        \"isActive\": true,\n        \"createdAt\": \"2023-09-03T23:02:44.070Z\",\n        \"updatedAt\": \"2023-07-21T09:50:15.429Z\"\n      }\n    ],\n    \"paginator\": {\n      \"itemCount\": 1,\n      \"offset\": 0,\n      \"perPage\": 10,\n      \"pageCount\": 1,\n      \"currentPage\": 1,\n      \"slNo\": 1,\n      \"hasPrevPage\": false,\n      \"hasNextPage\": false,\n      \"prev\": null,\n      \"next\": null\n    }\n  }\n}",
                   "header": [
                     {
                       "key": "Content-Type",
@@ -272,7 +866,7 @@
                 ],
                 "body": {
                   "mode": "raw",
-                  "raw": "{\n  \"data\": [\n    {\n      \"username\": \"Esmeralda26\",\n      \"password\": \"iygtwNDPBLRUlkA\",\n      \"email\": \"Aleen_Fisher@gmail.com\",\n      \"name\": \"Roxanne Purdy\",\n      \"mobileNo\": \"(339) 083-0142\",\n      \"userType\": 1\n    }\n  ]\n}"
+                  "raw": "{\n  \"data\": [\n    {\n      \"username\": \"Michael.OKeefe\",\n      \"password\": \"hfuv5ztRidToDff\",\n      \"email\": \"Hester.Bechtelar79@gmail.com\",\n      \"name\": \"Mario Gislason\",\n      \"mobileNo\": \"(213) 593-3485\",\n      \"userType\": 1\n    }\n  ]\n}"
                 },
                 "description": "",
                 "auth": {
@@ -370,7 +964,7 @@
                 ],
                 "body": {
                   "mode": "raw",
-                  "raw": "{\n  \"username\": \"Esmeralda26\",\n  \"password\": \"iygtwNDPBLRUlkA\",\n  \"email\": \"Aleen_Fisher@gmail.com\",\n  \"name\": \"Roxanne Purdy\",\n  \"mobileNo\": \"(339) 083-0142\",\n  \"userType\": 1\n}"
+                  "raw": "{\n  \"username\": \"Michael.OKeefe\",\n  \"password\": \"hfuv5ztRidToDff\",\n  \"email\": \"Hester.Bechtelar79@gmail.com\",\n  \"name\": \"Mario Gislason\",\n  \"mobileNo\": \"(213) 593-3485\",\n  \"userType\": 1\n}"
                 },
                 "description": "",
                 "auth": {
@@ -393,7 +987,7 @@
                   "status": "OK",
                   "code": 200,
                   "_postman_previewlanguage": "json",
-                  "body": "{\n  \"status\": \"SUCCESS\",\n  \"message\": \"Your request is successfully executed\",\n  \"data\": {\n    \"username\": \"Esmeralda26\",\n    \"email\": \"Aleen_Fisher@gmail.com\",\n    \"name\": \"Roxanne Purdy\",\n    \"mobileNo\": \"(339) 083-0142\",\n    \"userType\": 1,\n    \"id\": \"63b7b1fd0cb41919d67b493f\",\n    \"isDeleted\": false,\n    \"isActive\": true,\n    \"createdAt\": \"2023-09-28T17:21:15.673Z\",\n    \"updatedAt\": \"2023-02-17T23:16:57.861Z\"\n  }\n}",
+                  "body": "{\n  \"status\": \"SUCCESS\",\n  \"message\": \"Your request is successfully executed\",\n  \"data\": {\n    \"username\": \"Michael.OKeefe\",\n    \"email\": \"Hester.Bechtelar79@gmail.com\",\n    \"name\": \"Mario Gislason\",\n    \"mobileNo\": \"(213) 593-3485\",\n    \"userType\": 1,\n    \"id\": \"63b7b3ae1885d01a22f88144\",\n    \"isDeleted\": false,\n    \"isActive\": true,\n    \"createdAt\": \"2023-09-03T23:02:44.070Z\",\n    \"updatedAt\": \"2023-07-21T09:50:15.429Z\"\n  }\n}",
                   "header": [
                     {
                       "key": "Content-Type",
@@ -442,7 +1036,7 @@
                   "status": "OK",
                   "code": 200,
                   "_postman_previewlanguage": "json",
-                  "body": "{\n  \"status\": \"SUCCESS\",\n  \"message\": \"Your request is successfully executed\",\n  \"data\": {\n    \"username\": \"Esmeralda26\",\n    \"email\": \"Aleen_Fisher@gmail.com\",\n    \"name\": \"Roxanne Purdy\",\n    \"mobileNo\": \"(339) 083-0142\",\n    \"userType\": 1,\n    \"id\": \"63b7b1fd0cb41919d67b4940\",\n    \"isDeleted\": false,\n    \"isActive\": true,\n    \"createdAt\": \"2023-09-28T17:21:15.673Z\",\n    \"updatedAt\": \"2023-02-17T23:16:57.861Z\"\n  }\n}",
+                  "body": "{\n  \"status\": \"SUCCESS\",\n  \"message\": \"Your request is successfully executed\",\n  \"data\": {\n    \"username\": \"Michael.OKeefe\",\n    \"email\": \"Hester.Bechtelar79@gmail.com\",\n    \"name\": \"Mario Gislason\",\n    \"mobileNo\": \"(213) 593-3485\",\n    \"userType\": 1,\n    \"id\": \"63b7b3ae1885d01a22f88145\",\n    \"isDeleted\": false,\n    \"isActive\": true,\n    \"createdAt\": \"2023-09-03T23:02:44.070Z\",\n    \"updatedAt\": \"2023-07-21T09:50:15.429Z\"\n  }\n}",
                   "header": [
                     {
                       "key": "Content-Type",
@@ -615,7 +1209,7 @@
                 ],
                 "body": {
                   "mode": "raw",
-                  "raw": "{\n  \"username\": \"Esmeralda26\",\n  \"password\": \"iygtwNDPBLRUlkA\",\n  \"email\": \"Aleen_Fisher@gmail.com\",\n  \"name\": \"Roxanne Purdy\",\n  \"mobileNo\": \"(339) 083-0142\",\n  \"userType\": 1\n}"
+                  "raw": "{\n  \"username\": \"Michael.OKeefe\",\n  \"password\": \"hfuv5ztRidToDff\",\n  \"email\": \"Hester.Bechtelar79@gmail.com\",\n  \"name\": \"Mario Gislason\",\n  \"mobileNo\": \"(213) 593-3485\",\n  \"userType\": 1\n}"
                 },
                 "description": "",
                 "auth": {
@@ -638,7 +1232,7 @@
                   "status": "OK",
                   "code": 200,
                   "_postman_previewlanguage": "json",
-                  "body": "{\n  \"status\": \"SUCCESS\",\n  \"message\": \"Your request is successfully executed\",\n  \"data\": {\n    \"username\": \"Esmeralda26\",\n    \"email\": \"Aleen_Fisher@gmail.com\",\n    \"name\": \"Roxanne Purdy\",\n    \"mobileNo\": \"(339) 083-0142\",\n    \"userType\": 1,\n    \"id\": \"63b7b1fd0cb41919d67b4943\",\n    \"isDeleted\": false,\n    \"isActive\": true,\n    \"createdAt\": \"2023-09-28T17:21:15.673Z\",\n    \"updatedAt\": \"2023-02-17T23:16:57.861Z\"\n  }\n}",
+                  "body": "{\n  \"status\": \"SUCCESS\",\n  \"message\": \"Your request is successfully executed\",\n  \"data\": {\n    \"username\": \"Michael.OKeefe\",\n    \"email\": \"Hester.Bechtelar79@gmail.com\",\n    \"name\": \"Mario Gislason\",\n    \"mobileNo\": \"(213) 593-3485\",\n    \"userType\": 1,\n    \"id\": \"63b7b3ae1885d01a22f88148\",\n    \"isDeleted\": false,\n    \"isActive\": true,\n    \"createdAt\": \"2023-09-03T23:02:44.070Z\",\n    \"updatedAt\": \"2023-07-21T09:50:15.429Z\"\n  }\n}",
                   "header": [
                     {
                       "key": "Content-Type",
@@ -737,7 +1331,7 @@
                   "status": "OK",
                   "code": 200,
                   "_postman_previewlanguage": "json",
-                  "body": "{\n  \"status\": \"SUCCESS\",\n  \"message\": \"Login Successful\",\n  \"data\": {\n    \"username\": \"Esmeralda26\",\n    \"email\": \"Aleen_Fisher@gmail.com\",\n    \"name\": \"Roxanne Purdy\",\n    \"mobileNo\": \"(339) 083-0142\",\n    \"id\": \"63b7b1fd0cb41919d67b4945\",\n    \"loginRetryLimit\": 0,\n    \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYxMWRlZDVjMGFjMjAxMmFjMDI4ODkxZiIsInVzZXJuYW1lIjoiYWRtaW4iLCJpYXQiOjE2MjkzNTEyNzAsImV4cCI6MTYyOTk1MTI3MH0.BJ-WKjNYeFDQ4pn8kfli5gwn6GLz_c3voFht20Agj9k\",\n    \"isDeleted\": false,\n    \"isActive\": true,\n    \"createdAt\": \"2023-03-17T05:21:32.888Z\",\n    \"updatedAt\": \"2023-11-29T00:30:12.042Z\"\n  }\n}",
+                  "body": "{\n  \"status\": \"SUCCESS\",\n  \"message\": \"Login Successful\",\n  \"data\": {\n    \"username\": \"Michael.OKeefe\",\n    \"email\": \"Hester.Bechtelar79@gmail.com\",\n    \"name\": \"Mario Gislason\",\n    \"mobileNo\": \"(213) 593-3485\",\n    \"id\": \"63b7b3ae1885d01a22f8814a\",\n    \"loginRetryLimit\": 0,\n    \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYxMWRlZDVjMGFjMjAxMmFjMDI4ODkxZiIsInVzZXJuYW1lIjoiYWRtaW4iLCJpYXQiOjE2MjkzNTEyNzAsImV4cCI6MTYyOTk1MTI3MH0.BJ-WKjNYeFDQ4pn8kfli5gwn6GLz_c3voFht20Agj9k\",\n    \"isDeleted\": false,\n    \"isActive\": true,\n    \"createdAt\": \"2023-02-09T12:55:21.350Z\",\n    \"updatedAt\": \"2023-01-12T04:06:25.780Z\"\n  }\n}",
                   "header": [
                     {
                       "key": "Content-Type",
@@ -763,7 +1357,7 @@
                 ],
                 "body": {
                   "mode": "raw",
-                  "raw": "{\n  \"username\": \"Esmeralda26\",\n  \"password\": \"iygtwNDPBLRUlkA\",\n  \"email\": \"Aleen_Fisher@gmail.com\",\n  \"name\": \"Roxanne Purdy\",\n  \"mobileNo\": \"(339) 083-0142\"\n}"
+                  "raw": "{\n  \"username\": \"Michael.OKeefe\",\n  \"password\": \"hfuv5ztRidToDff\",\n  \"email\": \"Hester.Bechtelar79@gmail.com\",\n  \"name\": \"Mario Gislason\",\n  \"mobileNo\": \"(213) 593-3485\"\n}"
                 },
                 "description": "",
                 "auth": {}
@@ -781,7 +1375,7 @@
                   "status": "OK",
                   "code": 200,
                   "_postman_previewlanguage": "json",
-                  "body": "{\n  \"status\": \"SUCCESS\",\n  \"message\": \"Your request is successfully executed\",\n  \"data\": {\n    \"username\": \"Esmeralda26\",\n    \"email\": \"Aleen_Fisher@gmail.com\",\n    \"name\": \"Roxanne Purdy\",\n    \"mobileNo\": \"(339) 083-0142\",\n    \"id\": \"63b7b1fd0cb41919d67b4945\",\n    \"loginRetryLimit\": 0,\n    \"isDeleted\": false,\n    \"isActive\": true,\n    \"createdAt\": \"2023-03-17T05:21:32.888Z\",\n    \"updatedAt\": \"2023-11-29T00:30:12.042Z\"\n  }\n}",
+                  "body": "{\n  \"status\": \"SUCCESS\",\n  \"message\": \"Your request is successfully executed\",\n  \"data\": {\n    \"username\": \"Michael.OKeefe\",\n    \"email\": \"Hester.Bechtelar79@gmail.com\",\n    \"name\": \"Mario Gislason\",\n    \"mobileNo\": \"(213) 593-3485\",\n    \"id\": \"63b7b3ae1885d01a22f8814a\",\n    \"loginRetryLimit\": 0,\n    \"isDeleted\": false,\n    \"isActive\": true,\n    \"createdAt\": \"2023-02-09T12:55:21.350Z\",\n    \"updatedAt\": \"2023-01-12T04:06:25.780Z\"\n  }\n}",
                   "header": [
                     {
                       "key": "Content-Type",
@@ -1023,7 +1617,7 @@
                   "status": "OK",
                   "code": 200,
                   "_postman_previewlanguage": "json",
-                  "body": "{\n  \"status\": \"SUCCESS\",\n  \"message\": \"Your request is successfully executed\",\n  \"data\": {\n    \"name\": \"Irving Roob III\",\n    \"code\": \"Liberian\",\n    \"weight\": 938,\n    \"id\": \"63b7b1fd0cb41919d67b4952\",\n    \"isDeleted\": false,\n    \"isActive\": true,\n    \"createdAt\": \"2023-09-23T18:00:03.908Z\",\n    \"updatedAt\": \"2023-09-10T01:48:17.916Z\"\n  }\n}",
+                  "body": "{\n  \"status\": \"SUCCESS\",\n  \"message\": \"Your request is successfully executed\",\n  \"data\": {\n    \"name\": \"Clifford Sipes\",\n    \"code\": \"Avon\",\n    \"weight\": 504,\n    \"id\": \"63b7b3ae1885d01a22f88157\",\n    \"isDeleted\": false,\n    \"isActive\": true,\n    \"createdAt\": \"2023-04-18T10:07:22.449Z\",\n    \"updatedAt\": \"2023-12-09T22:38:15.618Z\"\n  }\n}",
                   "header": [
                     {
                       "key": "Content-Type",
@@ -1049,7 +1643,7 @@
                 ],
                 "body": {
                   "mode": "raw",
-                  "raw": "{\n  \"name\": \"Irving Roob III\",\n  \"code\": \"Liberian\",\n  \"weight\": 938\n}"
+                  "raw": "{\n  \"name\": \"Clifford Sipes\",\n  \"code\": \"Avon\",\n  \"weight\": 504\n}"
                 },
                 "description": "",
                 "auth": {
@@ -1072,7 +1666,7 @@
                   "status": "OK",
                   "code": 200,
                   "_postman_previewlanguage": "json",
-                  "body": "{\n  \"status\": \"SUCCESS\",\n  \"message\": \"Your request is successfully executed\",\n  \"data\": {\n    \"name\": \"Irving Roob III\",\n    \"code\": \"Liberian\",\n    \"weight\": 938,\n    \"id\": \"63b7b1fd0cb41919d67b494c\",\n    \"isDeleted\": false,\n    \"isActive\": true,\n    \"createdAt\": \"2023-09-23T18:00:03.908Z\",\n    \"updatedAt\": \"2023-09-10T01:48:17.916Z\"\n  }\n}",
+                  "body": "{\n  \"status\": \"SUCCESS\",\n  \"message\": \"Your request is successfully executed\",\n  \"data\": {\n    \"name\": \"Clifford Sipes\",\n    \"code\": \"Avon\",\n    \"weight\": 504,\n    \"id\": \"63b7b3ae1885d01a22f88151\",\n    \"isDeleted\": false,\n    \"isActive\": true,\n    \"createdAt\": \"2023-04-18T10:07:22.449Z\",\n    \"updatedAt\": \"2023-12-09T22:38:15.618Z\"\n  }\n}",
                   "header": [
                     {
                       "key": "Content-Type",
@@ -1098,7 +1692,7 @@
                 ],
                 "body": {
                   "mode": "raw",
-                  "raw": "{\n  \"data\": [\n    {\n      \"name\": \"Irving Roob III\",\n      \"code\": \"Liberian\",\n      \"weight\": 938\n    }\n  ]\n}"
+                  "raw": "{\n  \"data\": [\n    {\n      \"name\": \"Clifford Sipes\",\n      \"code\": \"Avon\",\n      \"weight\": 504\n    }\n  ]\n}"
                 },
                 "description": "",
                 "auth": {
@@ -1170,7 +1764,7 @@
                   "status": "OK",
                   "code": 200,
                   "_postman_previewlanguage": "json",
-                  "body": "{\n  \"status\": \"SUCCESS\",\n  \"message\": \"Your request is successfully executed\",\n  \"data\": {\n    \"data\": [\n      {\n        \"name\": \"Irving Roob III\",\n        \"code\": \"Liberian\",\n        \"weight\": 938,\n        \"id\": \"63b7b1fd0cb41919d67b494e\",\n        \"isDeleted\": false,\n        \"isActive\": true,\n        \"createdAt\": \"2023-09-23T18:00:03.908Z\",\n        \"updatedAt\": \"2023-09-10T01:48:17.916Z\"\n      }\n    ],\n    \"paginator\": {\n      \"itemCount\": 1,\n      \"offset\": 0,\n      \"perPage\": 10,\n      \"pageCount\": 1,\n      \"currentPage\": 1,\n      \"slNo\": 1,\n      \"hasPrevPage\": false,\n      \"hasNextPage\": false,\n      \"prev\": null,\n      \"next\": null\n    }\n  }\n}",
+                  "body": "{\n  \"status\": \"SUCCESS\",\n  \"message\": \"Your request is successfully executed\",\n  \"data\": {\n    \"data\": [\n      {\n        \"name\": \"Clifford Sipes\",\n        \"code\": \"Avon\",\n        \"weight\": 504,\n        \"id\": \"63b7b3ae1885d01a22f88153\",\n        \"isDeleted\": false,\n        \"isActive\": true,\n        \"createdAt\": \"2023-04-18T10:07:22.449Z\",\n        \"updatedAt\": \"2023-12-09T22:38:15.618Z\"\n      }\n    ],\n    \"paginator\": {\n      \"itemCount\": 1,\n      \"offset\": 0,\n      \"perPage\": 10,\n      \"pageCount\": 1,\n      \"currentPage\": 1,\n      \"slNo\": 1,\n      \"hasPrevPage\": false,\n      \"hasNextPage\": false,\n      \"prev\": null,\n      \"next\": null\n    }\n  }\n}",
                   "header": [
                     {
                       "key": "Content-Type",
@@ -1464,7 +2058,7 @@
                   "status": "OK",
                   "code": 200,
                   "_postman_previewlanguage": "json",
-                  "body": "{\n  \"status\": \"SUCCESS\",\n  \"message\": \"Your request is successfully executed\",\n  \"data\": {\n    \"name\": \"Irving Roob III\",\n    \"code\": \"Liberian\",\n    \"weight\": 938,\n    \"id\": \"63b7b1fd0cb41919d67b4950\",\n    \"isDeleted\": false,\n    \"isActive\": true,\n    \"createdAt\": \"2023-09-23T18:00:03.908Z\",\n    \"updatedAt\": \"2023-09-10T01:48:17.916Z\"\n  }\n}",
+                  "body": "{\n  \"status\": \"SUCCESS\",\n  \"message\": \"Your request is successfully executed\",\n  \"data\": {\n    \"name\": \"Clifford Sipes\",\n    \"code\": \"Avon\",\n    \"weight\": 504,\n    \"id\": \"63b7b3ae1885d01a22f88155\",\n    \"isDeleted\": false,\n    \"isActive\": true,\n    \"createdAt\": \"2023-04-18T10:07:22.449Z\",\n    \"updatedAt\": \"2023-12-09T22:38:15.618Z\"\n  }\n}",
                   "header": [
                     {
                       "key": "Content-Type",
@@ -1490,7 +2084,7 @@
                 ],
                 "body": {
                   "mode": "raw",
-                  "raw": "{\n  \"name\": \"Irving Roob III\",\n  \"code\": \"Liberian\",\n  \"weight\": 938\n}"
+                  "raw": "{\n  \"name\": \"Clifford Sipes\",\n  \"code\": \"Avon\",\n  \"weight\": 504\n}"
                 },
                 "description": "",
                 "auth": {
@@ -1513,7 +2107,7 @@
                   "status": "OK",
                   "code": 200,
                   "_postman_previewlanguage": "json",
-                  "body": "{\n  \"status\": \"SUCCESS\",\n  \"message\": \"Your request is successfully executed\",\n  \"data\": {\n    \"name\": \"Irving Roob III\",\n    \"code\": \"Liberian\",\n    \"weight\": 938,\n    \"id\": \"63b7b1fd0cb41919d67b4951\",\n    \"isDeleted\": false,\n    \"isActive\": true,\n    \"createdAt\": \"2023-09-23T18:00:03.908Z\",\n    \"updatedAt\": \"2023-09-10T01:48:17.916Z\"\n  }\n}",
+                  "body": "{\n  \"status\": \"SUCCESS\",\n  \"message\": \"Your request is successfully executed\",\n  \"data\": {\n    \"name\": \"Clifford Sipes\",\n    \"code\": \"Avon\",\n    \"weight\": 504,\n    \"id\": \"63b7b3ae1885d01a22f88156\",\n    \"isDeleted\": false,\n    \"isActive\": true,\n    \"createdAt\": \"2023-04-18T10:07:22.449Z\",\n    \"updatedAt\": \"2023-12-09T22:38:15.618Z\"\n  }\n}",
                   "header": [
                     {
                       "key": "Content-Type",
@@ -1617,7 +2211,7 @@
                   "status": "OK",
                   "code": 200,
                   "_postman_previewlanguage": "json",
-                  "body": "{\n  \"status\": \"SUCCESS\",\n  \"message\": \"Your request is successfully executed\",\n  \"data\": {\n    \"route_name\": \"Down-sized\",\n    \"method\": \"platforms\",\n    \"uri\": \"Markets\",\n    \"id\": \"63b7b1fd0cb41919d67b495a\",\n    \"isDeleted\": false,\n    \"isActive\": true,\n    \"createdAt\": \"2023-09-16T17:54:45.717Z\",\n    \"updatedAt\": \"2023-04-11T08:51:26.156Z\"\n  }\n}",
+                  "body": "{\n  \"status\": \"SUCCESS\",\n  \"message\": \"Your request is successfully executed\",\n  \"data\": {\n    \"route_name\": \"Architect\",\n    \"method\": \"metrics\",\n    \"uri\": \"Automotive\",\n    \"id\": \"63b7b3ae1885d01a22f8815f\",\n    \"isDeleted\": false,\n    \"isActive\": true,\n    \"createdAt\": \"2023-06-25T12:12:08.426Z\",\n    \"updatedAt\": \"2023-12-10T17:18:25.491Z\"\n  }\n}",
                   "header": [
                     {
                       "key": "Content-Type",
@@ -1643,7 +2237,7 @@
                 ],
                 "body": {
                   "mode": "raw",
-                  "raw": "{\n  \"route_name\": \"Down-sized\",\n  \"method\": \"platforms\",\n  \"uri\": \"Markets\"\n}"
+                  "raw": "{\n  \"route_name\": \"Architect\",\n  \"method\": \"metrics\",\n  \"uri\": \"Automotive\"\n}"
                 },
                 "description": "",
                 "auth": {
@@ -1666,7 +2260,7 @@
                   "status": "OK",
                   "code": 200,
                   "_postman_previewlanguage": "json",
-                  "body": "{\n  \"status\": \"SUCCESS\",\n  \"message\": \"Your request is successfully executed\",\n  \"data\": {\n    \"route_name\": \"Down-sized\",\n    \"method\": \"platforms\",\n    \"uri\": \"Markets\",\n    \"id\": \"63b7b1fd0cb41919d67b4954\",\n    \"isDeleted\": false,\n    \"isActive\": true,\n    \"createdAt\": \"2023-09-16T17:54:45.717Z\",\n    \"updatedAt\": \"2023-04-11T08:51:26.156Z\"\n  }\n}",
+                  "body": "{\n  \"status\": \"SUCCESS\",\n  \"message\": \"Your request is successfully executed\",\n  \"data\": {\n    \"route_name\": \"Architect\",\n    \"method\": \"metrics\",\n    \"uri\": \"Automotive\",\n    \"id\": \"63b7b3ae1885d01a22f88159\",\n    \"isDeleted\": false,\n    \"isActive\": true,\n    \"createdAt\": \"2023-06-25T12:12:08.426Z\",\n    \"updatedAt\": \"2023-12-10T17:18:25.491Z\"\n  }\n}",
                   "header": [
                     {
                       "key": "Content-Type",
@@ -1692,7 +2286,7 @@
                 ],
                 "body": {
                   "mode": "raw",
-                  "raw": "{\n  \"data\": [\n    {\n      \"route_name\": \"Down-sized\",\n      \"method\": \"platforms\",\n      \"uri\": \"Markets\"\n    }\n  ]\n}"
+                  "raw": "{\n  \"data\": [\n    {\n      \"route_name\": \"Architect\",\n      \"method\": \"metrics\",\n      \"uri\": \"Automotive\"\n    }\n  ]\n}"
                 },
                 "description": "",
                 "auth": {
@@ -1764,7 +2358,7 @@
                   "status": "OK",
                   "code": 200,
                   "_postman_previewlanguage": "json",
-                  "body": "{\n  \"status\": \"SUCCESS\",\n  \"message\": \"Your request is successfully executed\",\n  \"data\": {\n    \"data\": [\n      {\n        \"route_name\": \"Down-sized\",\n        \"method\": \"platforms\",\n        \"uri\": \"Markets\",\n        \"id\": \"63b7b1fd0cb41919d67b4956\",\n        \"isDeleted\": false,\n        \"isActive\": true,\n        \"createdAt\": \"2023-09-16T17:54:45.717Z\",\n        \"updatedAt\": \"2023-04-11T08:51:26.156Z\"\n      }\n    ],\n    \"paginator\": {\n      \"itemCount\": 1,\n      \"offset\": 0,\n      \"perPage\": 10,\n      \"pageCount\": 1,\n      \"currentPage\": 1,\n      \"slNo\": 1,\n      \"hasPrevPage\": false,\n      \"hasNextPage\": false,\n      \"prev\": null,\n      \"next\": null\n    }\n  }\n}",
+                  "body": "{\n  \"status\": \"SUCCESS\",\n  \"message\": \"Your request is successfully executed\",\n  \"data\": {\n    \"data\": [\n      {\n        \"route_name\": \"Architect\",\n        \"method\": \"metrics\",\n        \"uri\": \"Automotive\",\n        \"id\": \"63b7b3ae1885d01a22f8815b\",\n        \"isDeleted\": false,\n        \"isActive\": true,\n        \"createdAt\": \"2023-06-25T12:12:08.426Z\",\n        \"updatedAt\": \"2023-12-10T17:18:25.491Z\"\n      }\n    ],\n    \"paginator\": {\n      \"itemCount\": 1,\n      \"offset\": 0,\n      \"perPage\": 10,\n      \"pageCount\": 1,\n      \"currentPage\": 1,\n      \"slNo\": 1,\n      \"hasPrevPage\": false,\n      \"hasNextPage\": false,\n      \"prev\": null,\n      \"next\": null\n    }\n  }\n}",
                   "header": [
                     {
                       "key": "Content-Type",
@@ -2058,7 +2652,7 @@
                   "status": "OK",
                   "code": 200,
                   "_postman_previewlanguage": "json",
-                  "body": "{\n  \"status\": \"SUCCESS\",\n  \"message\": \"Your request is successfully executed\",\n  \"data\": {\n    \"route_name\": \"Down-sized\",\n    \"method\": \"platforms\",\n    \"uri\": \"Markets\",\n    \"id\": \"63b7b1fd0cb41919d67b4958\",\n    \"isDeleted\": false,\n    \"isActive\": true,\n    \"createdAt\": \"2023-09-16T17:54:45.717Z\",\n    \"updatedAt\": \"2023-04-11T08:51:26.156Z\"\n  }\n}",
+                  "body": "{\n  \"status\": \"SUCCESS\",\n  \"message\": \"Your request is successfully executed\",\n  \"data\": {\n    \"route_name\": \"Architect\",\n    \"method\": \"metrics\",\n    \"uri\": \"Automotive\",\n    \"id\": \"63b7b3ae1885d01a22f8815d\",\n    \"isDeleted\": false,\n    \"isActive\": true,\n    \"createdAt\": \"2023-06-25T12:12:08.426Z\",\n    \"updatedAt\": \"2023-12-10T17:18:25.491Z\"\n  }\n}",
                   "header": [
                     {
                       "key": "Content-Type",
@@ -2084,7 +2678,7 @@
                 ],
                 "body": {
                   "mode": "raw",
-                  "raw": "{\n  \"route_name\": \"Down-sized\",\n  \"method\": \"platforms\",\n  \"uri\": \"Markets\"\n}"
+                  "raw": "{\n  \"route_name\": \"Architect\",\n  \"method\": \"metrics\",\n  \"uri\": \"Automotive\"\n}"
                 },
                 "description": "",
                 "auth": {
@@ -2107,7 +2701,7 @@
                   "status": "OK",
                   "code": 200,
                   "_postman_previewlanguage": "json",
-                  "body": "{\n  \"status\": \"SUCCESS\",\n  \"message\": \"Your request is successfully executed\",\n  \"data\": {\n    \"route_name\": \"Down-sized\",\n    \"method\": \"platforms\",\n    \"uri\": \"Markets\",\n    \"id\": \"63b7b1fd0cb41919d67b4959\",\n    \"isDeleted\": false,\n    \"isActive\": true,\n    \"createdAt\": \"2023-09-16T17:54:45.717Z\",\n    \"updatedAt\": \"2023-04-11T08:51:26.156Z\"\n  }\n}",
+                  "body": "{\n  \"status\": \"SUCCESS\",\n  \"message\": \"Your request is successfully executed\",\n  \"data\": {\n    \"route_name\": \"Architect\",\n    \"method\": \"metrics\",\n    \"uri\": \"Automotive\",\n    \"id\": \"63b7b3ae1885d01a22f8815e\",\n    \"isDeleted\": false,\n    \"isActive\": true,\n    \"createdAt\": \"2023-06-25T12:12:08.426Z\",\n    \"updatedAt\": \"2023-12-10T17:18:25.491Z\"\n  }\n}",
                   "header": [
                     {
                       "key": "Content-Type",
@@ -2211,7 +2805,7 @@
                   "status": "OK",
                   "code": 200,
                   "_postman_previewlanguage": "json",
-                  "body": "{\n  \"status\": \"SUCCESS\",\n  \"message\": \"Your request is successfully executed\",\n  \"data\": {\n    \"routeId\": \"63b7b1fd0cb41919d67b495b\",\n    \"roleId\": \"63b7b1fd0cb41919d67b495c\",\n    \"id\": \"63b7b1fd0cb41919d67b4964\",\n    \"isDeleted\": false,\n    \"isActive\": true,\n    \"createdAt\": \"2023-04-21T06:41:31.790Z\",\n    \"updatedAt\": \"2023-01-25T12:49:39.304Z\"\n  }\n}",
+                  "body": "{\n  \"status\": \"SUCCESS\",\n  \"message\": \"Your request is successfully executed\",\n  \"data\": {\n    \"routeId\": \"63b7b3ae1885d01a22f88160\",\n    \"roleId\": \"63b7b3ae1885d01a22f88161\",\n    \"id\": \"63b7b3ae1885d01a22f88169\",\n    \"isDeleted\": false,\n    \"isActive\": true,\n    \"createdAt\": \"2023-05-07T03:37:07.674Z\",\n    \"updatedAt\": \"2023-05-21T12:41:41.289Z\"\n  }\n}",
                   "header": [
                     {
                       "key": "Content-Type",
@@ -2237,7 +2831,7 @@
                 ],
                 "body": {
                   "mode": "raw",
-                  "raw": "{\n  \"routeId\": \"63b7b1fd0cb41919d67b495b\",\n  \"roleId\": \"63b7b1fd0cb41919d67b495c\"\n}"
+                  "raw": "{\n  \"routeId\": \"63b7b3ae1885d01a22f88160\",\n  \"roleId\": \"63b7b3ae1885d01a22f88161\"\n}"
                 },
                 "description": "",
                 "auth": {
@@ -2260,7 +2854,7 @@
                   "status": "OK",
                   "code": 200,
                   "_postman_previewlanguage": "json",
-                  "body": "{\n  \"status\": \"SUCCESS\",\n  \"message\": \"Your request is successfully executed\",\n  \"data\": {\n    \"routeId\": \"63b7b1fd0cb41919d67b495b\",\n    \"roleId\": \"63b7b1fd0cb41919d67b495c\",\n    \"id\": \"63b7b1fd0cb41919d67b495e\",\n    \"isDeleted\": false,\n    \"isActive\": true,\n    \"createdAt\": \"2023-04-21T06:41:31.790Z\",\n    \"updatedAt\": \"2023-01-25T12:49:39.304Z\"\n  }\n}",
+                  "body": "{\n  \"status\": \"SUCCESS\",\n  \"message\": \"Your request is successfully executed\",\n  \"data\": {\n    \"routeId\": \"63b7b3ae1885d01a22f88160\",\n    \"roleId\": \"63b7b3ae1885d01a22f88161\",\n    \"id\": \"63b7b3ae1885d01a22f88163\",\n    \"isDeleted\": false,\n    \"isActive\": true,\n    \"createdAt\": \"2023-05-07T03:37:07.674Z\",\n    \"updatedAt\": \"2023-05-21T12:41:41.289Z\"\n  }\n}",
                   "header": [
                     {
                       "key": "Content-Type",
@@ -2286,7 +2880,7 @@
                 ],
                 "body": {
                   "mode": "raw",
-                  "raw": "{\n  \"data\": [\n    {\n      \"routeId\": \"63b7b1fd0cb41919d67b495b\",\n      \"roleId\": \"63b7b1fd0cb41919d67b495c\"\n    }\n  ]\n}"
+                  "raw": "{\n  \"data\": [\n    {\n      \"routeId\": \"63b7b3ae1885d01a22f88160\",\n      \"roleId\": \"63b7b3ae1885d01a22f88161\"\n    }\n  ]\n}"
                 },
                 "description": "",
                 "auth": {
@@ -2358,7 +2952,7 @@
                   "status": "OK",
                   "code": 200,
                   "_postman_previewlanguage": "json",
-                  "body": "{\n  \"status\": \"SUCCESS\",\n  \"message\": \"Your request is successfully executed\",\n  \"data\": {\n    \"data\": [\n      {\n        \"routeId\": \"63b7b1fd0cb41919d67b495b\",\n        \"roleId\": \"63b7b1fd0cb41919d67b495c\",\n        \"id\": \"63b7b1fd0cb41919d67b4960\",\n        \"isDeleted\": false,\n        \"isActive\": true,\n        \"createdAt\": \"2023-04-21T06:41:31.790Z\",\n        \"updatedAt\": \"2023-01-25T12:49:39.304Z\"\n      }\n    ],\n    \"paginator\": {\n      \"itemCount\": 1,\n      \"offset\": 0,\n      \"perPage\": 10,\n      \"pageCount\": 1,\n      \"currentPage\": 1,\n      \"slNo\": 1,\n      \"hasPrevPage\": false,\n      \"hasNextPage\": false,\n      \"prev\": null,\n      \"next\": null\n    }\n  }\n}",
+                  "body": "{\n  \"status\": \"SUCCESS\",\n  \"message\": \"Your request is successfully executed\",\n  \"data\": {\n    \"data\": [\n      {\n        \"routeId\": \"63b7b3ae1885d01a22f88160\",\n        \"roleId\": \"63b7b3ae1885d01a22f88161\",\n        \"id\": \"63b7b3ae1885d01a22f88165\",\n        \"isDeleted\": false,\n        \"isActive\": true,\n        \"createdAt\": \"2023-05-07T03:37:07.674Z\",\n        \"updatedAt\": \"2023-05-21T12:41:41.289Z\"\n      }\n    ],\n    \"paginator\": {\n      \"itemCount\": 1,\n      \"offset\": 0,\n      \"perPage\": 10,\n      \"pageCount\": 1,\n      \"currentPage\": 1,\n      \"slNo\": 1,\n      \"hasPrevPage\": false,\n      \"hasNextPage\": false,\n      \"prev\": null,\n      \"next\": null\n    }\n  }\n}",
                   "header": [
                     {
                       "key": "Content-Type",
@@ -2652,7 +3246,7 @@
                   "status": "OK",
                   "code": 200,
                   "_postman_previewlanguage": "json",
-                  "body": "{\n  \"status\": \"SUCCESS\",\n  \"message\": \"Your request is successfully executed\",\n  \"data\": {\n    \"routeId\": \"63b7b1fd0cb41919d67b495b\",\n    \"roleId\": \"63b7b1fd0cb41919d67b495c\",\n    \"id\": \"63b7b1fd0cb41919d67b4962\",\n    \"isDeleted\": false,\n    \"isActive\": true,\n    \"createdAt\": \"2023-04-21T06:41:31.790Z\",\n    \"updatedAt\": \"2023-01-25T12:49:39.304Z\"\n  }\n}",
+                  "body": "{\n  \"status\": \"SUCCESS\",\n  \"message\": \"Your request is successfully executed\",\n  \"data\": {\n    \"routeId\": \"63b7b3ae1885d01a22f88160\",\n    \"roleId\": \"63b7b3ae1885d01a22f88161\",\n    \"id\": \"63b7b3ae1885d01a22f88167\",\n    \"isDeleted\": false,\n    \"isActive\": true,\n    \"createdAt\": \"2023-05-07T03:37:07.674Z\",\n    \"updatedAt\": \"2023-05-21T12:41:41.289Z\"\n  }\n}",
                   "header": [
                     {
                       "key": "Content-Type",
@@ -2678,7 +3272,7 @@
                 ],
                 "body": {
                   "mode": "raw",
-                  "raw": "{\n  \"routeId\": \"63b7b1fd0cb41919d67b495b\",\n  \"roleId\": \"63b7b1fd0cb41919d67b495c\"\n}"
+                  "raw": "{\n  \"routeId\": \"63b7b3ae1885d01a22f88160\",\n  \"roleId\": \"63b7b3ae1885d01a22f88161\"\n}"
                 },
                 "description": "",
                 "auth": {
@@ -2701,7 +3295,7 @@
                   "status": "OK",
                   "code": 200,
                   "_postman_previewlanguage": "json",
-                  "body": "{\n  \"status\": \"SUCCESS\",\n  \"message\": \"Your request is successfully executed\",\n  \"data\": {\n    \"routeId\": \"63b7b1fd0cb41919d67b495b\",\n    \"roleId\": \"63b7b1fd0cb41919d67b495c\",\n    \"id\": \"63b7b1fd0cb41919d67b4963\",\n    \"isDeleted\": false,\n    \"isActive\": true,\n    \"createdAt\": \"2023-04-21T06:41:31.790Z\",\n    \"updatedAt\": \"2023-01-25T12:49:39.304Z\"\n  }\n}",
+                  "body": "{\n  \"status\": \"SUCCESS\",\n  \"message\": \"Your request is successfully executed\",\n  \"data\": {\n    \"routeId\": \"63b7b3ae1885d01a22f88160\",\n    \"roleId\": \"63b7b3ae1885d01a22f88161\",\n    \"id\": \"63b7b3ae1885d01a22f88168\",\n    \"isDeleted\": false,\n    \"isActive\": true,\n    \"createdAt\": \"2023-05-07T03:37:07.674Z\",\n    \"updatedAt\": \"2023-05-21T12:41:41.289Z\"\n  }\n}",
                   "header": [
                     {
                       "key": "Content-Type",
@@ -2805,7 +3399,7 @@
                   "status": "OK",
                   "code": 200,
                   "_postman_previewlanguage": "json",
-                  "body": "{\n  \"status\": \"SUCCESS\",\n  \"message\": \"Your request is successfully executed\",\n  \"data\": {\n    \"userId\": \"63b7b1fd0cb41919d67b4965\",\n    \"roleId\": \"63b7b1fd0cb41919d67b4966\",\n    \"id\": \"63b7b1fd0cb41919d67b496e\",\n    \"isDeleted\": false,\n    \"isActive\": true,\n    \"createdAt\": \"2023-01-08T16:08:41.916Z\",\n    \"updatedAt\": \"2023-11-24T08:27:52.128Z\"\n  }\n}",
+                  "body": "{\n  \"status\": \"SUCCESS\",\n  \"message\": \"Your request is successfully executed\",\n  \"data\": {\n    \"userId\": \"63b7b3ae1885d01a22f8816a\",\n    \"roleId\": \"63b7b3ae1885d01a22f8816b\",\n    \"id\": \"63b7b3ae1885d01a22f88173\",\n    \"isDeleted\": false,\n    \"isActive\": true,\n    \"createdAt\": \"2023-08-16T20:30:18.162Z\",\n    \"updatedAt\": \"2023-08-14T04:58:09.866Z\"\n  }\n}",
                   "header": [
                     {
                       "key": "Content-Type",
@@ -2831,7 +3425,7 @@
                 ],
                 "body": {
                   "mode": "raw",
-                  "raw": "{\n  \"userId\": \"63b7b1fd0cb41919d67b4965\",\n  \"roleId\": \"63b7b1fd0cb41919d67b4966\"\n}"
+                  "raw": "{\n  \"userId\": \"63b7b3ae1885d01a22f8816a\",\n  \"roleId\": \"63b7b3ae1885d01a22f8816b\"\n}"
                 },
                 "description": "",
                 "auth": {
@@ -2854,7 +3448,7 @@
                   "status": "OK",
                   "code": 200,
                   "_postman_previewlanguage": "json",
-                  "body": "{\n  \"status\": \"SUCCESS\",\n  \"message\": \"Your request is successfully executed\",\n  \"data\": {\n    \"userId\": \"63b7b1fd0cb41919d67b4965\",\n    \"roleId\": \"63b7b1fd0cb41919d67b4966\",\n    \"id\": \"63b7b1fd0cb41919d67b4968\",\n    \"isDeleted\": false,\n    \"isActive\": true,\n    \"createdAt\": \"2023-01-08T16:08:41.916Z\",\n    \"updatedAt\": \"2023-11-24T08:27:52.128Z\"\n  }\n}",
+                  "body": "{\n  \"status\": \"SUCCESS\",\n  \"message\": \"Your request is successfully executed\",\n  \"data\": {\n    \"userId\": \"63b7b3ae1885d01a22f8816a\",\n    \"roleId\": \"63b7b3ae1885d01a22f8816b\",\n    \"id\": \"63b7b3ae1885d01a22f8816d\",\n    \"isDeleted\": false,\n    \"isActive\": true,\n    \"createdAt\": \"2023-08-16T20:30:18.162Z\",\n    \"updatedAt\": \"2023-08-14T04:58:09.866Z\"\n  }\n}",
                   "header": [
                     {
                       "key": "Content-Type",
@@ -2880,7 +3474,7 @@
                 ],
                 "body": {
                   "mode": "raw",
-                  "raw": "{\n  \"data\": [\n    {\n      \"userId\": \"63b7b1fd0cb41919d67b4965\",\n      \"roleId\": \"63b7b1fd0cb41919d67b4966\"\n    }\n  ]\n}"
+                  "raw": "{\n  \"data\": [\n    {\n      \"userId\": \"63b7b3ae1885d01a22f8816a\",\n      \"roleId\": \"63b7b3ae1885d01a22f8816b\"\n    }\n  ]\n}"
                 },
                 "description": "",
                 "auth": {
@@ -2952,7 +3546,7 @@
                   "status": "OK",
                   "code": 200,
                   "_postman_previewlanguage": "json",
-                  "body": "{\n  \"status\": \"SUCCESS\",\n  \"message\": \"Your request is successfully executed\",\n  \"data\": {\n    \"data\": [\n      {\n        \"userId\": \"63b7b1fd0cb41919d67b4965\",\n        \"roleId\": \"63b7b1fd0cb41919d67b4966\",\n        \"id\": \"63b7b1fd0cb41919d67b496a\",\n        \"isDeleted\": false,\n        \"isActive\": true,\n        \"createdAt\": \"2023-01-08T16:08:41.916Z\",\n        \"updatedAt\": \"2023-11-24T08:27:52.128Z\"\n      }\n    ],\n    \"paginator\": {\n      \"itemCount\": 1,\n      \"offset\": 0,\n      \"perPage\": 10,\n      \"pageCount\": 1,\n      \"currentPage\": 1,\n      \"slNo\": 1,\n      \"hasPrevPage\": false,\n      \"hasNextPage\": false,\n      \"prev\": null,\n      \"next\": null\n    }\n  }\n}",
+                  "body": "{\n  \"status\": \"SUCCESS\",\n  \"message\": \"Your request is successfully executed\",\n  \"data\": {\n    \"data\": [\n      {\n        \"userId\": \"63b7b3ae1885d01a22f8816a\",\n        \"roleId\": \"63b7b3ae1885d01a22f8816b\",\n        \"id\": \"63b7b3ae1885d01a22f8816f\",\n        \"isDeleted\": false,\n        \"isActive\": true,\n        \"createdAt\": \"2023-08-16T20:30:18.162Z\",\n        \"updatedAt\": \"2023-08-14T04:58:09.866Z\"\n      }\n    ],\n    \"paginator\": {\n      \"itemCount\": 1,\n      \"offset\": 0,\n      \"perPage\": 10,\n      \"pageCount\": 1,\n      \"currentPage\": 1,\n      \"slNo\": 1,\n      \"hasPrevPage\": false,\n      \"hasNextPage\": false,\n      \"prev\": null,\n      \"next\": null\n    }\n  }\n}",
                   "header": [
                     {
                       "key": "Content-Type",
@@ -3246,7 +3840,7 @@
                   "status": "OK",
                   "code": 200,
                   "_postman_previewlanguage": "json",
-                  "body": "{\n  \"status\": \"SUCCESS\",\n  \"message\": \"Your request is successfully executed\",\n  \"data\": {\n    \"userId\": \"63b7b1fd0cb41919d67b4965\",\n    \"roleId\": \"63b7b1fd0cb41919d67b4966\",\n    \"id\": \"63b7b1fd0cb41919d67b496c\",\n    \"isDeleted\": false,\n    \"isActive\": true,\n    \"createdAt\": \"2023-01-08T16:08:41.916Z\",\n    \"updatedAt\": \"2023-11-24T08:27:52.128Z\"\n  }\n}",
+                  "body": "{\n  \"status\": \"SUCCESS\",\n  \"message\": \"Your request is successfully executed\",\n  \"data\": {\n    \"userId\": \"63b7b3ae1885d01a22f8816a\",\n    \"roleId\": \"63b7b3ae1885d01a22f8816b\",\n    \"id\": \"63b7b3ae1885d01a22f88171\",\n    \"isDeleted\": false,\n    \"isActive\": true,\n    \"createdAt\": \"2023-08-16T20:30:18.162Z\",\n    \"updatedAt\": \"2023-08-14T04:58:09.866Z\"\n  }\n}",
                   "header": [
                     {
                       "key": "Content-Type",
@@ -3272,7 +3866,7 @@
                 ],
                 "body": {
                   "mode": "raw",
-                  "raw": "{\n  \"userId\": \"63b7b1fd0cb41919d67b4965\",\n  \"roleId\": \"63b7b1fd0cb41919d67b4966\"\n}"
+                  "raw": "{\n  \"userId\": \"63b7b3ae1885d01a22f8816a\",\n  \"roleId\": \"63b7b3ae1885d01a22f8816b\"\n}"
                 },
                 "description": "",
                 "auth": {
@@ -3295,7 +3889,7 @@
                   "status": "OK",
                   "code": 200,
                   "_postman_previewlanguage": "json",
-                  "body": "{\n  \"status\": \"SUCCESS\",\n  \"message\": \"Your request is successfully executed\",\n  \"data\": {\n    \"userId\": \"63b7b1fd0cb41919d67b4965\",\n    \"roleId\": \"63b7b1fd0cb41919d67b4966\",\n    \"id\": \"63b7b1fd0cb41919d67b496d\",\n    \"isDeleted\": false,\n    \"isActive\": true,\n    \"createdAt\": \"2023-01-08T16:08:41.916Z\",\n    \"updatedAt\": \"2023-11-24T08:27:52.128Z\"\n  }\n}",
+                  "body": "{\n  \"status\": \"SUCCESS\",\n  \"message\": \"Your request is successfully executed\",\n  \"data\": {\n    \"userId\": \"63b7b3ae1885d01a22f8816a\",\n    \"roleId\": \"63b7b3ae1885d01a22f8816b\",\n    \"id\": \"63b7b3ae1885d01a22f88172\",\n    \"isDeleted\": false,\n    \"isActive\": true,\n    \"createdAt\": \"2023-08-16T20:30:18.162Z\",\n    \"updatedAt\": \"2023-08-14T04:58:09.866Z\"\n  }\n}",
                   "header": [
                     {
                       "key": "Content-Type",
@@ -3365,6 +3959,600 @@
       "description": "device APIs",
       "item": [
         {
+          "name": "patient",
+          "description": "patient Model APIs",
+          "item": [
+            {
+              "name": "getpatient",
+              "request": {
+                "url": "{{url}}/device/api/v1/patient/:id",
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json",
+                    "description": ""
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{}"
+                },
+                "description": "",
+                "auth": {
+                  "type": "bearer",
+                  "bearer": {
+                    "token": "{{token}}"
+                  }
+                }
+              },
+              "response": [
+                {
+                  "name": "getpatient_response",
+                  "originalRequest": {
+                    "method": "GET",
+                    "header": [],
+                    "url": {
+                      "raw": "{{url}}/device/api/v1/patient/:id"
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "json",
+                  "body": "{\n  \"status\": \"SUCCESS\",\n  \"message\": \"Your request is successfully executed\",\n  \"data\": {\n    \"name\": \"Allison Bergstrom\",\n    \"code\": \"calculating\",\n    \"email\": \"Brenda.Jacobi@hotmail.com\",\n    \"isDelete\": true,\n    \"id\": \"63b7b3ae1885d01a22f8813b\",\n    \"isDeleted\": false,\n    \"isActive\": true,\n    \"createdAt\": \"2023-11-07T02:46:14.364Z\",\n    \"updatedAt\": \"2023-02-26T17:21:38.263Z\"\n  }\n}",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": []
+                }
+              ],
+              "_postman_isSubFolder": true
+            },
+            {
+              "name": "addpatient",
+              "request": {
+                "url": "{{url}}/device/api/v1/patient/create",
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json",
+                    "description": ""
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"name\": \"Allison Bergstrom\",\n  \"code\": \"calculating\",\n  \"email\": \"Brenda.Jacobi@hotmail.com\",\n  \"isDelete\": true\n}"
+                },
+                "description": "",
+                "auth": {
+                  "type": "bearer",
+                  "bearer": {
+                    "token": "{{token}}"
+                  }
+                }
+              },
+              "response": [
+                {
+                  "name": "addpatient_response",
+                  "originalRequest": {
+                    "method": "POST",
+                    "header": [],
+                    "url": {
+                      "raw": "{{url}}/device/api/v1/patient/create"
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "json",
+                  "body": "{\n  \"status\": \"SUCCESS\",\n  \"message\": \"Your request is successfully executed\",\n  \"data\": {\n    \"name\": \"Allison Bergstrom\",\n    \"code\": \"calculating\",\n    \"email\": \"Brenda.Jacobi@hotmail.com\",\n    \"isDelete\": true,\n    \"id\": \"63b7b3ae1885d01a22f88139\",\n    \"isDeleted\": false,\n    \"isActive\": true,\n    \"createdAt\": \"2023-11-07T02:46:14.364Z\",\n    \"updatedAt\": \"2023-02-26T17:21:38.263Z\"\n  }\n}",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": []
+                }
+              ],
+              "_postman_isSubFolder": true
+            },
+            {
+              "name": "findAllpatient",
+              "request": {
+                "url": "{{url}}/device/api/v1/patient/list",
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json",
+                    "description": ""
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"query\": {},\n  \"options\": {\n    \"select\": [\n      \"field 1\",\n      \"field 2\"\n    ],\n    \"collation\": \"\",\n    \"sort\": \"\",\n    \"populate\": \"\",\n    \"projection\": \"\",\n    \"lean\": false,\n    \"leanWithId\": true,\n    \"offset\": 0,\n    \"page\": 1,\n    \"limit\": 10,\n    \"pagination\": true,\n    \"useEstimatedCount\": false,\n    \"useCustomCountFn\": false,\n    \"forceCountFn\": false,\n    \"read\": {},\n    \"options\": {}\n  },\n  \"isCountOnly\": false\n}"
+                },
+                "description": "",
+                "auth": {
+                  "type": "bearer",
+                  "bearer": {
+                    "token": "{{token}}"
+                  }
+                }
+              },
+              "response": [
+                {
+                  "name": "findAllpatient_response",
+                  "originalRequest": {
+                    "method": "POST",
+                    "header": [],
+                    "url": {
+                      "raw": "{{url}}/device/api/v1/patient/list"
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "json",
+                  "body": "{\n  \"status\": \"SUCCESS\",\n  \"message\": \"Your request is successfully executed\",\n  \"data\": {\n    \"data\": [\n      {\n        \"name\": \"Allison Bergstrom\",\n        \"code\": \"calculating\",\n        \"email\": \"Brenda.Jacobi@hotmail.com\",\n        \"isDelete\": true,\n        \"id\": \"63b7b3ae1885d01a22f8813a\",\n        \"isDeleted\": false,\n        \"isActive\": true,\n        \"createdAt\": \"2023-11-07T02:46:14.364Z\",\n        \"updatedAt\": \"2023-02-26T17:21:38.263Z\"\n      }\n    ],\n    \"paginator\": {\n      \"itemCount\": 1,\n      \"offset\": 0,\n      \"perPage\": 10,\n      \"pageCount\": 1,\n      \"currentPage\": 1,\n      \"slNo\": 1,\n      \"hasPrevPage\": false,\n      \"hasNextPage\": false,\n      \"prev\": null,\n      \"next\": null\n    }\n  }\n}",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": []
+                }
+              ],
+              "_postman_isSubFolder": true
+            },
+            {
+              "name": "getpatientCount",
+              "request": {
+                "url": "{{url}}/device/api/v1/patient/count",
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json",
+                    "description": ""
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"where\": {\n    \"isActive\": true\n  }\n}"
+                },
+                "description": "",
+                "auth": {
+                  "type": "bearer",
+                  "bearer": {
+                    "token": "{{token}}"
+                  }
+                }
+              },
+              "response": [
+                {
+                  "name": "getpatientCount_response",
+                  "originalRequest": {
+                    "method": "POST",
+                    "header": [],
+                    "url": {
+                      "raw": "{{url}}/device/api/v1/patient/count"
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "json",
+                  "body": "{\n  \"status\": \"SUCCESS\",\n  \"message\": \"Your request is successfully executed\",\n  \"data\": {\n    \"count\": 10\n  }\n}",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": []
+                }
+              ],
+              "_postman_isSubFolder": true
+            },
+            {
+              "name": "insertBulkpatient",
+              "request": {
+                "url": "{{url}}/device/api/v1/patient/addBulk",
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json",
+                    "description": ""
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"data\": [\n    {\n      \"name\": \"Allison Bergstrom\",\n      \"code\": \"calculating\",\n      \"email\": \"Brenda.Jacobi@hotmail.com\",\n      \"isDelete\": true\n    }\n  ]\n}"
+                },
+                "description": "",
+                "auth": {
+                  "type": "bearer",
+                  "bearer": {
+                    "token": "{{token}}"
+                  }
+                }
+              },
+              "response": [
+                {
+                  "name": "insertBulkpatient_response",
+                  "originalRequest": {
+                    "method": "POST",
+                    "header": [],
+                    "url": {
+                      "raw": "{{url}}/device/api/v1/patient/addBulk"
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "json",
+                  "body": "{\n  \"status\": \"SUCCESS\",\n  \"message\": \"Your request is successfully executed\",\n  \"data\": {\n    \"count\": 2\n  }\n}",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": []
+                }
+              ],
+              "_postman_isSubFolder": true
+            },
+            {
+              "name": "deleteManypatient",
+              "request": {
+                "url": "{{url}}/device/api/v1/patient/deleteMany",
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json",
+                    "description": ""
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"isWarning\": true,\n  \"ids\": [\n    \":id\"\n  ]\n}"
+                },
+                "description": "",
+                "auth": {
+                  "type": "bearer",
+                  "bearer": {
+                    "token": "{{token}}"
+                  }
+                }
+              },
+              "response": [
+                {
+                  "name": "deleteManypatient_response",
+                  "originalRequest": {
+                    "method": "POST",
+                    "header": [],
+                    "url": {
+                      "raw": "{{url}}/device/api/v1/patient/deleteMany"
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "json",
+                  "body": "{\n  \"status\": \"SUCCESS\",\n  \"message\": \"Your request is successfully executed\",\n  \"data\": {\n    \"count\": 2\n  }\n}",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": []
+                }
+              ],
+              "_postman_isSubFolder": true
+            },
+            {
+              "name": "updatepatient",
+              "request": {
+                "url": "{{url}}/device/api/v1/patient/update/:id",
+                "method": "PUT",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json",
+                    "description": ""
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"name\": \"Allison Bergstrom\",\n  \"code\": \"calculating\",\n  \"email\": \"Brenda.Jacobi@hotmail.com\",\n  \"isDelete\": true\n}"
+                },
+                "description": "",
+                "auth": {
+                  "type": "bearer",
+                  "bearer": {
+                    "token": "{{token}}"
+                  }
+                }
+              },
+              "response": [
+                {
+                  "name": "updatepatient_response",
+                  "originalRequest": {
+                    "method": "PUT",
+                    "header": [],
+                    "url": {
+                      "raw": "{{url}}/device/api/v1/patient/update/:id"
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "json",
+                  "body": "{\n  \"status\": \"SUCCESS\",\n  \"message\": \"Your request is successfully executed\",\n  \"data\": {\n    \"name\": \"Allison Bergstrom\",\n    \"code\": \"calculating\",\n    \"email\": \"Brenda.Jacobi@hotmail.com\",\n    \"isDelete\": true,\n    \"id\": \"63b7b3ae1885d01a22f8813c\",\n    \"isDeleted\": false,\n    \"isActive\": true,\n    \"createdAt\": \"2023-11-07T02:46:14.364Z\",\n    \"updatedAt\": \"2023-02-26T17:21:38.263Z\"\n  }\n}",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": []
+                }
+              ],
+              "_postman_isSubFolder": true
+            },
+            {
+              "name": "partialupdatepatient",
+              "request": {
+                "url": "{{url}}/device/api/v1/patient/partial-update/:id",
+                "method": "PUT",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json",
+                    "description": ""
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"isActive\": true,\n  \"isDeleted\": false\n}"
+                },
+                "description": "",
+                "auth": {
+                  "type": "bearer",
+                  "bearer": {
+                    "token": "{{token}}"
+                  }
+                }
+              },
+              "response": [
+                {
+                  "name": "partialupdatepatient_response",
+                  "originalRequest": {
+                    "method": "PUT",
+                    "header": [],
+                    "url": {
+                      "raw": "{{url}}/device/api/v1/patient/partial-update/:id"
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "json",
+                  "body": "{\n  \"status\": \"SUCCESS\",\n  \"message\": \"Your request is successfully executed\",\n  \"data\": {\n    \"name\": \"Allison Bergstrom\",\n    \"code\": \"calculating\",\n    \"email\": \"Brenda.Jacobi@hotmail.com\",\n    \"isDelete\": true,\n    \"id\": \"63b7b3ae1885d01a22f8813d\",\n    \"isDeleted\": false,\n    \"isActive\": true,\n    \"createdAt\": \"2023-11-07T02:46:14.364Z\",\n    \"updatedAt\": \"2023-02-26T17:21:38.263Z\"\n  }\n}",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": []
+                }
+              ],
+              "_postman_isSubFolder": true
+            },
+            {
+              "name": "softDeletepatient",
+              "request": {
+                "url": "{{url}}/device/api/v1/patient/softDelete/:id",
+                "method": "PUT",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json",
+                    "description": ""
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{}"
+                },
+                "description": "",
+                "auth": {
+                  "type": "bearer",
+                  "bearer": {
+                    "token": "{{token}}"
+                  }
+                }
+              },
+              "response": [
+                {
+                  "name": "softDeletepatient_response",
+                  "originalRequest": {
+                    "method": "PUT",
+                    "header": [],
+                    "url": {
+                      "raw": "{{url}}/device/api/v1/patient/softDelete/:id"
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "json",
+                  "body": "{\n  \"status\": \"SUCCESS\",\n  \"message\": \"Your request is successfully executed\",\n  \"data\": {\n    \"count\": 2\n  }\n}",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": []
+                }
+              ],
+              "_postman_isSubFolder": true
+            },
+            {
+              "name": "softDeleteManypatient",
+              "request": {
+                "url": "{{url}}/device/api/v1/patient/softDeleteMany",
+                "method": "PUT",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json",
+                    "description": ""
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"ids\": [\n    \":id\"\n  ]\n}"
+                },
+                "description": "",
+                "auth": {
+                  "type": "bearer",
+                  "bearer": {
+                    "token": "{{token}}"
+                  }
+                }
+              },
+              "response": [
+                {
+                  "name": "softDeleteManypatient_response",
+                  "originalRequest": {
+                    "method": "PUT",
+                    "header": [],
+                    "url": {
+                      "raw": "{{url}}/device/api/v1/patient/softDeleteMany"
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "json",
+                  "body": "{\n  \"status\": \"SUCCESS\",\n  \"message\": \"Your request is successfully executed\",\n  \"data\": {\n    \"count\": 2\n  }\n}",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": []
+                }
+              ],
+              "_postman_isSubFolder": true
+            },
+            {
+              "name": "updateBulkpatient",
+              "request": {
+                "url": "{{url}}/device/api/v1/patient/updateBulk",
+                "method": "PUT",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json",
+                    "description": ""
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"filter\": {\n    \"isActive\": true\n  },\n  \"data\": {\n    \"isDeleted\": false\n  }\n}"
+                },
+                "description": "",
+                "auth": {
+                  "type": "bearer",
+                  "bearer": {
+                    "token": "{{token}}"
+                  }
+                }
+              },
+              "response": [
+                {
+                  "name": "updateBulkpatient_response",
+                  "originalRequest": {
+                    "method": "PUT",
+                    "header": [],
+                    "url": {
+                      "raw": "{{url}}/device/api/v1/patient/updateBulk"
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "json",
+                  "body": "{\n  \"status\": \"SUCCESS\",\n  \"message\": \"Your request is successfully executed\",\n  \"data\": {\n    \"count\": 2\n  }\n}",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": []
+                }
+              ],
+              "_postman_isSubFolder": true
+            },
+            {
+              "name": "deletepatient",
+              "request": {
+                "url": "{{url}}/device/api/v1/patient/delete/:id",
+                "method": "DELETE",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json",
+                    "description": ""
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"isWarning\": true\n}"
+                },
+                "description": "",
+                "auth": {
+                  "type": "bearer",
+                  "bearer": {
+                    "token": "{{token}}"
+                  }
+                }
+              },
+              "response": [
+                {
+                  "name": "deletepatient_response",
+                  "originalRequest": {
+                    "method": "DELETE",
+                    "header": [],
+                    "url": {
+                      "raw": "{{url}}/device/api/v1/patient/delete/:id"
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "json",
+                  "body": "{\n  \"status\": \"SUCCESS\",\n  \"message\": \"Your request is successfully executed\",\n  \"data\": {\n    \"Count\": 1\n  }\n}",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": []
+                }
+              ],
+              "_postman_isSubFolder": true
+            }
+          ]
+        },
+        {
           "name": "user",
           "description": "user Model APIs",
           "item": [
@@ -3405,7 +4593,7 @@
                   "status": "OK",
                   "code": 200,
                   "_postman_previewlanguage": "json",
-                  "body": "{\n  \"status\": \"SUCCESS\",\n  \"message\": \"Your request is successfully executed\",\n  \"data\": {\n    \"username\": \"Esmeralda26\",\n    \"email\": \"Aleen_Fisher@gmail.com\",\n    \"name\": \"Roxanne Purdy\",\n    \"mobileNo\": \"(339) 083-0142\",\n    \"userType\": 1,\n    \"id\": \"63b7b1fd0cb41919d67b4947\",\n    \"isDeleted\": false,\n    \"isActive\": true,\n    \"createdAt\": \"2023-03-23T00:02:54.295Z\",\n    \"updatedAt\": \"2023-12-30T22:20:27.224Z\"\n  }\n}",
+                  "body": "{\n  \"status\": \"SUCCESS\",\n  \"message\": \"Your request is successfully executed\",\n  \"data\": {\n    \"username\": \"Michael.OKeefe\",\n    \"email\": \"Hester.Bechtelar79@gmail.com\",\n    \"name\": \"Mario Gislason\",\n    \"mobileNo\": \"(213) 593-3485\",\n    \"userType\": 1,\n    \"id\": \"63b7b3ae1885d01a22f8814c\",\n    \"isDeleted\": false,\n    \"isActive\": true,\n    \"createdAt\": \"2023-10-18T21:55:50.897Z\",\n    \"updatedAt\": \"2023-07-05T07:36:24.794Z\"\n  }\n}",
                   "header": [
                     {
                       "key": "Content-Type",
@@ -3431,7 +4619,7 @@
                 ],
                 "body": {
                   "mode": "raw",
-                  "raw": "{\n  \"username\": \"Esmeralda26\",\n  \"password\": \"iygtwNDPBLRUlkA\",\n  \"email\": \"Aleen_Fisher@gmail.com\",\n  \"name\": \"Roxanne Purdy\",\n  \"mobileNo\": \"(339) 083-0142\",\n  \"userType\": 1\n}"
+                  "raw": "{\n  \"username\": \"Michael.OKeefe\",\n  \"password\": \"hfuv5ztRidToDff\",\n  \"email\": \"Hester.Bechtelar79@gmail.com\",\n  \"name\": \"Mario Gislason\",\n  \"mobileNo\": \"(213) 593-3485\",\n  \"userType\": 1\n}"
                 },
                 "description": "",
                 "auth": {
@@ -3454,7 +4642,7 @@
                   "status": "OK",
                   "code": 200,
                   "_postman_previewlanguage": "json",
-                  "body": "{\n  \"status\": \"SUCCESS\",\n  \"message\": \"Your request is successfully executed\",\n  \"data\": {\n    \"username\": \"Esmeralda26\",\n    \"email\": \"Aleen_Fisher@gmail.com\",\n    \"name\": \"Roxanne Purdy\",\n    \"mobileNo\": \"(339) 083-0142\",\n    \"userType\": 1,\n    \"id\": \"63b7b1fd0cb41919d67b4946\",\n    \"isDeleted\": false,\n    \"isActive\": true,\n    \"createdAt\": \"2023-03-23T00:02:54.295Z\",\n    \"updatedAt\": \"2023-12-30T22:20:27.224Z\"\n  }\n}",
+                  "body": "{\n  \"status\": \"SUCCESS\",\n  \"message\": \"Your request is successfully executed\",\n  \"data\": {\n    \"username\": \"Michael.OKeefe\",\n    \"email\": \"Hester.Bechtelar79@gmail.com\",\n    \"name\": \"Mario Gislason\",\n    \"mobileNo\": \"(213) 593-3485\",\n    \"userType\": 1,\n    \"id\": \"63b7b3ae1885d01a22f8814b\",\n    \"isDeleted\": false,\n    \"isActive\": true,\n    \"createdAt\": \"2023-10-18T21:55:50.897Z\",\n    \"updatedAt\": \"2023-07-05T07:36:24.794Z\"\n  }\n}",
                   "header": [
                     {
                       "key": "Content-Type",
@@ -3504,7 +4692,7 @@
                   "status": "OK",
                   "code": 200,
                   "_postman_previewlanguage": "json",
-                  "body": "{\n  \"status\": \"SUCCESS\",\n  \"message\": \"Login Successful\",\n  \"data\": {\n    \"username\": \"Esmeralda26\",\n    \"email\": \"Aleen_Fisher@gmail.com\",\n    \"name\": \"Roxanne Purdy\",\n    \"mobileNo\": \"(339) 083-0142\",\n    \"id\": \"63b7b1fd0cb41919d67b4948\",\n    \"loginRetryLimit\": 0,\n    \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYxMWRlZDVjMGFjMjAxMmFjMDI4ODkxZiIsInVzZXJuYW1lIjoiYWRtaW4iLCJpYXQiOjE2MjkzNTEyNzAsImV4cCI6MTYyOTk1MTI3MH0.BJ-WKjNYeFDQ4pn8kfli5gwn6GLz_c3voFht20Agj9k\",\n    \"isDeleted\": false,\n    \"isActive\": true,\n    \"createdAt\": \"2023-05-25T16:10:21.816Z\",\n    \"updatedAt\": \"2023-10-18T10:04:26.559Z\"\n  }\n}",
+                  "body": "{\n  \"status\": \"SUCCESS\",\n  \"message\": \"Login Successful\",\n  \"data\": {\n    \"username\": \"Michael.OKeefe\",\n    \"email\": \"Hester.Bechtelar79@gmail.com\",\n    \"name\": \"Mario Gislason\",\n    \"mobileNo\": \"(213) 593-3485\",\n    \"id\": \"63b7b3ae1885d01a22f8814d\",\n    \"loginRetryLimit\": 0,\n    \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYxMWRlZDVjMGFjMjAxMmFjMDI4ODkxZiIsInVzZXJuYW1lIjoiYWRtaW4iLCJpYXQiOjE2MjkzNTEyNzAsImV4cCI6MTYyOTk1MTI3MH0.BJ-WKjNYeFDQ4pn8kfli5gwn6GLz_c3voFht20Agj9k\",\n    \"isDeleted\": false,\n    \"isActive\": true,\n    \"createdAt\": \"2023-03-02T10:19:16.010Z\",\n    \"updatedAt\": \"2023-11-29T04:49:30.031Z\"\n  }\n}",
                   "header": [
                     {
                       "key": "Content-Type",
@@ -3530,7 +4718,7 @@
                 ],
                 "body": {
                   "mode": "raw",
-                  "raw": "{\n  \"username\": \"Esmeralda26\",\n  \"password\": \"iygtwNDPBLRUlkA\",\n  \"email\": \"Aleen_Fisher@gmail.com\",\n  \"name\": \"Roxanne Purdy\",\n  \"mobileNo\": \"(339) 083-0142\"\n}"
+                  "raw": "{\n  \"username\": \"Michael.OKeefe\",\n  \"password\": \"hfuv5ztRidToDff\",\n  \"email\": \"Hester.Bechtelar79@gmail.com\",\n  \"name\": \"Mario Gislason\",\n  \"mobileNo\": \"(213) 593-3485\"\n}"
                 },
                 "description": "",
                 "auth": {}
@@ -3548,7 +4736,7 @@
                   "status": "OK",
                   "code": 200,
                   "_postman_previewlanguage": "json",
-                  "body": "{\n  \"status\": \"SUCCESS\",\n  \"message\": \"Your request is successfully executed\",\n  \"data\": {\n    \"username\": \"Esmeralda26\",\n    \"email\": \"Aleen_Fisher@gmail.com\",\n    \"name\": \"Roxanne Purdy\",\n    \"mobileNo\": \"(339) 083-0142\",\n    \"id\": \"63b7b1fd0cb41919d67b4948\",\n    \"loginRetryLimit\": 0,\n    \"isDeleted\": false,\n    \"isActive\": true,\n    \"createdAt\": \"2023-05-25T16:10:21.816Z\",\n    \"updatedAt\": \"2023-10-18T10:04:26.559Z\"\n  }\n}",
+                  "body": "{\n  \"status\": \"SUCCESS\",\n  \"message\": \"Your request is successfully executed\",\n  \"data\": {\n    \"username\": \"Michael.OKeefe\",\n    \"email\": \"Hester.Bechtelar79@gmail.com\",\n    \"name\": \"Mario Gislason\",\n    \"mobileNo\": \"(213) 593-3485\",\n    \"id\": \"63b7b3ae1885d01a22f8814d\",\n    \"loginRetryLimit\": 0,\n    \"isDeleted\": false,\n    \"isActive\": true,\n    \"createdAt\": \"2023-03-02T10:19:16.010Z\",\n    \"updatedAt\": \"2023-11-29T04:49:30.031Z\"\n  }\n}",
                   "header": [
                     {
                       "key": "Content-Type",

@@ -3,6 +3,7 @@
  * @description :: exports deleteDependent service for project.
  */
 
+let Patient = require('../model/patient');
 let User = require('../model/user');
 let UserTokens = require('../model/userTokens');
 let Role = require('../model/role');
@@ -11,11 +12,23 @@ let RouteRole = require('../model/routeRole');
 let UserRole = require('../model/userRole');
 let dbService = require('.//dbService');
 
+const deletePatient = async (filter) =>{
+  try {
+    let response  = await dbService.deleteMany(Patient,filter);
+    return response;
+  } catch (error){
+    throw new Error(error.message);
+  }
+};
+
 const deleteUser = async (filter) =>{
   try {
     let user = await dbService.findMany(User,filter);
     if (user && user.length){
       user = user.map((obj) => obj.id);
+
+      const patientFilter = { $or: [{ addedBy : { $in : user } },{ updatedBy : { $in : user } }] };
+      const patientCnt = await dbService.deleteMany(Patient,patientFilter);
 
       const userFilter = { $or: [{ addedBy : { $in : user } },{ updatedBy : { $in : user } }] };
       const userCnt = await dbService.deleteMany(User,userFilter);
@@ -37,6 +50,7 @@ const deleteUser = async (filter) =>{
 
       let deleted  = await dbService.deleteMany(User,filter);
       let response = {
+        patient :patientCnt,
         user :userCnt + deleted,
         userTokens :userTokensCnt,
         role :roleCnt,
@@ -129,11 +143,23 @@ const deleteUserRole = async (filter) =>{
   }
 };
 
+const countPatient = async (filter) =>{
+  try {
+    const patientCnt =  await dbService.count(Patient,filter);
+    return { patient : patientCnt };
+  } catch (error){
+    throw new Error(error.message);
+  }
+};
+
 const countUser = async (filter) =>{
   try {
     let user = await dbService.findMany(User,filter);
     if (user && user.length){
       user = user.map((obj) => obj.id);
+
+      const patientFilter = { $or: [{ addedBy : { $in : user } },{ updatedBy : { $in : user } }] };
+      const patientCnt =  await dbService.count(Patient,patientFilter);
 
       const userFilter = { $or: [{ addedBy : { $in : user } },{ updatedBy : { $in : user } }] };
       const userCnt =  await dbService.count(User,userFilter);
@@ -154,6 +180,7 @@ const countUser = async (filter) =>{
       const userRoleCnt =  await dbService.count(UserRole,userRoleFilter);
 
       let response = {
+        patient : patientCnt,
         user : userCnt,
         userTokens : userTokensCnt,
         role : roleCnt,
@@ -241,11 +268,23 @@ const countUserRole = async (filter) =>{
   }
 };
 
+const softDeletePatient = async (filter,updateBody) =>{  
+  try {
+    const patientCnt =  await dbService.updateMany(Patient,filter);
+    return { patient : patientCnt };
+  } catch (error){
+    throw new Error(error.message);
+  }
+};
+
 const softDeleteUser = async (filter,updateBody) =>{  
   try {
     let user = await dbService.findMany(User,filter, { id:1 });
     if (user.length){
       user = user.map((obj) => obj.id);
+
+      const patientFilter = { '$or': [{ addedBy : { '$in' : user } },{ updatedBy : { '$in' : user } }] };
+      const patientCnt = await dbService.updateMany(Patient,patientFilter,updateBody);
 
       const userFilter = { '$or': [{ addedBy : { '$in' : user } },{ updatedBy : { '$in' : user } }] };
       const userCnt = await dbService.updateMany(User,userFilter,updateBody);
@@ -267,6 +306,7 @@ const softDeleteUser = async (filter,updateBody) =>{
       let updated = await dbService.updateMany(User,filter,updateBody);
 
       let response = {
+        patient :patientCnt,
         user :userCnt + updated,
         userTokens :userTokensCnt,
         role :roleCnt,
@@ -357,18 +397,21 @@ const softDeleteUserRole = async (filter,updateBody) =>{
 };
 
 module.exports = {
+  deletePatient,
   deleteUser,
   deleteUserTokens,
   deleteRole,
   deleteProjectRoute,
   deleteRouteRole,
   deleteUserRole,
+  countPatient,
   countUser,
   countUserTokens,
   countRole,
   countProjectRoute,
   countRouteRole,
   countUserRole,
+  softDeletePatient,
   softDeleteUser,
   softDeleteUserTokens,
   softDeleteRole,
